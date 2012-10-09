@@ -1,4 +1,1 @@
-eCommerce
-=========
-
-E-Commerce class for DIG4530c
+# This is my README
