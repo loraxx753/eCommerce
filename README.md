@@ -1,5 +1,4 @@
-eCommerce
+eCommerce Front End
 =========
 
-E-Commerce class for DIG4530c
-test
+These are the files for our eCommerce Front End
