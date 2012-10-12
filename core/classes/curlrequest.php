@@ -1,6 +1,8 @@
 <?php
 
-Class CurlRequest {
+namespace Baughss\Core;
+
+class CurlRequest {
 
 	private function run($options)
 	{

@@ -1,5 +1,7 @@
 <?php
 
+namespace Baughss\Core;
+
 class Login {
 	public function verifyCredentials($username, $password)
 	{

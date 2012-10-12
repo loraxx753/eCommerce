@@ -1,4 +1,7 @@
 <?php
+
+namespace Baughss\Core;
+
 class Controller {
 	public static function render($type, $page)
 	{

@@ -2,45 +2,14 @@
 session_start();
 
 //Defines the server base depending on where the public file is.
-define(BASE, substr(dirname(__FILE__), 0, -6)); //removes the string "public" 
+define("BASE", substr(dirname(__FILE__), 0, -6)); //removes the string "public" 
+define("APPBASE", BASE."app".DIRECTORY_SEPARATOR ); //removes the string "public" 
+define("COREBASE", BASE."core".DIRECTORY_SEPARATOR ); //removes the string "public" 
 
-//Auto loads the class when referenced	
-function __autoload($class_name) {
-	
-	$exploded = explode('_', $class_name);
-
-
-	if(count($exploded) > 1 && $exploded[1] == "Controller")
-	{
-		$class = strtolower($exploded[0]);
-	}
-	else if(count($exploded) > 1 && $exploded[0] == "Model")
-	{
-		$model = strtolower($exploded[1]);
-	}
-	else
-	{
-		$class = strtolower($class_name);
-	}
-	//If the class name exists in the app controllers, load that class
-	if(file_exists(BASE.'app/classes/controllers/'.$class.'.php')) 
-	{
-		include BASE.'app/classes/controllers/'.$class.'.php';
-	}
-	//Else if it's in the core classes, load it from there.
-	else if(file_exists(BASE.'core/classes/'.$class.'.php')) 
-	{
-		include BASE.'core/classes/'.$class.'.php';
-	}
-	//Else if it's in the core classes, load it from there.
-	else if(file_exists(BASE.'app/classes/models/'.$model.'.php')) 
-	{
-		include BASE.'app/classes/models/'.$model.'.php';
-	}
-}
+include APPBASE."bootstrap.php";
 
 //Defines the base used for assets.
-define(WEB_BASE, Config::find("base"));
+define("WEB_BASE", Config::find("base"));
 
 //If the user is at the base location, load the default controller.
 if(!isset($_GET['url']))

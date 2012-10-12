@@ -1,6 +1,8 @@
 <?php
 
-Class Database {
+namespace Baughss\Core;
+
+class Database {
 	
 	public $pdo;
 
@@ -9,7 +11,7 @@ Class Database {
 		$database = Config::find('database');
 		$user     = Config::find('dbUser');
 		$password = Config::find('dbPassword');
-		return new PDO("mysql:host=localhost;dbname=$database", "$user", "$password");
+		return new \PDO("mysql:host=localhost;dbname=$database", "$user", "$password");
 	}
 	public function query($query, $return = false)
 	{

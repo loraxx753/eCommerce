@@ -1,11 +1,15 @@
 <?php
 
+namespace Baughss\Core;
+
 class Config {
 	public function find($item)
 	{
-		if(file_exists(BASE.'app/config/config.php'))
+		if(file_exists(BASE.'app/config/custom/config.php'))
 		{
-			$config = include BASE.'app/config/config.php';
+			$default = include BASE.'app/config/custom/config.php';
+			$custom  = include BASE.'app/config/config.php';
+			$config  = array_merge($custom, $default);
 			return $config[$item];
 		}
 		else
