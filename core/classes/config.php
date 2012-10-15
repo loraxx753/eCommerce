@@ -14,7 +14,10 @@ class Config {
 		}
 		else
 		{
-			echo "The config file doesn't exist! You have to make that before you continue!";
+			echo "The config file doesn't exist! You have to make that before you continue!<br/><br>Go to <code>".BASE."config/custom/</code> and save a <strong>COPY</strong> of <code>template.config.php</code> as <code>config.php</code>.";
+			echo "<br/><br/>";
+			echo "Read the comments on config.php and go to <code>http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']."setup</code> to setup your database.";
+			die();
 		}
 	}
 }
