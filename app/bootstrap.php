@@ -17,6 +17,8 @@ Autoloader::add_classes(array(
 	'Baughss\Core\Login',
 	'Baughss\Core\Render',
 	'Baughss\Core\Template',
+	'Baughss\Core\Query',
+	'Baughss\Core\Model'
 ));
 
 Autoloader::alias_core_classes();
