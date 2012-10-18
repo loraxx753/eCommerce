@@ -137,6 +137,16 @@ header {
 	padding-left: 10px;
 	margin-bottom: 0px;
 }
+ul.thumbnail li {
+	list-style: none;
+	font-weight: bold;
+}
+ul.thumbnail li img {
+	margin: auto;
+}
+ul.thumbnail {
+	margin: 0 0 20px 0;
+}
 
 /* Cart Page Styles */
 .page_header h2 {
