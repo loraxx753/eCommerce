@@ -81,68 +81,68 @@
 						<h2 class="catalog_header">Item Categories</h2>
 						<hr />
 						<div class="span2 item">
-							<div class="thumbnail">
-								<img src="img/products/chair2_thumbnail.jpg" alt="Chairs" />
-								<p><a href="#">Chairs</a></p>
-							</div>
+							<ul class="thumbnail">
+								<li><img src="img/products/chair2_thumbnail.jpg" alt="Chairs" /></li>
+								<li><a href="#">Chairs</a></li>
+							</ul>
 						</div>
 						<div class="span2 offset1 item">
-							<div class="thumbnail">
-								<img src="img/products/couch1_thumbnail.jpg" alt="Couches" />
-								<p><a href="#">Couches</a></p>
-							</div>
+							<ul class="thumbnail">
+								<li><img src="img/products/couch1_thumbnail.jpg" alt="Couches" /></li>
+								<li><a href="#">Couches</a></li>
+							</ul>
 						</div>
 						<div class="span2 offset1 item">
-							<div class="thumbnail">
-								<img src="img/products/desk_thumbnail.jpg" alt="Desks" />
-								<p><a href="#">Desks</a></p>
-							</div>
+							<ul class="thumbnail">
+								<li><img src="img/products/desk_thumbnail.jpg" alt="Desks" /></li>
+								<li><a href="#">Desks</a></li>
+							</ul>
 						</div>		
 					</div>
 					<div class="span9">
 						<h2 class="catalog_header">Merchandise</h2>
 						<hr />
 						<div class="span2">
-							<div class="thumbnail">
-								<img src="img/products/couch2_thumbnail.jpg" alt="Chic Couch" />
-								<h5><a href="product.php">Chic Couch</a></h5>
-								<h5>$100.00</h5>
-							</div>
+							<ul class="thumbnail">
+								<li><img src="img/products/couch2_thumbnail.jpg" alt="Chic Couch" /></li>
+								<li><a href="product.php">Chic Couch</a></li>
+								<li>$100.00</li>
+							</ul>
 						</div>
 						<div class="span2 offset1">
-							<div class="thumbnail">
-								<img src="img/products/couch3_thumbnail.jpg" alt="Viewing Couch" />
-								<h5><a href="product.php">Viewing Couch</a></h5>
-								<h5>$100.00</h5>
-							</div>
+							<ul class="thumbnail">
+								<li><img src="img/products/couch3_thumbnail.jpg" alt="Viewing Couch" /></li>
+								<li><a href="product.php">Viewing Couch</a></li>
+								<li>$100.00</li>
+							</ul>
 						</div>
 						<div class="span2 offset1">
-							<div class="thumbnail">
-								<img src="img/products/couch4_thumbnail.jpg" alt="Resting Couch" />
-								<h5><a href="product.php">Resting Couch</a></h5>
-								<h5>$100.00</h5>
-							</div>
+							<ul class="thumbnail">
+								<li><img src="img/products/couch4_thumbnail.jpg" alt="Resting Couch" /></li>
+								<li><a href="product.php">Resting Couch</a></li>
+								<li>$100.00</li>
+							</ul>
 						</div>	
 						<div class="span2 featured">
-							<div class="thumbnail">
-								<img src="img/products/desk_thumbnail.jpg" alt="Apple Desk" />
-								<h5><a href="product.php">Apple Desk</a></h5>
-								<h5>$100.00</h5>
-							</div>
+							<ul class="thumbnail">
+								<li><img src="img/products/desk_thumbnail.jpg" alt="Apple Desk" /></li>
+								<li><a href="product.php">Apple Desk</a></li>
+								<li>$100.00</li>
+							</ul>
 						</div>
 						<div class="span2 offset1 featured">
-							<div class="thumbnail">
-								<img src="img/products/desk2_thumbnail.jpg" alt="Writing Desk" />
-								<h5><a href="product.php">Writing Desk</a></h5>
-								<h5>$100.00</h5>
-							</div>
+							<ul class="thumbnail">
+								<li><img src="img/products/desk2_thumbnail.jpg" alt="Writing Desk" /></li>
+								<li><a href="product.php">Writing Desk</a></li>
+								<li>$100.00</li>
+							</ul>
 						</div>
 						<div class="span2 offset1 featured">
-							<div class="thumbnail">
-								<img src="img/products/desk3_thumbnail.jpg" alt="Computer Desk" />
-								<h5><a href="product.php">Computer Desk</a></h5>
-								<h5>$100.00</h5>
-							</div>
+							<ul class="thumbnail">
+								<li><img src="img/products/desk3_thumbnail.jpg" alt="Computer Desk" /></li>
+								<li><a href="product.php">Computer Desk</a></li>
+								<li>$100.00</li>
+							</ul>
 						</div>		
 					</div>
 				</div>
