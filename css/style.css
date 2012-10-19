@@ -148,6 +148,14 @@ ul.thumbnail li img {
 ul.thumbnail {
 	margin: 0 0 20px 0;
 }
+.catalog_item {
+	margin-left: 30px;
+	margin-right: 60px;
+}
+.featured_catalog_item {
+	margin-left: 90px;
+	margin-right: 60px;
+}
 
 /* Cart Page Styles */
 .page_header h2 {
