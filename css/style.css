@@ -143,6 +143,7 @@ ul.thumbnail li {
 }
 ul.thumbnail li img {
 	margin: auto;
+	height: 87px;
 }
 ul.thumbnail {
 	margin: 0 0 20px 0;
