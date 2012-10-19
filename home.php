@@ -50,26 +50,26 @@
 			<div class="span8">
 				<div class="row">
 					<div class="span9 featured">
-						<div class="span2 offset1">
-							<div class="thumbnail">
-								<img src="img/products/chair2_thumbnail.jpg" alt="Wooden Chair" />
-								<h5><a href="product.php">Napoleon Chair</a></h5>
-								<h5>$100.00</h5>
-							</div>
+						<div class="span2">
+							<ul class="thumbnail">
+								<li><img src="img/products/chair2_thumbnail.jpg" alt="Wooden Chair" /></li>
+								<li><a href="product.php">Napoleon Chair</a></li>
+								<li>$100.00</li>
+							</ul>
 						</div>
 						<div class="span2 offset1">
-							<div class="thumbnail">
-								<img src="img/products/chair3_thumbnail.jpg" alt="Wooden Chair" />
-								<h5><a href="product.php">Wooden Chair</a></h5>
-								<h5>$100.00</h5>
-							</div>
+							<ul class="thumbnail">
+								<li><img src="img/products/chair3_thumbnail.jpg" alt="Wooden Chair" /></li>
+								<li><a href="product.php">Wooden Chair</a></li>
+								<li>$100.00</li>
+							</ul>
 						</div>
 						<div class="span2 offset1">
-							<div class="thumbnail">
-								<img src="img/products/couch1_thumbnail.jpg" alt="Thinking Couch" />
-								<h5><a href="product.php">Thinking Couch</a></h5>
-								<h5>$100.00</h5>
-							</div>
+							<ul class="thumbnail">
+								<li><img src="img/products/couch1_thumbnail.jpg" alt="Thinking Couch" /></li>
+								<li><a href="product.php">Thinking Couch</a></li>
+								<li>$100.00</li>
+							</ul>
 						</div>
 						<div class="span2 offset6">
 							<button class="btn btn-small featured_button">More Featured Items</button>
@@ -77,25 +77,25 @@
 					</div>
 					<div class="span9 featured">
 						<div class="span2">
-							<div class="thumbnail">
-								<img src="img/products/couch2_thumbnail.jpg" alt="Chic Couch" />
-								<h5><a href="product.php">Chic Couch</a></h5>
-								<h5>$100.00</h5>
-							</div>
+							<ul class="thumbnail">
+								<li><img src="img/products/couch2_thumbnail.jpg" alt="Chic Couch" /></li>
+								<li><a href="product.php">Chic Couch</a></li>
+								<li>$100.00</li>
+							</ul>
 						</div>
 						<div class="span2 offset1">
-							<div class="thumbnail">
-								<img src="img/products/couch3_thumbnail.jpg" alt="Viewing Couch" />
-								<h5><a href="product.php">Viewing Couch</a></h5>
-								<h5>$100.00</h5>
-							</div>
+							<ul class="thumbnail">
+								<li><img src="img/products/couch3_thumbnail.jpg" alt="Viewing Couch" /></li>
+								<li><a href="product.php">Viewing Couch</a></li>
+								<li>$100.00</li>
+							</ul>
 						</div>
 						<div class="span2 offset1">
-							<div class="thumbnail">
-								<img src="img/products/couch4_thumbnail.jpg" alt="Resting Couch" />
-								<h5><a href="product.php">Resting Couch</a></h5>
-								<h5>$100.00</h5>
-							</div>
+							<ul class="thumbnail">
+								<li><img src="img/products/couch4_thumbnail.jpg" alt="Resting Couch" /></li>
+								<li><a href="product.php">Resting Couch</a></li>
+								<li>$100.00</li>
+							</ul>
 						</div>
 						<div class="span2 offset6">
 							<button class="btn btn-small featured_button">More Top Sellers</button>
@@ -103,25 +103,25 @@
 					</div>
 					<div class="span9 featured">
 						<div class="span2">
-							<div class="thumbnail">
-								<img src="img/products/desk_thumbnail.jpg" alt="Apple Desk" />
-								<h5><a href="product.php">Apple Desk</a></h5>
-								<h5>$100.00</h5>
-							</div>
+							<ul class="thumbnail">
+								<li><img src="img/products/desk_thumbnail.jpg" alt="Apple Desk" /></li>
+								<li><a href="product.php">Apple Desk</a></li>
+								<li>$100.00</li>
+							</ul>
 						</div>
 						<div class="span2 offset1">
-							<div class="thumbnail">
-								<img src="img/products/desk2_thumbnail.jpg" alt="Writing Desk" />
-								<h5><a href="product.php">Writing Desk</a></h5>
-								<h5>$100.00</h5>
-							</div>
+							<ul class="thumbnail">
+								<li><img src="img/products/desk2_thumbnail.jpg" alt="Writing Desk" /></li>
+								<li><a href="product.php">Writing Desk</a></li>
+								<li>$100.00</li>
+							</ul>
 						</div>
 						<div class="span2 offset1">
-							<div class="thumbnail">
-								<img src="img/products/desk3_thumbnail.jpg" alt="Computer Desk" />
-								<h5><a href="product.php">Computer Desk</a></h5>
-								<h5>$100.00</h5>
-							</div>
+							<ul class="thumbnail">
+								<li><img src="img/products/desk3_thumbnail.jpg" alt="Computer Desk" /></li>
+								<li><a href="product.php">Computer Desk</a></li>
+								<li>$100.00</li>
+							</ul>
 						</div>
 						<div class="span2 offset6">
 							<button class="btn btn-small featured_button">More Newly Added</button>
