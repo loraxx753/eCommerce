@@ -177,7 +177,7 @@ ul.thumbnail {
 .cart_item h4 {
 	margin-bottom: 0;
 }
-.price h4 {
+.price p {
 	float:right;
 	padding-right: 10px;
 }
@@ -206,7 +206,7 @@ ul.thumbnail {
 .policies button:hover {
 	background: none;
 }
-#sub-total h3 {
+#sub-total p {
 	float:right;
 	padding-right: 10px;
 }
@@ -215,6 +215,19 @@ ul.thumbnail {
 }
 .action_buttons button {
 	float:right;
+}
+.item_name {
+	font-weight: bold;
+	font-size: 22px;
+}
+.item_total {
+	font-weight: bold;
+	font-size: 22px;
+}
+.sub_total {
+	font-weight: bold;
+	font-size: 25px;
+	margin-top: 20px;
 }
 
 /* Product Page Styles */
