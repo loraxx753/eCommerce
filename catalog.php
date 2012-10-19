@@ -80,19 +80,19 @@
 					<div class="span9">
 						<h2 class="catalog_header">Item Categories</h2>
 						<hr />
-						<div class="span2 item">
+						<div class="span2 catalog_item">
 							<ul class="thumbnail">
 								<li><img src="img/products/chair2_thumbnail.jpg" alt="Chairs" /></li>
 								<li><a href="#">Chairs</a></li>
 							</ul>
 						</div>
-						<div class="span2 offset1 item">
+						<div class="span2 catalog_item">
 							<ul class="thumbnail">
 								<li><img src="img/products/couch1_thumbnail.jpg" alt="Couches" /></li>
 								<li><a href="#">Couches</a></li>
 							</ul>
 						</div>
-						<div class="span2 offset1 item">
+						<div class="span2 catalog_item">
 							<ul class="thumbnail">
 								<li><img src="img/products/desk_thumbnail.jpg" alt="Desks" /></li>
 								<li><a href="#">Desks</a></li>
@@ -102,42 +102,42 @@
 					<div class="span9">
 						<h2 class="catalog_header">Merchandise</h2>
 						<hr />
-						<div class="span2">
+						<div class="span2 catalog_item">
 							<ul class="thumbnail">
 								<li><img src="img/products/couch2_thumbnail.jpg" alt="Chic Couch" /></li>
 								<li><a href="product.php">Chic Couch</a></li>
 								<li>$100.00</li>
 							</ul>
 						</div>
-						<div class="span2 offset1">
+						<div class="span2 catalog_item">
 							<ul class="thumbnail">
 								<li><img src="img/products/couch3_thumbnail.jpg" alt="Viewing Couch" /></li>
 								<li><a href="product.php">Viewing Couch</a></li>
 								<li>$100.00</li>
 							</ul>
 						</div>
-						<div class="span2 offset1">
+						<div class="span2 catalog_item">
 							<ul class="thumbnail">
 								<li><img src="img/products/couch4_thumbnail.jpg" alt="Resting Couch" /></li>
 								<li><a href="product.php">Resting Couch</a></li>
 								<li>$100.00</li>
 							</ul>
 						</div>	
-						<div class="span2 featured">
+						<div class="span2 catalog_item">
 							<ul class="thumbnail">
 								<li><img src="img/products/desk_thumbnail.jpg" alt="Apple Desk" /></li>
 								<li><a href="product.php">Apple Desk</a></li>
 								<li>$100.00</li>
 							</ul>
 						</div>
-						<div class="span2 offset1 featured">
+						<div class="span2 catalog_item">
 							<ul class="thumbnail">
 								<li><img src="img/products/desk2_thumbnail.jpg" alt="Writing Desk" /></li>
 								<li><a href="product.php">Writing Desk</a></li>
 								<li>$100.00</li>
 							</ul>
 						</div>
-						<div class="span2 offset1 featured">
+						<div class="span2 catalog_item">
 							<ul class="thumbnail">
 								<li><img src="img/products/desk3_thumbnail.jpg" alt="Computer Desk" /></li>
 								<li><a href="product.php">Computer Desk</a></li>
