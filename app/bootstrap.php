@@ -11,6 +11,7 @@ Autoloader::add_classes(array(
 	'Baughss\Core\Controller',
 	'Baughss\Core\CurlRequest',
 	'Baughss\Core\Database',
+	'Baughss\Core\Shopper',
 	'Baughss\Core\Encryption',
 	'Baughss\Core\Error',
 	'Baughss\Core\Load',
@@ -18,6 +19,7 @@ Autoloader::add_classes(array(
 	'Baughss\Core\Render',
 	'Baughss\Core\Template',
 	'Baughss\Core\Query',
+	'Baughss\Core\Session',
 	'Baughss\Core\Model'
 ));
 
