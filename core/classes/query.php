@@ -14,8 +14,6 @@ class Query {
 	{
 		$this->table = $table;
 		$this->selector = array("*");
-		var_dump(get_called_class());
-		die();
 	}
 	public function where($column, $seperator, $value = null) {
 		if(!preg_match("/\=/", $seperator)) {
@@ -62,6 +60,11 @@ class Query {
 	}
 	public function prepare()
 	{
+		$query = $this->compile();
+		$this->query = $query;		
+	}
+	public function compile()
+	{
 		$selector = implode(", ", $this->selector);
 		$query = "SELECT $selector FROM $this->table";
 		if(count($this->where) > 0 || count($this->or_where) > 0)
@@ -78,17 +81,13 @@ class Query {
 		{
 			$query .= " LIMIT ".$this->limit;
 		}
-		$this->query = $query;		
+		return $query;
 	}
 	public function execute() 
 	{
 		$this->prepare();
 		$items =  \Database::query($this->query);
-		var_dump(get_called_class());
-		die();
 		$items->setFetchMode(\PDO::FETCH_CLASS, 'Model_Products');
-		echo $this->query;
-		echo "<br/><br/><br/>";
 		while($obj = $items->fetch()) {
 			$return[] = $obj;
 		}
