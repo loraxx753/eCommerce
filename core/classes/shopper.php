@@ -116,6 +116,11 @@ class Shopper {
 		}
 	}
 
+	/**
+	 * Gets the quantity of an id in the cart.
+	 * @param  int $search_id The ID to look for within the cart
+	 * @return int            The number of that id in the cart.
+	 */
 	public function quantity($search_id)
 	{
 		if(isset($this->cart[$search_id]))
