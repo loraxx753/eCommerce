@@ -3,31 +3,31 @@
 				<div class="thumbnail">
 					<img src="img/products/desk_big.jpg" alt="Desk" />
 				</div>
-					<span class="span1 product_thumbnail">
-						<a href="#" class="thumbnail">
-							<img src="img/products/desk_thumbnail.jpg" alt="Desk" />
-						</a>
-					</span>
-					<span class="span1 product_thumbnail">
-						<a href="#" class="thumbnail">
-							<img src="img/products/desk_thumbnail.jpg" alt="Desk" />
-						</a>
-					</span>
-					<span class="span1 product_thumbnail">
-						<a href="#" class="thumbnail">
-							<img src="img/products/desk_thumbnail.jpg" alt="Desk" />
-						</a>
-					</span>
-					<span class="span1 product_thumbnail">
-						<a href="#" class="thumbnail">
-							<img src="img/products/desk_thumbnail.jpg" alt="Desk" />
-						</a>
-					</span>
-					<span class="span1 product_thumbnail">
-						<a href="#" class="thumbnail">
-							<img src="img/products/desk_thumbnail.jpg" alt="Desk" />
-						</a>
-					</span>
+				<span class="span1 product_thumbnail">
+					<a href="#" class="thumbnail">
+						<img src="img/products/desk_thumbnail.jpg" alt="Desk" />
+					</a>
+				</span>
+				<span class="span1 product_thumbnail">
+					<a href="#" class="thumbnail">
+						<img src="img/products/desk_thumbnail.jpg" alt="Desk" />
+					</a>
+				</span>
+				<span class="span1 product_thumbnail">
+					<a href="#" class="thumbnail">
+						<img src="img/products/desk_thumbnail.jpg" alt="Desk" />
+					</a>
+				</span>
+				<span class="span1 product_thumbnail">
+					<a href="#" class="thumbnail">
+						<img src="img/products/desk_thumbnail.jpg" alt="Desk" />
+					</a>
+				</span>
+				<span class="span1 product_thumbnail">
+					<a href="#" class="thumbnail">
+						<img src="img/products/desk_thumbnail.jpg" alt="Desk" />
+					</a>
+				</span>
 			</div>
 			<div class="span3">
 				<h3>Apple Desk</h3>
@@ -91,26 +91,26 @@
 			<div class="span12">
 				<h3>Other Recommended Items</h3>
 				<div class="span12">
-						<div class="span2 offset1">
-							<div class="thumbnail">
-								<img src="img/products/chair2_thumbnail.jpg" alt="Napoleon Chair" />
-								<h5><a href="product.php">Napoleon Chair</a></h5>
-								<h5>$100.00</h5>
-							</div>
+						<div class="span2 featured_catalog_item">
+							<ul class="thumbnail">
+								<li><img src="img/products/chair2_thumbnail.jpg" alt="Napoleon Chair" /></li>
+								<li><a href="product.php">Napoleon Chair</a></li>
+								<li>$100.00</li>
+							</ul>
 						</div>
-						<div class="span2 offset1">
-							<div class="thumbnail">
-								<img src="img/products/desk2_thumbnail.jpg" alt="Writing Desk" />
-								<h5><a href="product.php">Writing Desk</a></h5>
-								<h5>$100.00</h5>
-							</div>
+						<div class="span2 featured_catalog_item">
+							<ul class="thumbnail">
+								<li><img src="img/products/desk2_thumbnail.jpg" alt="Writing Desk" /></li>
+								<li><a href="product.php">Writing Desk</a></li>
+								<li>$100.00</li>
+							</ul>
 						</div>
-						<div class="span2 offset1">
-							<div class="thumbnail">
-								<img src="img/products/chair3_thumbnail.jpg" alt="Wooden Chair" />
-								<h5><a href="product.php">Wooden Chair</a></h5>
-								<h5>$100.00</h5>
-							</div>
+						<div class="span2 featured_catalog_item">
+							<ul class="thumbnail">
+								<li><img src="img/products/chair3_thumbnail.jpg" alt="Wooden Chair" /></li>
+								<li><a href="product.php">Wooden Chair</a></li>
+								<li>$100.00</li>
+							</ul>
 						</div>
 						<div class="span2 offset9">
 							<button class="btn btn-small recommended_button">More Recommended Items</button>

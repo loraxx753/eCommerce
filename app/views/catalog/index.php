@@ -39,69 +39,69 @@
 					<div class="span9">
 						<h2 class="catalog_header">Item Categories</h2>
 						<hr />
-						<div class="span2 item">
-							<div class="thumbnail">
-								<?=Load::image("/products/chair2_thumbnail.jpg", "Chairs")?>
-								<p><a href="#">Chairs</a></p>
-							</div>
+						<div class="span2 catalog_item">
+							<ul class="thumbnail">
+								<li><?=Load::image("/products/chair2_thumbnail.jpg", "Chairs")?></li>
+								<li><a href="#">Chairs</a></li>
+							</ul>
 						</div>
-						<div class="span2 offset1 item">
-							<div class="thumbnail">
-								<?=Load::image("/products/chair2_thumbnail.jpg", "Chairs")?>
-								<p><a href="#">Couches</a></p>
-							</div>
+						<div class="span2 catalog_item">
+							<ul class="thumbnail">
+								<li><?=Load::image("/products/chair2_thumbnail.jpg", "Chairs")?></li>
+								<li><a href="#">Couches</a></li>
+							</ul>
 						</div>
-						<div class="span2 offset1 item">
-							<div class="thumbnail">
-								<?=Load::image("/products/chair2_thumbnail.jpg", "Chairs")?>
-								<p><a href="#">Desks</a></p>
-							</div>
+						<div class="span2 catalog_item">
+							<ul class="thumbnail">
+								<li><?=Load::image("/products/chair2_thumbnail.jpg", "Chairs")?></li>
+								<li><a href="#">Desks</a></li>
+							</ul>
 						</div>		
 					</div>
 					<div class="span9">
 						<h2 class="catalog_header">Merchandise</h2>
 						<hr />
-						<div class="span2">
-							<div class="thumbnail">
-								<?=Load::image("/products/chair2_thumbnail.jpg", "Chairs")?>
-								<h5><a href="product.php">Chic Couch</a></h5>
-								<h5>$100.00</h5>
-							</div>
+						<div class="span2 catalog_item">
+							<ul class="thumbnail">
+								<li><?=Load::image("/products/chair2_thumbnail.jpg", "Chairs")?></li>
+								<li><a href="product.php">Chic Couch</a></li>
+								<li>$100.00</li>
+							</ul>
 						</div>
-						<div class="span2 offset1">
-							<div class="thumbnail">
-								<?=Load::image("/products/chair2_thumbnail.jpg", "Chairs")?>
-								<h5><a href="product.php">Viewing Couch</a></h5>
-								<h5>$100.00</h5>
-							</div>
+						<div class="span2 catalog_item">
+							<ul class="thumbnail">
+								<li><?=Load::image("/products/chair2_thumbnail.jpg", "Chairs")?></li>
+								<li><a href="product.php">Viewing Couch</a></li>
+								<li>$100.00</li>
+							</ul>
 						</div>
-						<div class="span2 offset1">
-							<div class="thumbnail">
-								<?=Load::image("/products/chair2_thumbnail.jpg", "Chairs")?>
-								<h5><a href="product.php">Resting Couch</a></h5>
-								<h5>$100.00</h5>
-							</div>
+						<div class="span2 catalog_item">
+							<ul class="thumbnail">
+								<li><?=Load::image("/products/chair2_thumbnail.jpg", "Chairs")?></li>
+								<li><a href="product.php">Resting Couch</a></li>
+								<li>$100.00</li>
+							</ul>
 						</div>	
-						<div class="span2 featured">
-							<div class="thumbnail">
-								<?=Load::image("/products/chair2_thumbnail.jpg", "Chairs")?>
-								<h5><a href="product.php">Apple Desk</a></h5>
-								<h5>$100.00</h5>
-							</div>
+						<div class="span2 catalog_item">
+							<ul class="thumbnail">
+								<li><?=Load::image("/products/chair2_thumbnail.jpg", "Chairs")?></li>
+								<li><a href="product.php">Apple Desk</a></li>
+								<li>$100.00</li>
+							</ul>
 						</div>
-						<div class="span2 offset1 featured">
-							<div class="thumbnail">
-								<?=Load::image("/products/chair2_thumbnail.jpg", "Chairs")?>
-								<h5><a href="product.php">Writing Desk</a></h5>
-								<h5>$100.00</h5>
-							</div>
+						<div class="span2 catalog_item">
+							<ul class="thumbnail">
+								<li><?=Load::image("/products/chair2_thumbnail.jpg", "Chairs")?></li>
+								<li><a href="product.php">Writing Desk</a></li>
+								<li>$100.00</li>
+							</ul>
 						</div>
-						<div class="span2 offset1 featured">
-							<div class="thumbnail">
-								<?=Load::image("/products/chair2_thumbnail.jpg", "Chairs")?>
-								<h5><a href="product.php">Computer Desk</a></h5>
-								<h5>$100.00</h5>
-							</div>
+						<div class="span2 catalog_item">
+							<ul class="thumbnail">
+								<li><?=Load::image("/products/chair2_thumbnail.jpg", "Chairs")?></li>
+								<li><a href="product.php">Computer Desk</a></li>
+								<li>$100.00</li>
+							</ul>
 						</div>		
 					</div>
 				</div>
