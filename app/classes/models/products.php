@@ -13,7 +13,7 @@ class Model_Products
 	public $Product_Image;
 	public $Featured;
 
-	static function find($finder = false) {
+	public static function find($finder = false) {
 		$query = "SELECT * FROM products";
 		if($finder)
 		{

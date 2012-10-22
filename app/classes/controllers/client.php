@@ -1,6 +1,6 @@
 <?php
 	class Client_Controller {
-		public function action_index()
+		public static function action_index()
 		{
 			$render = new Render();
 			$render->addVar('title', "Profile");
@@ -8,7 +8,7 @@
 			$render->load('client', 'profile');
 
 		}
-		public function action_admin()
+		public static function action_admin()
 		{
 			$render = new Render();
 			$render->addVar('title', "Admin");

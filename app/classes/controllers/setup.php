@@ -2,7 +2,7 @@
 
 	class Setup_Controller {
 
-		public function action_index() {
+		public static function action_index() {
 
 
 			$queryArray = array(
@@ -66,7 +66,7 @@
 			$render->load('setup', 'index');
 		}
 
-		public function action_fill()
+		public static function action_fill()
 		{
 			$queryArray = array(
 					array("INSERT INTO `Products` (`SKU`, `Product_Name`, `Product_Description`, `Category_ID`, `Stock`, `Product_Cost`, `Product_Price`, `Product_Image`, `Product_Weight`, `Product_Size`, `Featured`, `Sale_ID`) VALUES

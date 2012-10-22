@@ -3,7 +3,7 @@
 namespace Baughss\Core;
 
 class Config {
-	static public function find($item)
+    public static function find($item)
 	{
 		if(file_exists(BASE.'app/config/custom/config.php'))
 		{

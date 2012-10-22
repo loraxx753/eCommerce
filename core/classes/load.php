@@ -28,7 +28,7 @@ class Load {
 			}
 		}
 	}
-	public function link($files = array(), $options = array())
+	public static function link($files = array(), $options = array())
 	{
 		foreach ($files as $location => $description) {
 			echo "<a href='".Config::find('base')."$location'";

@@ -2,7 +2,7 @@
 
 class Cart_Controller extends Controller
 {
-	public function action_index()
+	public static function action_index()
 	{
 		$render = new Render();
 		$render->addVar('title', "Cart");
@@ -10,7 +10,7 @@ class Cart_Controller extends Controller
 		$render->load('cart', 'index');
 
 	}
-	public function action_checkout()
+	public static function action_checkout()
 	{
 		$render = new Render();
 		$render->addVar('title', "Ceckout");
