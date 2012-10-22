@@ -28,16 +28,16 @@ class Shopper {
 	 */
 	public function add_item($item_id)
 	{
-		if(!in_array($item_id, $this->cart))
+		if(!$this->cart[$item_id])
 		{
-			$this->cart[] = $item_id;
-			Session::set('cart', $this->cart);
-			return true;
+			$this->cart[$item_id] = 1;
 		}
 		else
 		{
-			return "Item already added.";
+			$this->cart[$item_id]++;
 		}
+		Session::set('cart', $this->cart);
+		return true;
 	}
 
 	/**
@@ -47,13 +47,17 @@ class Shopper {
 	 */
 	public function remove_item($item_id) 
 	{
-		$key = array_search($item_id, $this->cart);
-		try {
-			unset($this->cart[$key]);
-		}
-		catch(Exception $e)
+		if($this->cart[$item_id] == 1)
 		{
-			return false;
+			unset($this->cart[$item_id]);
+		}
+		else if(isset($this->cart[$item_id]))
+		{
+			$this->cart[$item_id]--;
+		}
+		else
+		{
+			return "Item not found";
 		}
 		Session::set('cart', $this->cart);
 		return true;
@@ -76,15 +80,18 @@ class Shopper {
 	 */
 	public function get()
 	{
+		var_dump($this->cart);
 		if(count($this->cart) > 0)
 		{
 			$products = \Model_Products::build();
-			foreach($this->cart as $item)
+			foreach($this->cart as $key => $item)
 			{
-				$products->or_where('ProductID', $item);
+				$products->or_where('ProductID', $key);
 			}
 
-			return $products->execute();
+			$return = $products->execute();
+
+			return $return;
 		}
 		else
 		{
@@ -99,13 +106,25 @@ class Shopper {
 	 */
 	public function search($search_id)
 	{
-		if(in_array($search_id, $this->cart))
+		if(isset($this->cart[$search_id]))
 		{
 			return true;
 		}
 		else
 		{
 			return false;
+		}
+	}
+
+	public function quantity($search_id)
+	{
+		if(isset($this->cart[$search_id]))
+		{
+			return $this->cart[$search_id];
+		}
+		else
+		{
+			return 0;
 		}
 	}
 
@@ -118,11 +137,11 @@ class Shopper {
 		if(count($this->cart) > 0)
 		{
 			$products = \Model_Products::build();
-			foreach($this->cart as $item)
+			foreach($this->cart as $key => $item)
 			{
-				$products->or_where('ProductID', $item);
+				$products->or_where('ProductID', $key);
 			}
-			$products->selector('Price');
+			$products->selector('Product_Price, ProductID');
 
 			$prices = $products->execute();
 
@@ -130,7 +149,7 @@ class Shopper {
 
 			foreach($prices as $price)
 			{
-				$subtotal += (int)$price->Price;
+				$subtotal += (int)$price->Product_Price*$this->cart[$price->ProductID];
 			}
 			
 			return $subtotal;
