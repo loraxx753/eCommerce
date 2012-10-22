@@ -14,6 +14,8 @@ class Query {
 	{
 		$this->table = $table;
 		$this->selector = array("*");
+		var_dump(get_called_class());
+		die();
 	}
 	public function where($column, $seperator, $value = null) {
 		if(!preg_match("/\=/", $seperator)) {
@@ -82,6 +84,8 @@ class Query {
 	{
 		$this->prepare();
 		$items =  \Database::query($this->query);
+		var_dump(get_called_class());
+		die();
 		$items->setFetchMode(\PDO::FETCH_CLASS, 'Model_Products');
 		echo $this->query;
 		echo "<br/><br/><br/>";
