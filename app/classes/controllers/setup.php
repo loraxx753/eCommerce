@@ -2,8 +2,23 @@
 
 	class Setup_Controller {
 
-		public static function action_index() {
 
+		public function action_index() {
+			Query::build_table('Products')
+					->column('ProductID', 'int(11)', 'NOT NULL', 'AUTO_INCREMENT',  'primary')
+					->column('SKU', 'int(11)')
+					->column('Product_Name', 'varchar(255)')
+					->column('Product_Description', 'varchar(255)')
+					->column('Category_ID', 'int(11)')
+					->column('Stock', 'int(11)')
+					->column('Product_Cost', 'int(11)')
+					->column('Product_Price', 'int(11)')
+					->column('Product_Image', 'varchar(255)')
+					->column('Product_Weight', 'int(11)')
+					->column('Product_Size', 'varchar(255)')
+					->column('Featured', 'tinyint(1)')
+					->column('Sale_ID', 'int(11)')
+				->execute();
 
 			$queryArray = array(
 					array("CREATE TABLE IF NOT EXISTS `Products` (

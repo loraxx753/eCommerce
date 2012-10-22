@@ -14,10 +14,10 @@
 				<h1>NWA Furniture</h1>
 			</div>
 			<div id="admin_buttons" class="span4 offset3">
-				<form method="get" action="<?=WEB_BASE?>admin">
+				<form method="get" action="admin.php">
 					<button class="btn btn-small">Manage</button>
 				</form>
-				<form method="get" action="<?=WEB_BASE?>client">
+				<form method="get" action="client.php">
 					<button class="btn btn-small">My Account</button>
 				</form>
 				<button class="btn btn-small">Log-In</button>
@@ -31,12 +31,11 @@
 			</div>
 		</div>
 		<div id="nav" class="row">
-				<div class="span3"><?=Load::link(array("home" => "HOME"));?></div>
-				<div class="span3"><?=Load::link(array("catalog" => "PRODUCTS"))?></a></div>
-				<div class="span3"><?=Load::link(array("cart" => "CART"))?></div>
-				<div class="span3"><?=Load::link(array("checkout" => "CHECKOUT"))?></div>
+				<div class="span3"><a href="home.php">HOME</a></div>
+				<div class="span3"><a href="catalog.php">PRODUCTS</a></div>
+				<div class="span3"><a href="cart.php">CART</a></div>
+				<div class="span3"><a href="checkout.php">CHECKOUT</a></div>
 		</div>
-
 		<?php require_once($page_location); ?>
 		<div class="row">
 			<div id="footer" class="span12">
