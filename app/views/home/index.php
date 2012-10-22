@@ -1,6 +1,6 @@
 		<div class="row">
 			<div id="featured_slider" class="span12">
-				<img src="img/slider.jpg" alt="Furniture Sale!" />
+				<?=Load::image("slider.jpg", "Furniture Sale!")?>
 			</div>
 		</div>
 		<div id="main_content" class="row">
