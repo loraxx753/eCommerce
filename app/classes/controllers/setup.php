@@ -6,7 +6,7 @@
 		public function action_index() {
 
 			$queryArray = array(
-					array("CREATE TABLE IF NOT EXISTS `Products` (
+					array("CREATE TABLE IF NOT EXISTS `products` (
 					  `ProductID` int(11) NOT NULL AUTO_INCREMENT,
 					  `SKU` int(11) NOT NULL,
 					  `Product_Name` varchar(255) NOT NULL,

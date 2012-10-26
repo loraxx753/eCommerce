@@ -5,7 +5,9 @@ namespace Baughss\Core;
 class Model {
 	static function build() {
 		$class = get_called_class();
-		$table = array_pop(explode("_", $class));
+		$array = explode("_", $class);
+		$table = array_pop($array);
+		$table = strtolower($table);
 		return new \Query($table);
 	}
 }

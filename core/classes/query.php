@@ -87,10 +87,17 @@ class Query {
 	{
 		$this->prepare();
 		$items =  \Database::query($this->query);
-		$items->setFetchMode(\PDO::FETCH_CLASS, 'Model_Products');
+		$items->setFetchMode(\PDO::FETCH_CLASS, 'Model_'.ucwords($this->table));
 		while($obj = $items->fetch()) {
 			$return[] = $obj;
 		}
-		return $return;
+		if(isset($return))
+		{
+			return $return;
+		}
+		else
+		{
+			return false;
+		}
 	}
 }

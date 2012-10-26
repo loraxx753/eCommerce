@@ -20,7 +20,7 @@ Autoloader::add_classes(array(
 	'Baughss\Core\Template',
 	'Baughss\Core\Query',
 	'Baughss\Core\Session',
-	'Baughss\Core\Model'
+	'Baughss\Core\Model',
 ));
 
 Autoloader::alias_core_classes();
