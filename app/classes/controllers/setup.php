@@ -4,21 +4,6 @@
 
 
 		public function action_index() {
-			// Query::build_table('Products')
-			// 		->column('ProductID', 'int(11)', 'NOT NULL', 'AUTO_INCREMENT',  'primary')
-			// 		->column('SKU', 'int(11)')
-			// 		->column('Product_Name', 'varchar(255)')
-			// 		->column('Product_Description', 'varchar(255)')
-			// 		->column('Category_ID', 'int(11)')
-			// 		->column('Stock', 'int(11)')
-			// 		->column('Product_Cost', 'int(11)')
-			// 		->column('Product_Price', 'int(11)')
-			// 		->column('Product_Image', 'varchar(255)')
-			// 		->column('Product_Weight', 'int(11)')
-			// 		->column('Product_Size', 'varchar(255)')
-			// 		->column('Featured', 'tinyint(1)')
-			// 		->column('Sale_ID', 'int(11)')
-			// 	->execute();
 
 			$queryArray = array(
 					array("CREATE TABLE IF NOT EXISTS `Products` (
@@ -34,8 +19,7 @@
 					  `Product_Weight` int(11) DEFAULT NULL,
 					  `Product_Size` varchar(255) DEFAULT NULL,
 					  `Featured` tinyint(1) NOT NULL,
-					  `Sale_ID` int(11) DEFAULT NULL,
-					  'Sale_Price' int(11) DEFAULT NULL,
+					  `Sale_Price` int(11) DEFAULT NULL,
 		  			  PRIMARY KEY (`ProductID`)
 					) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -85,7 +69,7 @@
 		public static function action_fill()
 		{
 			$queryArray = array(
-					array("INSERT INTO `Products` (`SKU`, `Product_Name`, `Product_Description`, `Category_ID`, `Stock`, `Product_Cost`, `Product_Price`, `Product_Image`, `Product_Weight`, `Product_Size`, `Featured`, `Sale_ID`) VALUES
+					array("INSERT INTO `Products` (`SKU`, `Product_Name`, `Product_Description`, `Category_ID`, `Stock`, `Product_Cost`, `Product_Price`, `Product_Image`, `Product_Weight`, `Product_Size`, `Featured`, `Sale_Price`) VALUES
 						(1, 'Red Thinking Chair', 'chair', 1, 5, 50, 100, 'img/products/chair_thumbnail.jpg', 20, '10x11x12', 0, NULL),
 						(2, 'Napoleon Chair', 'chair', 1, 5, 60, 100, 'img/products/chair2_thumbnail.jpg', 40, '10x11x12', 1, NULL),
 						(3, 'Wooden Chair', 'chair', 1, 5, 40, 100, 'img/products/chair3_thumbnail.jpg', 10, '10x11x12', 0, NULL),
