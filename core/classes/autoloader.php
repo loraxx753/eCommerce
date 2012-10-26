@@ -54,7 +54,7 @@ class Autoloader {
 		}
 		else if(count($exploded) > 1 && $exploded[0] == "Model")
 		{
-			$model = strtolower($exploded[1]);
+			$class = strtolower($exploded[1]);
 		}
 		else
 		{
@@ -71,9 +71,9 @@ class Autoloader {
 			include BASE.'core/classes/'.$class.'.php';
 		}
 		//Else if it's in the core classes, load it from there.
-		else if(file_exists(BASE.'app/classes/models/'.$model.'.php')) 
+		else if(file_exists(BASE.'app/classes/models/'.$class.'.php')) 
 		{
-			include BASE.'app/classes/models/'.$model.'.php';
+			include BASE.'app/classes/models/'.$class.'.php';
 		}
 	}
 }
