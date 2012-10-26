@@ -35,6 +35,7 @@
 					  `Product_Size` varchar(255) DEFAULT NULL,
 					  `Featured` tinyint(1) NOT NULL,
 					  `Sale_ID` int(11) DEFAULT NULL,
+					  'Sale_Price' int(11) DEFAULT NULL,
 		  			  PRIMARY KEY (`ProductID`)
 					) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
