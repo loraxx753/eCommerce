@@ -7,7 +7,6 @@ class Model_Users extends Model
 	public $email; 
 	public $created; 
 	public $updated; 
-	public $verified; 
 }
 
 ?>

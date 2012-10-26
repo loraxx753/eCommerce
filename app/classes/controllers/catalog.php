@@ -9,8 +9,6 @@ class Catalog_Controller extends Controller
 
 		$items = Model_Products::build()->execute();
 
-		var_dump($items);
-		die();
 		$render->load('catalog', 'index');
 	}
 	public function action_product()

@@ -31,10 +31,10 @@
 			</div>
 		</div>
 		<div id="nav" class="row">
-				<div class="span3"><a href="home.php">HOME</a></div>
-				<div class="span3"><a href="catalog.php">PRODUCTS</a></div>
-				<div class="span3"><a href="cart.php">CART</a></div>
-				<div class="span3"><a href="checkout.php">CHECKOUT</a></div>
+				<div class="span3"><a href="<?=WEB_BASE?>">HOME</a></div>
+				<div class="span3"><a href="<?=WEB_BASE?>catalog">PRODUCTS</a></div>
+				<div class="span3"><a href="<?=WEB_BASE?>cart">CART</a></div>
+				<div class="span3"><a href="<?=WEB_BASE?>checkout">CHECKOUT</a></div>
 		</div>
 		<?php require_once($page_location); ?>
 		<div class="row">
