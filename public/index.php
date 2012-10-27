@@ -5,7 +5,7 @@ session_start();
 define("BASE", substr(dirname(__FILE__), 0, -6)); //removes the string "public" 
 define("APPBASE", BASE."app".DIRECTORY_SEPARATOR ); //removes the string "public" 
 define("COREBASE", BASE."core".DIRECTORY_SEPARATOR ); //removes the string "public" 
-ini_set('error_reporting', E_ALL);
+ini_set('error_reporting', E_ERROR);
 include APPBASE."bootstrap.php";
 
 //Defines the base used for assets.

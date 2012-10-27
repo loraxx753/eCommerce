@@ -80,7 +80,6 @@ class Shopper {
 	 */
 	public function get()
 	{
-		var_dump($this->cart);
 		if(count($this->cart) > 0)
 		{
 			$products = \Model_Products::build();

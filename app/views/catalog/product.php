@@ -51,7 +51,7 @@
 				<div class="span2 pull-right"><h3>$100.00</h3></div>
 			</div>
 			<div class="span3 pull-right add_to_cart">
-				<button class="btn">Add To Cart</button>
+				<a href="<?=WEB_BASE?>catalog/cart">Add To Cart</a>
 			</div>
 		</div>
 		<div class="row">

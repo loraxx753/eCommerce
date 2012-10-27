@@ -9,15 +9,21 @@ class Catalog_Controller extends Controller
 
 		$items = Model_Products::build()->execute();
 
-		var_dump($items);
-		die();
 		$render->load('catalog', 'index');
-	}
-	public function action_product()
+	}	
+	public static function action_product()
 	{
 		$render = new Render();
 		$render->addVar('title', "Catalog");
-
 		$render->load('catalog', 'product');		
+	}
+	public static function action_cart($item = 2)
+	{
+		$render = new Render();
+
+		$cart = Shopper::load(); 
+		$cart->add_item($item);
+
+		$render->load('catalog', 'product');
 	}
 }
