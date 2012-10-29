@@ -64,42 +64,42 @@
 						<div class="span2 catalog_item">
 							<ul class="thumbnail">
 								<li><?=Load::image("/products/chair2_thumbnail.jpg", "Chairs")?></li>
-								<li><a href="product.php">Chic Couch</a></li>
+								<li><a href="product">Chic Couch</a></li>
 								<li>$100.00</li>
 							</ul>
 						</div>
 						<div class="span2 catalog_item">
 							<ul class="thumbnail">
 								<li><?=Load::image("/products/chair2_thumbnail.jpg", "Chairs")?></li>
-								<li><a href="product.php">Viewing Couch</a></li>
+								<li><a href="product">Viewing Couch</a></li>
 								<li>$100.00</li>
 							</ul>
 						</div>
 						<div class="span2 catalog_item">
 							<ul class="thumbnail">
 								<li><?=Load::image("/products/chair2_thumbnail.jpg", "Chairs")?></li>
-								<li><a href="product.php">Resting Couch</a></li>
+								<li><a href="product">Resting Couch</a></li>
 								<li>$100.00</li>
 							</ul>
 						</div>	
 						<div class="span2 catalog_item">
 							<ul class="thumbnail">
 								<li><?=Load::image("/products/chair2_thumbnail.jpg", "Chairs")?></li>
-								<li><a href="product.php">Apple Desk</a></li>
+								<li><a href="product">Apple Desk</a></li>
 								<li>$100.00</li>
 							</ul>
 						</div>
 						<div class="span2 catalog_item">
 							<ul class="thumbnail">
 								<li><?=Load::image("/products/chair2_thumbnail.jpg", "Chairs")?></li>
-								<li><a href="product.php">Writing Desk</a></li>
+								<li><a href="product">Writing Desk</a></li>
 								<li>$100.00</li>
 							</ul>
 						</div>
 						<div class="span2 catalog_item">
 							<ul class="thumbnail">
 								<li><?=Load::image("/products/chair2_thumbnail.jpg", "Chairs")?></li>
-								<li><a href="product.php">Computer Desk</a></li>
+								<li><a href="product">Computer Desk</a></li>
 								<li>$100.00</li>
 							</ul>
 						</div>		
