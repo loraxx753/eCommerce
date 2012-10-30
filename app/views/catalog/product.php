@@ -1,7 +1,7 @@
 		<div class="row product">
 			<div class="span6">
 				<div class="thumbnail">
-					<?=Load::image("/products/desk_big.jpg", "Desk")?>
+					<span><?=Load::image("/products/desk_big.jpg", "Desk")?></span>
 				</div>
 			</div>
 			<div class="span3">
@@ -30,14 +30,14 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="span8">
+			<div class="span12">
 				<div class="row">
-					<div class="span8 featured">
+					<div class="span12 featured">
 						<div class="tabbable">
 							<ul class="nav nav-tabs">
-								<li class="active"><a href="#tab1">Product Specifications</a></li>
-								<li><a href="#tab2">Product Reviews</a></li>
-								<li><a href="#tab3">Policies</a></li>
+								<li class="active"><a href="#tab1" data-toggle="tab">Product Specifications</a></li>
+								<li><a href="#tab2" data-toggle="tab">Product Reviews</a></li>
+								<li><a href="#tab3" data-toggle="tab">Policies</a></li>
 							</ul>
 							<div class="tab-content">
 								<div class="tab-pane active" id="tab1">
@@ -51,13 +51,6 @@
 								</div>
 							</div>
 						</div>
-					</div>
-				</div>
-			</div>
-			<div class="span4">
-				<div class="row">
-					<div id="product_sidebar" class="span4">
-						<img src="img/ads/ad1.jpg" alt="Marketing Firm Ad" />
 					</div>
 				</div>
 			</div>
