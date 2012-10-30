@@ -5,7 +5,7 @@
 		<div class="row cart_item">
 			<div class="span3">
 				<div class="thumbnail">
-					<?=Load::image("products/chair3_big.jpg", "Chair")?>
+					<span><?=Load::image("products/chair3_big.jpg", "Chair")?></span>
 				</div>
 			</div>
 			<div class="span9 item_details">
@@ -31,7 +31,7 @@
 		<div class="row cart_item">
 			<div class="span3">
 				<div class="thumbnail">
-					<?=Load::image("products/chair3_big.jpg", "Chair")?>
+					<span><?=Load::image("products/chair3_big.jpg", "Chair")?></span>
 				</div>
 			</div>
 			<div class="span9 item_details">
@@ -57,7 +57,7 @@
 		<div class="row cart_item">
 			<div class="span3">
 				<div class="thumbnail">
-					<?=Load::image("products/chair3_big.jpg", "Chair")?>
+					<span><?=Load::image("products/chair3_big.jpg", "Chair")?></span>
 				</div>
 			</div>
 			<div class="span9 item_details">
