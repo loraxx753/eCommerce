@@ -79,6 +79,13 @@ header {
 #footer {
 	margin-top: 40px;
 }
+#footer_links {
+	text-align: center;
+	font-size: 10px;
+}
+#footer_links a:link, a:hover, a:active, a:visited {
+	color: #000000;
+}
 #disclaimer {
 	text-align: center;
 	font-size: 9px;
