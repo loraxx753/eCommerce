@@ -30,10 +30,13 @@ header {
 #admin_buttons {
 	height: 30px;
 }
+#admin_buttons a:link, a:hover, a:active, a:visited {
+	color: #000000;
+}
 #admin_buttons form {
 	margin:0;
 }
-#admin_buttons button {
+#admin_buttons button, #admin_buttons a {
 	float:right;
 	margin-top: 7px;
 	margin-left:5px;
@@ -64,6 +67,9 @@ header {
 }
 #nav ul {
 	list-style: none;
+}
+#nav ul li {
+	margin: 0;
 }
 #nav a:link, a:hover, a:active, a:visited {
 	color: #000000;
@@ -130,12 +136,15 @@ header {
 	list-style: none;
 	padding-bottom: 10px;
 }
-#sidebar h4 {
+#sidebar span {
 	text-decoration: underline;
+	font-weight: bold;
+	font-size: 16px;
 }
-#sidebar h5 {
+#sidebar p {
 	padding-left: 10px;
 	margin-bottom: 0px;
+	font-weight: bold;
 }
 ul.thumbnail li {
 	list-style: none;
@@ -150,6 +159,10 @@ ul.thumbnail {
 }
 .catalog_item {
 	margin-left: 30px;
+	margin-right: 60px;
+}
+.featured .catalog_item:first-child {
+	margin-left: 50px;
 	margin-right: 60px;
 }
 .featured_catalog_item {
@@ -427,9 +440,10 @@ form#card_info div select.expir_month, select.expir_year {
 #client_sidebar ul li a:visited, a:link, a:active, a:hover {
 	color: #08C;
 }
-#client_sidebar h5 {
+#client_sidebar span {
 	padding-left: 10px;
 	margin-bottom: 0px;
+	font-weight: bold;
 }
 
 /* Admin Page Styles */
@@ -453,9 +467,10 @@ form#card_info div select.expir_month, select.expir_year {
 #admin_sidebar ul li a:visited, a:link, a:active, a:hover {
 	color: #08C;
 }
-#admin_sidebar h5 {
+#admin_sidebar span {
 	padding-left: 10px;
 	margin-bottom: 0px;
+	font-weight: bold;
 }
 a:hover {
 	color: #000000;
