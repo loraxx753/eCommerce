@@ -1,15 +1,15 @@
 		<div class="row">
 			<div class="span3">
 				<div class="row">
-					<div id="sidebar" class="span3">
-						<h4>Item Categories</h4>
+					<aside id="sidebar" class="span3">
+						<span>Item Categories</span>
 							<ul>
 								<li><a href="#">Chairs</a></li>
 								<li><a href="#">Couches</a></li>
 								<li><a href="#">Desks</a></li>
 							</ul>
-						<h4>Narrow Results</h4>
-						<h5>Price</h5>
+						<span>Narrow Results</span>
+						<p>Price</p>
 							<ul>
 								<li><a href="#">$0-$100</a></li>
 								<li><a href="#">$100-$200</a></li>
@@ -17,21 +17,21 @@
 								<li><a href="#">$300-$400</a></li>
 								<li><a href="#">$400+</a></li>
 							</ul>
-						<h5>Material</h5>
+						<p>Material</p>
 							<ul>
 								<li><a href="#">Cotton</a></li>
 								<li><a href="#">Leather</a></li>
 								<li><a href="#">Wool</a></li>
 								<li><a href="#">Polyester</a></li>
 							</ul>
-						<h5>Weight</h5>
+						<p>Weight</p>
 							<ul>
 								<li><a href="#">0<small>lbs</small>-50<small>lbs</small></a></li>
 								<li><a href="#">50<small>lbs</small>-100<small>lbs</small></a></li>
 								<li><a href="#">100<small>lbs</small>-150<small>lbs</small></a></li>
 								<li><a href="#">150<small>lbs</small>-200<small>lbs</small></a></li>
 							</ul>
-					</div>
+					</aside>
 				</div>
 			</div>
 			<div class="span8">
