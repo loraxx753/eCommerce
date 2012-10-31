@@ -35,7 +35,7 @@
 		<?php require_once($page_location); ?>
 		<div class="row">
 			<footer id="footer" class="span12">
-				<div id="footer_links" class="span12"><a href="#">About Us</a> | <a href="#">Policies</a></div>
+				<div id="footer_links" class="span12"><a href="<?=WEB_BASE?>about">About Us</a> | <a href="<?=WEB_BASE?>about/policies">Policies</a></div>
 				<span id="disclaimer" class="span12">
 					This site is not official and is an assignment for a UCF Digital Media course.<br />
 					Designed by NWA Furniture
