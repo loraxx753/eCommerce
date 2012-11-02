@@ -14,7 +14,7 @@
 			<div id="admin_buttons" class="span5 offset2">
 				<a href="<?=WEB_BASE?>admin" class="btn btn-small">Manage</a>
 				<a href="<?=WEB_BASE?>client"class="btn btn-small">My Account</a>
-				<a class="btn btn-small">Log-In</a>
+				<a id="login" class="btn btn-small">Log-In</a>
 			</div>
 			<div id="search" class="span7">
 				<form class="form-search pull-right" action="#">
@@ -59,3 +59,6 @@
 	</script>
 </body>
 </html>
+<div id="loginBox">
+	<span>Form Content</span>
+</div>
