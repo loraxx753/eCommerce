@@ -6,7 +6,7 @@ class Model_Users extends Model
 	public $pass;
 	public $email; 
 	public $created; 
-	public $updated; 
+	public $access; 
 }
 
 ?>

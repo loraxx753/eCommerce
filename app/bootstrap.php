@@ -15,7 +15,7 @@ Autoloader::add_classes(array(
 	'Baughss\Core\Encryption',
 	'Baughss\Core\Error',
 	'Baughss\Core\Load',
-	'Baughss\Core\Login',
+	'Baughss\Core\Auth',
 	'Baughss\Core\Render',
 	'Baughss\Core\Template',
 	'Baughss\Core\Query',
