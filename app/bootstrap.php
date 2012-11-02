@@ -17,6 +17,7 @@ Autoloader::add_classes(array(
 	'Baughss\Core\Load',
 	'Baughss\Core\Auth',
 	'Baughss\Core\Render',
+	'Baughss\Core\Review',
 	'Baughss\Core\Template',
 	'Baughss\Core\Query',
 	'Baughss\Core\Session',
