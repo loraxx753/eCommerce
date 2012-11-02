@@ -1,3 +1,3 @@
 <div class="span12">
-	<h1>Test Content</h1>
+	<h2>Our Policies</h2>
 </div>
