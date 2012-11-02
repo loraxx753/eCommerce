@@ -128,17 +128,14 @@
 			$currentUpdate = \Database::query("SELECT * FROM updates LIMIT 1")->fetch();
 
 			$queryArray = array(
-							array("skip", "Skipped1"),
-							array("skip", "Skipped2"),
-							array("skip", "Skipped3"),
-							array("skip", "Skipped4"),
-							array("skip", "Skipped5"),
-							array("skip", "Skipped6"),
-							array("skip", "Skipped7"),
-							array("skip", "Skipped8"),
-							array("skip", "Skipped9"),
-							array("skip", "Skipped10"),
-							array("skip", "Skipped11"),
+					array("CREATE TABLE  `ecommerce`.`reviews` (
+							`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+							`product_id` INT NOT NULL ,
+							`review` TEXT NOT NULL ,
+							`rating` INT NOT NULL DEFAULT  '0',
+							`created` INT( 33 ) NOT NULL
+							) ENGINE = MYISAM ;
+					", "Creating Reviews Table")
 				);
 			if($currentUpdate['current'] > 0)
 			{
