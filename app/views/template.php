@@ -43,7 +43,7 @@
 			</footer>
 		</div>
 	</div>
-	<?=Load::js(array('//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js', "bootstrap.js"));?>
+	<?=Load::js(array('http://code.jquery.com/jquery-1.8.2.js', 'http://code.jquery.com/ui/1.9.1/jquery-ui.js', 'bootstrap.js', 'plugins/jqmodal.js', 'ecommerce.js'));?>
 
 <!-- Google Analytics -->
 	<script type="text/javascript">
@@ -59,6 +59,7 @@
 	</script>
 </body>
 </html>
+
 <div id="loginBox">
 	<span>Form Content</span>
 </div>
