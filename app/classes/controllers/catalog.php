@@ -17,13 +17,16 @@ class Catalog_Controller extends Controller
 		$render->addVar('title', "Catalog");
 		$render->load('catalog', 'product');		
 	}
-	public static function action_cart($item = 2)
+	public static function action_cart($item, $quantity)
 	{
 		$render = new Render();
 
-		$cart = Shopper::load(); 
-		$cart->add_item($item);
-
+		$cart = Shopper::load();
+		for($x=0; $x<$quantity; $x++)
+		{
+			$cart->add_item($item);
+		}
+		
 		$render->load('catalog', 'product');
 	}
 }

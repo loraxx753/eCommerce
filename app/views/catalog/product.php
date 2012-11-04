@@ -1,33 +1,8 @@
 		<div class="row product">
 			<div class="span6">
 				<div class="thumbnail">
-					<img src="img/products/desk_big.jpg" alt="Desk" />
+					<span><?=Load::image("/products/desk_big.jpg", "Desk")?></span>
 				</div>
-				<span class="span1 product_thumbnail">
-					<a href="#" class="thumbnail">
-						<img src="img/products/desk_thumbnail.jpg" alt="Desk" />
-					</a>
-				</span>
-				<span class="span1 product_thumbnail">
-					<a href="#" class="thumbnail">
-						<img src="img/products/desk_thumbnail.jpg" alt="Desk" />
-					</a>
-				</span>
-				<span class="span1 product_thumbnail">
-					<a href="#" class="thumbnail">
-						<img src="img/products/desk_thumbnail.jpg" alt="Desk" />
-					</a>
-				</span>
-				<span class="span1 product_thumbnail">
-					<a href="#" class="thumbnail">
-						<img src="img/products/desk_thumbnail.jpg" alt="Desk" />
-					</a>
-				</span>
-				<span class="span1 product_thumbnail">
-					<a href="#" class="thumbnail">
-						<img src="img/products/desk_thumbnail.jpg" alt="Desk" />
-					</a>
-				</span>
 			</div>
 			<div class="span3">
 				<h3>Apple Desk</h3>
@@ -55,14 +30,14 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="span8">
+			<div class="span12">
 				<div class="row">
-					<div class="span8 featured">
+					<div class="span12 featured">
 						<div class="tabbable">
 							<ul class="nav nav-tabs">
-								<li class="active"><a href="#tab1">Product Specifications</a></li>
-								<li><a href="#tab2">Product Reviews</a></li>
-								<li><a href="#tab3">Policies</a></li>
+								<li class="active"><a href="#tab1" data-toggle="tab">Product Specifications</a></li>
+								<li><a href="#tab2" data-toggle="tab">Product Reviews</a></li>
+								<li><a href="#tab3" data-toggle="tab">Policies</a></li>
 							</ul>
 							<div class="tab-content">
 								<div class="tab-pane active" id="tab1">
@@ -79,13 +54,6 @@
 					</div>
 				</div>
 			</div>
-			<div class="span4">
-				<div class="row">
-					<div id="product_sidebar" class="span4">
-						<img src="img/ads/ad1.jpg" alt="Marketing Firm Ad" />
-					</div>
-				</div>
-			</div>
 		</div>
 		<div class="row">
 			<div class="span12">
@@ -93,22 +61,22 @@
 				<div class="span12">
 						<div class="span2 featured_catalog_item">
 							<ul class="thumbnail">
-								<li><img src="img/products/chair2_thumbnail.jpg" alt="Napoleon Chair" /></li>
-								<li><a href="product.php">Napoleon Chair</a></li>
+								<li><?=Load::image("/products/chair2_thumbnail.jpg", "Napoleon Chair")?></li>
+								<li><a href="product">Napoleon Chair</a></li>
 								<li>$100.00</li>
 							</ul>
 						</div>
 						<div class="span2 featured_catalog_item">
 							<ul class="thumbnail">
-								<li><img src="img/products/desk2_thumbnail.jpg" alt="Writing Desk" /></li>
-								<li><a href="product.php">Writing Desk</a></li>
+								<li><?=Load::image("/products/desk2_thumbnail.jpg", "Writing Desk")?></li>
+								<li><a href="product">Writing Desk</a></li>
 								<li>$100.00</li>
 							</ul>
 						</div>
 						<div class="span2 featured_catalog_item">
 							<ul class="thumbnail">
-								<li><img src="img/products/chair3_thumbnail.jpg" alt="Wooden Chair" /></li>
-								<li><a href="product.php">Wooden Chair</a></li>
+								<li><?=Load::image("/products/chair3_thumbnail.jpg", "Wooden Chair")?></li>
+								<li><a href="product">Wooden Chair</a></li>
 								<li>$100.00</li>
 							</ul>
 						</div>

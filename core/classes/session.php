@@ -26,4 +26,9 @@ class Session {
 		return self::set($key, $value);
 	}
 
+	public static function destroy($key)
+	{
+		unset($_SESSION[$key]);
+	}
+
 }

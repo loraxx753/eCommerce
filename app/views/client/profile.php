@@ -2,17 +2,17 @@
 			<div class="span4">
 				<div class="row">
 					<div id="client_sidebar" class="span4">
-						<h5>Account Home</h5>
+						<span>Account Home</span>
 							<ul>
 								<li><a href="#">Dashboard</a></li>
 								<li><a href="#">Messages</a></li>
 							</ul>
-						<h5>Orders</h5>
+						<span>Orders</span>
 							<ul>
 								<li><a href="#">Order History</a></li>
 								<li><a href="#">Returns</a></li>
 							</ul>
-						<h5>Options</h5>
+						<span>Options</span>
 							<ul>
 								<li><a href="#">Account Settings</a></li>
 								<li><a href="#">Address Book</a></li>
@@ -20,7 +20,7 @@
 								<li><a href="#">Subscriptions</a></li>
 								<li><a href="#">Academic Info</a></li>
 							</ul>
-						<h5>Shopping</h5>
+						<span>Shopping</span>
 							<ul>
 								<li><a href="#">Shopping Cart</a></li>
 								<li><a href="#">Wish Lists</a></li>

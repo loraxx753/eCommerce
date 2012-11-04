@@ -2,6 +2,7 @@
 			<h2>Shopping Cart</h2>
 			<hr />
 		</div>
+
 		<?php 
 			if(count($cartArray) <= 0)
 			{
@@ -44,6 +45,8 @@
 				}
 			}
 		?>
+
+		
 		<div class="row policies">
 			<div class="span6 pull-right order_summary">
  				<div class="span2">
