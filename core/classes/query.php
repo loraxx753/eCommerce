@@ -10,6 +10,7 @@ class Query {
 	var $selector;
 	var $limit = 0;
 	var $query;
+	var $order_by;
 	var $type = "insert";
 
 	//Insert Stuff
@@ -63,6 +64,11 @@ class Query {
 		}
 		return $this;
 	}
+	public function order_by($order)
+	{
+		$this->order_by = $order;
+		return $this;
+	}
 	public function limit($amount)
 	{
 		$this->limit = $amount;
@@ -86,6 +92,10 @@ class Query {
 			}
 			$where .= implode(" OR ", $this->or_where);				
 			$query .= " WHERE ".$where;
+		}
+		if(!empty($this->order_by))
+		{
+			$query .= " ORDER BY ".$this->order_by;
 		}
 		if($this->limit > 0)
 		{
