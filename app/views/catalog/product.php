@@ -26,7 +26,7 @@
 				<div class="span2 pull-right"><h3>$<?=number_format($product->Product_Price, 2)?></h3></div>
 			</div>
 			<div class="span3 pull-right add_to_cart">
-				<a href="<?=WEB_BASE?>catalog/cart/2/2">Add To Cart</a>
+				<a href="<?=WEB_BASE?>catalog/cart/2/2" class="btn btn-small">Add To Cart</a>
 			</div>
 		</div>
 		<div class="row">
@@ -80,8 +80,8 @@
 								<li>$100.00</li>
 							</ul>
 						</div>
-						<div class="span2 offset9">
-							<button class="btn btn-small recommended_button">More Recommended Items</button>
+						<div class="span3 offset8">
+							<a href="#" class="btn btn-small recommended_button">More Recommended Items</a>
 						</div>	
 					</div>
 			</div>
