@@ -24,6 +24,12 @@
 					) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 			", "Creating Products Table."),
+					array("CREATE TABLE IF NOT EXISTS `updates` (
+						  `id` int(11) NOT NULL AUTO_INCREMENT,
+						  `current` int(11) NOT NULL DEFAULT '0',
+						  PRIMARY KEY (`id`)
+						) ENGINE=MyISAM  DEFAULT CHARSET=latin1;
+			", "Creating Updater Table"),
 					array("CREATE TABLE IF NOT EXISTS `users` (
 						  `id` int(11) NOT NULL AUTO_INCREMENT,
 						  `user` varchar(255) NOT NULL,
@@ -31,9 +37,9 @@
 						  `email` varchar(200) NOT NULL,
 						  `created` int(32) NOT NULL,
 						  `updated` int(32) NOT NULL,
-						  `verified` tinyint(1) NOT NULL DEFAULT '0',
+						  `access` int(3) NOT NULL DEFAULT '0',
 			  PRIMARY KEY (`id`)
-			) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
+			) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
 			", "Creating User Table."),
 					array("skip", "Setup Complete.")
 			);
@@ -95,8 +101,12 @@
 						(10, 'Computer Desk', 'desk', 3, 5, 60, 100, 'img/products/desk3_thumbnail.jpg', 40, '30x31x32', 0, NULL);
 >>>>>>> 1859ae1ce0847cc9e31f0b1d769de1e68d6edc51
 									", "Filling Products Table."),
+					array("INSERT INTO `updates` (`id`, `current`) VALUES (1, 0);", "Filling Updater."),
 					array("skip", "Your database has been filled.")
 			);
+
+			Auth::register('Super', "UPPER~CASE", "UPPER~CASE", "super@example.com", 2);
+			Auth::register('Admin', "high^five", "high^five", "admin@example.com", 3);
 
 			$result = '';
 
@@ -124,5 +134,59 @@
 			$render->addVar('list', $result);
 			$render->changeTemplate('blank_template');
 			$render->load('setup', 'fill');
+		}
+
+		public static function action_update()
+		{
+
+			$currentUpdate = \Database::query("SELECT * FROM updates LIMIT 1")->fetch();
+
+			$queryArray = array(
+					array("CREATE TABLE  `ecommerce`.`reviews` (
+							`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+							`product_id` INT NOT NULL ,
+							`review` TEXT NOT NULL ,
+							`rating` INT NOT NULL DEFAULT  '0',
+							`created` INT( 33 ) NOT NULL
+							) ENGINE = MYISAM ;
+					", "Creating Reviews Table")
+				);
+			if($currentUpdate['current'] > 0)
+			{
+				$undoneUpdates = array_slice($queryArray, $currentUpdate['current']);
+			}
+			else
+			{
+				$undoneUpdates = $queryArray;
+			}
+
+			$result = '';
+			foreach($undoneUpdates as $query)
+			{
+					if($query[0] != "skip")
+					{
+							if(Database::query($query[0]))
+							{
+									$result .= "<li class='hidden'>".$query[1]."</li>";
+							}
+							else
+							{
+									$result .= '<li class="hidden">Setup has already been run</li>';
+									break;
+							}
+					}
+					else
+					{
+							$result .= "<li class='hidden'>".$query[1]."</li>";
+					}
+					$currentUpdate['current']++;
+			}
+
+			\Database::query("UPDATE updates SET current=$currentUpdate[current] WHERE id=$currentUpdate[id]");
+
+			$render = new Render();
+			$render->addVar('list', $result);
+			$render->changeTemplate('blank_template');
+			$render->load('setup', 'update');
 		}
 	}

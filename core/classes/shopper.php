@@ -28,7 +28,7 @@ class Shopper {
 	 */
 	public function add_item($item_id)
 	{
-		if(!$this->cart[$item_id])
+		if(!isset($this->cart[$item_id]))
 		{
 			$this->cart[$item_id] = 1;
 		}

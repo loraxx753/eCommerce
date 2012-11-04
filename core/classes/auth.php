@@ -2,8 +2,8 @@
 
 namespace Baughss\Core;
 
-class Login {
-	static public function register($username, $password1, $password2, $email) {
+class Auth {
+	static public function register($username, $password1, $password2, $email, $access = 1) {
 		$error = array();
 		if(strlen($username) < 5) 
 		{
@@ -26,8 +26,7 @@ class Login {
 		{
             $time = time();
             $encrypt = sha1($password1.$time);
-            // var_dump("INSERT INTO users (user, pass, email, created_at) VALUES ('$username', '$encrypt', '$email', $time)");
-			\Database::query("INSERT INTO users (user, pass, email, created) VALUES ('$username', '$encrypt', '$email', $time)");
+			\Database::query("INSERT INTO users (user, pass, email, created, access) VALUES ('$username', '$encrypt', '$email', $time, $access)");
 			return array('success' => 'You have successfully registered.');
 		}
 		else
@@ -58,5 +57,54 @@ class Login {
 	{
 		Session::destroy('username');
 		return true;
+	}
+	/**
+	 * Access levels are ints as follows
+	 *
+	 * banned = 0
+	 * customer = 1
+	 * privilege = 2
+	 * admin = 3
+	 *
+	 * @param  int/string an int or a string of the access level to check
+	 * @return bool       whether the user has that access level or not
+	 */
+	static public function check_access($level)
+	{
+
+		$user = \Model_Users::build()->where('user', Session::get('username'))->execute();
+		if(!is_int($level))
+		{
+			switch ($level) 
+			{
+				case 'banned':
+					$level = 0;
+					break;
+				case 'customer':
+					$level = 1;
+					break;
+				case 'privilege':
+					$level = 2;
+					break;
+				case 'admin':
+					$level = 3;
+					break;
+			}
+		}
+		if(isset($user->access))
+		{
+			if($user->access == $level)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}			
+		}
+		else
+		{
+			return false;
+		}
 	}
 }

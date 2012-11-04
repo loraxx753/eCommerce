@@ -3,17 +3,27 @@
 namespace Baughss\Core;
 
 class Query {
+	// Misc stuff
 	var $table;
 	var $where = array();
 	var $or_where = array();
 	var $selector;
 	var $limit = 0;
 	var $query;
+	var $type = "insert";
+
+	//Insert Stuff
+	var $columns = array();
+	var $values = array();
 
 	function __construct($table) 
 	{
 		$this->table = $table;
 		$this->selector = array("*");
+	}
+	public function insert()
+	{
+		$this->type = "insert";
 	}
 	public function where($column, $seperator, $value = null) {
 		if(!preg_match("/\=/", $seperator)) {
