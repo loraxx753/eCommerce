@@ -18,7 +18,7 @@
 						echo'<div class="row cart_item">
 							<div class="span3">
 								<div class="thumbnail">'.
-									Load::image($product->Product_Image, "Chair").
+									Load::image($product->Product_Image."_big.jpg", "Chair").
 								'</div>
 							</div>
 							<div class="span9 item_details">
