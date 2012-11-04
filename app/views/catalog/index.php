@@ -47,13 +47,13 @@
 						</div>
 						<div class="span2 catalog_item">
 							<ul class="thumbnail">
-								<li><?=Load::image("/products/chair2_thumbnail.jpg", "Chairs")?></li>
+								<li><?=Load::image("/products/couch2_thumbnail.jpg", "Couches")?></li>
 								<li><a href="#">Couches</a></li>
 							</ul>
 						</div>
 						<div class="span2 catalog_item">
 							<ul class="thumbnail">
-								<li><?=Load::image("/products/chair2_thumbnail.jpg", "Chairs")?></li>
+								<li><?=Load::image("/products/desk2_thumbnail.jpg", "Desks")?></li>
 								<li><a href="#">Desks</a></li>
 							</ul>
 						</div>		
@@ -61,48 +61,19 @@
 					<div class="span9">
 						<h2 class="catalog_header">Merchandise</h2>
 						<hr />
-						<div class="span2 catalog_item">
-							<ul class="thumbnail">
-								<li><?=Load::image("/products/chair2_thumbnail.jpg", "Chairs")?></li>
-								<li><a href="product">Chic Couch</a></li>
-								<li>$100.00</li>
-							</ul>
-						</div>
-						<div class="span2 catalog_item">
-							<ul class="thumbnail">
-								<li><?=Load::image("/products/chair2_thumbnail.jpg", "Chairs")?></li>
-								<li><a href="product">Viewing Couch</a></li>
-								<li>$100.00</li>
-							</ul>
-						</div>
-						<div class="span2 catalog_item">
-							<ul class="thumbnail">
-								<li><?=Load::image("/products/chair2_thumbnail.jpg", "Chairs")?></li>
-								<li><a href="product">Resting Couch</a></li>
-								<li>$100.00</li>
-							</ul>
-						</div>	
-						<div class="span2 catalog_item">
-							<ul class="thumbnail">
-								<li><?=Load::image("/products/chair2_thumbnail.jpg", "Chairs")?></li>
-								<li><a href="product">Apple Desk</a></li>
-								<li>$100.00</li>
-							</ul>
-						</div>
-						<div class="span2 catalog_item">
-							<ul class="thumbnail">
-								<li><?=Load::image("/products/chair2_thumbnail.jpg", "Chairs")?></li>
-								<li><a href="product">Writing Desk</a></li>
-								<li>$100.00</li>
-							</ul>
-						</div>
-						<div class="span2 catalog_item">
-							<ul class="thumbnail">
-								<li><?=Load::image("/products/chair2_thumbnail.jpg", "Chairs")?></li>
-								<li><a href="product">Computer Desk</a></li>
-								<li>$100.00</li>
-							</ul>
-						</div>		
+						<?php
+							foreach ($items as $key => $value) 
+							{
+								
+								echo '<div class="span2 catalog_item">';
+								echo '<ul class="thumbnail">';
+								echo '<li>'.Load::image($value->Product_Image, "Chairs").'</li>';
+								echo '<li><a href="product/'.$value->ProductID.'">'.$value->Product_Name.'</a></li>';
+								echo '<li>'.number_format($value->Product_Price,2).'</li>';
+								echo '</ul>';
+								echo '</div>';
+							}
+						?>
 					</div>
 				</div>
 			</div>

@@ -18,7 +18,6 @@ class Cart_Controller extends Controller
 			$query = new Query("products");
 			$query -> where("ProductID", "=", (string)$key);
 			$cartArray[$key] = $query -> execute($query);
-			$cartArray[$key][0]->Quantity = $cart->cart[$key];
 		}
 
 		//create total price

@@ -1,12 +1,12 @@
 		<div class="row product">
 			<div class="span6">
 				<div class="thumbnail">
-					<span><?=Load::image("/products/desk_big.jpg", "Desk")?></span>
+					<span><?=Load::image($product->Product_Image, "Desk")?></span>
 				</div>
 			</div>
 			<div class="span3">
-				<h3>Apple Desk</h3>
-				<small>SKU# 1234567890</small>
+				<h3><?=$product->Product_Name?></h3>
+				<small>SKU# <?=$product->SKU?></small>
 			</div>
 			<div class="span2 offset1 rating">
 				<div>
@@ -18,15 +18,15 @@
 				</div>
 			</div>
 			<div class="span6 product_description">
-				<p>Lorem ipsum dolor sit amet, maiores ornare ac fermentum, imperdiet ut vivamus a, nam lectus at nunc. Quam euismod sem, semper ut potenti pellentesque quisque. In eget sapien sed, sit duis vestibulum ultricies, placerat morbi amet vel, nullam in in lorem vel. In molestie elit dui dictum, praesent nascetur pulvinar sed, in dolor pede in aliquam, risus nec error quis pharetra. Eros metus quam augue suspendisse, metus rutrum risus erat in.</p>
+				<p><?=$product->Product_Description?></p>
 			</div>
 			<div class="span6 product_options">
 				<p class="span1 quantity">Quantity:</p>
 				<input type="text" class="span1" value="1" />
-				<div class="span2 pull-right"><h3>$100.00</h3></div>
+				<div class="span2 pull-right"><h3>$<?=number_format($product->Product_Price, 2)?></h3></div>
 			</div>
 			<div class="span3 pull-right add_to_cart">
-				<a href="<?=WEB_BASE?>catalog/cart">Add To Cart</a>
+				<a href="<?=WEB_BASE?>catalog/cart/2/2">Add To Cart</a>
 			</div>
 		</div>
 		<div class="row">
