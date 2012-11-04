@@ -67,7 +67,7 @@
 								
 								echo '<div class="span2 catalog_item">';
 								echo '<ul class="thumbnail">';
-								echo '<li>'.Load::image($value->Product_Image, "Chairs").'</li>';
+								echo '<li>'.Load::image($value->Product_Image."_thumbnail.jpg", "Chairs").'</li>';
 								echo '<li><a href="product/'.$value->ProductID.'">'.$value->Product_Name.'</a></li>';
 								echo '<li>'.number_format($value->Product_Price,2).'</li>';
 								echo '</ul>';
