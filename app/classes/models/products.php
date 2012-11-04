@@ -13,5 +13,5 @@ class Model_Products extends Model
 	public $Product_Image;
 	public $Sale_Price;
 	public $Featured; 
-	public $TotalSold; 
+	public $Total_Sold; 
 }
