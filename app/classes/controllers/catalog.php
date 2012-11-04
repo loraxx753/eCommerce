@@ -26,14 +26,10 @@ class Catalog_Controller extends Controller
 	}
 	public static function action_cart($item, $quantity)
 	{
-		$render = new Render();
-
 		$cart = Shopper::load();
 		for($x=0; $x<$quantity; $x++)
 		{
 			$cart->add_item($item);
 		}
-		
-		$render->load('catalog', 'product');
 	}
 }

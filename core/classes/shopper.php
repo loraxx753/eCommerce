@@ -63,6 +63,13 @@ class Shopper {
 		return true;
 	}
 
+	public function remove_type($item_id)
+	{
+		unset($this->cart[$item_id]);
+		Session::set('cart', $this->cart);
+		return true;
+	}
+
 	/**
 	 * Clears the cart of all items
 	 * @return bool returns true on removal.

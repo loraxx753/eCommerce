@@ -79,6 +79,36 @@ class Cart_Controller extends Controller
 		$render->load('cart', 'index');
 	}
 
+	public static function action_delete($itemID)
+	{
+		$render = new Render();
+		$render->addVar('title', "Cart");
+
+		//create array of cart item information pulled from database
+		$cart = Shopper::load();
+		$cart->remove_type($itemID);
+		$cartArray = array(); 
+		$count = 0; 
+
+		//grabbing product information from the database
+		foreach($cart -> cart as $key => $value)
+		{
+			$query = new Query("products");
+			$query -> where("ProductID", "=", (string)$key);
+			$cartArray[$key] = $query -> execute($query);
+		}
+
+		//create total price
+		$total = $cart->subtotal();
+
+		$render->addVar('total', $total);
+		$render->addVar('cart', $cart->cart);
+		$render->addVar('cartArray', $cartArray);
+		$render->load('cart', 'index');
+		
+
+	}
+
 	public static function action_checkout()
 	{
 		$render = new Render();
