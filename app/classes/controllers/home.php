@@ -5,7 +5,7 @@ class Home_Controller extends Controller
 	public static function action_index()
 	{
 		$render = new Render();
-		$render->addVar('title', "Home");
+		$render->addVar('title', "NWA Furniture | Home");
 
 		$featured = \Model_Products::build();
 		$featured = $featured->or_where('Featured', 1);

@@ -3,6 +3,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title><?=$title;?></title>
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css" />
 	<?=Load::css(array("bootstrap.css", "style.css"))?>
 </head>
 <body>
@@ -43,7 +44,7 @@
 			</footer>
 		</div>
 	</div>
-	<?=Load::js(array('//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js', "bootstrap.js"));?>
+	<?=Load::js(array('http://code.jquery.com/jquery-1.8.2.js', 'http://code.jquery.com/ui/1.9.1/jquery-ui.js', 'bootstrap.js', 'ecommerce.js'));?>
 
 <!-- Google Analytics -->
 	<script type="text/javascript">
@@ -59,6 +60,12 @@
 	</script>
 </body>
 </html>
+
 <div id="loginBox">
-	<span>Form Content</span>
+	<form>
+		<label>Username:</label>
+		<input type="text">
+		<label>Password:</label>
+		<input type="password">
+	</form>
 </div>

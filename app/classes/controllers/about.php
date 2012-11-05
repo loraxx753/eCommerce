@@ -5,7 +5,7 @@ class About_Controller extends Controller
 	public static function action_index()
 	{
 		$render = new Render();
-		$render->addVar('title', "About");
+		$render->addVar('title', "NWA Furniture | About");
 
 		$render->load('about', 'index');
 

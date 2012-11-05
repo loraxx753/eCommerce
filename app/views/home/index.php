@@ -12,7 +12,7 @@
 							{
 								echo '<div class="span2 catalog_item">';
 								echo '<ul class="thumbnail">';
-								echo '<li>'.Load::image($featured[$x]->Product_Image, $featured[$x]->Product_Name).'</li>';
+								echo '<li>'.Load::image($featured[$x]->Product_Image.'_thumbnail.jpg', $featured[$x]->Product_Name).'</li>';
 								echo '<li>'.Load::link(array('product/'.$featured[$x]->ProductID => $featured[$x]->Product_Name)).'</li>';
 								echo '<li>$'.number_format($featured[$x]->Product_Price, 2).'</li>';
 								echo '</ul>';
@@ -29,7 +29,7 @@
 							{
 								echo '<div class="span2 catalog_item">';
 								echo '<ul class="thumbnail">';
-								echo '<li>'.Load::image($top[$x]->Product_Image, $top[$x]->Product_Name).'</li>';
+								echo '<li>'.Load::image($top[$x]->Product_Image.'_thumbnail.jpg', $top[$x]->Product_Name).'</li>';
 								echo '<li>'.Load::link(array('product/'.$top[$x]->ProductID => $top[$x]->Product_Name)).'</li>';
 								echo '<li>$'.number_format($top[$x]->Product_Price, 2).'</li>';
 								echo '</ul>';
@@ -46,7 +46,7 @@
 							{
 								echo '<div class="span2 catalog_item">';
 								echo '<ul class="thumbnail">';
-								echo '<li>'.Load::image($new[$x]->Product_Image, $new[$x]->Product_Name).'</li>';
+								echo '<li>'.Load::image($new[$x]->Product_Image.'_thumbnail.jpg', $new[$x]->Product_Name).'</li>';
 								echo '<li>'.Load::link(array('product/'.$new[$x]->ProductID => $new[$x]->Product_Name)).'</li>';
 								echo '<li>$'.number_format($new[$x]->Product_Price, 2).'</li>';
 								echo '</ul>';

@@ -5,7 +5,7 @@ class Catalog_Controller extends Controller
 	public static function action_index()
 	{
 		$render = new Render();
-		$render->addVar('title', "Catalog");
+		$render->addVar('title', "NWA Furniture | Catalog");
 
 		$items = Model_Products::build()->execute();
 		$render->addVar('items', $items);
@@ -15,7 +15,7 @@ class Catalog_Controller extends Controller
 	public static function action_product($id)
 	{
 		$render = new Render();
-		$render->addVar('title', "Catalog");
+		$render->addVar('title', "NWA Furniture | Product");
 
 		$products = \Model_Products::build();
 		$products->or_where("ProductID", $id);

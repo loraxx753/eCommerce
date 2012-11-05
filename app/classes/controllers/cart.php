@@ -5,7 +5,7 @@ class Cart_Controller extends Controller
 	public static function action_index()
 	{
 		$render = new Render();
-		$render->addVar('title', "Cart");
+		$render->addVar('title', "NWA Furniture | Cart");
 		
 		//create array of cart item information pulled from database
 		$cart = Shopper::load();
@@ -56,7 +56,7 @@ class Cart_Controller extends Controller
 		}
 
 		$render = new Render();
-		$render->addVar('title', "Cart");
+		$render->addVar('title', "NWA Furniture | Shopping Cart");
 		
 		//create array of cart item information pulled from database
 		$cartArray = array(); 
@@ -82,7 +82,7 @@ class Cart_Controller extends Controller
 	public static function action_delete($itemID)
 	{
 		$render = new Render();
-		$render->addVar('title', "Cart");
+		$render->addVar('title', "NWA Furniture | Shopping Cart");
 
 		//create array of cart item information pulled from database
 		$cart = Shopper::load();
@@ -112,7 +112,7 @@ class Cart_Controller extends Controller
 	public static function action_checkout()
 	{
 		$render = new Render();
-		$render->addVar('title', "Ceckout");
+		$render->addVar('title', "NWA Furniture | Checkout");
 		$render->load('cart', 'checkout');
 	}
 }
