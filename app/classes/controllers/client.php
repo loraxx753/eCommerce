@@ -3,7 +3,7 @@
 		public static function action_index()
 		{
 			$render = new Render();
-			$render->addVar('title', "Profile");
+			$render->addVar('title', "NWA Furniture | Client Dashboard");
 
 			$render->load('client', 'profile');
 
@@ -12,7 +12,7 @@
 		{
 			$this->authenticate('admin');
 			$render = new Render();
-			$render->addVar('title', "Admin");
+			$render->addVar('title', "NWA Furniture | Administrator Dashboard");
 
 			$render->load('client', 'admin');
 
