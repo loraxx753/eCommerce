@@ -11,6 +11,7 @@ var $loginDialog = $('#loginBox').dialog({
 });
 
 $('#login').on('click', function (){
-	console.log('clicked');
+	console.log('clicked, before open');
 	$loginDialog.dialog('open');
+	console.log('clicked, after open');
 });
