@@ -2,11 +2,24 @@
 
 namespace Baughss\Core;
 
+/**
+ * Select builder for Query class
+ */
 class Query_Select extends Query {
-	// Misc stuff
-	var $table;
+	/**
+	 * single selector or an array of selectors
+	 * @var array
+	 */
 	var $selector;
+	/**
+	 * The limit of items returned
+	 * @var integer
+	 */
 	var $limit = 0;
+	/**
+	 * Order by parameters for sql call
+	 * @var string
+	 */
 	var $order_by;
 
 	function __construct($table) 
@@ -14,6 +27,11 @@ class Query_Select extends Query {
 		$this->table = $table;
 		$this->selector = array("*");
 	}
+	/**
+	 * Builds the selector variable
+	 * @param  mixed $selector An array of selectors to use or single selector string
+	 * @return class           Current instance of called class.
+	 */
 	public function selector($selector)
 	{
 		if(is_string($selector))
@@ -26,16 +44,30 @@ class Query_Select extends Query {
 		}
 		return $this;
 	}
+	/**
+	 * Builds the ordering variable
+	 * @param  mixed $order A string to order the results
+	 * @return class        Current instance of called class.
+	 */
 	public function order_by($order)
 	{
 		$this->order_by = $order;
 		return $this;
 	}
+	/**
+	 * Builds the limiting variable
+	 * @param  int $order Amount of items to return.
+	 * @return class      Current instance of called class.
+	 */
 	public function limit($amount)
 	{
 		$this->limit = $amount;
 		return $this;
 	}
+	/**
+	 * Compiles the specific select query
+	 * @return string  The query.
+	 */
 	public function compile()
 	{
 		$selector = implode(", ", $this->selector);

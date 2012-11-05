@@ -1,23 +1,27 @@
 <?php
 
 namespace Baughss\Core;
-
+/**
+ * Update builder for the Query class
+ */
 class Query_Update extends Query {
-	// Misc stuff
-	var $table;
+	/**
+	 * Array of items to update
+	 * @var array
+	 */
 	var $set = array();
-	var $query;
 
 	function __construct($table) 
 	{
 		$this->table = $table;
 		$this->selector = array("*");
 	}
-	public function prepare()
-	{
-		$query = $this->compile();
-		$this->query = $query;		
-	}
+	/**
+	 * [set description]
+	 * @param string $key   Column name to be updated
+	 * @param string $value Value to update column to
+	 * @return  class       Instance of called class.
+	 */
 	public function set($key, $value)
 	{
 		if(is_string($value) && $value != "NULL")
@@ -31,6 +35,10 @@ class Query_Update extends Query {
 		$this->set[] = $key." = ".$value;
 		return $this;
 	}
+	/**
+	 * Compiling specific for update builder
+	 * @return string Query to be run
+	 */
 	public function compile()
 	{
 		$selector = implode(", ", $this->selector);
@@ -53,22 +61,5 @@ class Query_Update extends Query {
 			$query .= " ORDER BY ".$this->order_by;
 		}
 		return $query;
-	}
-	public function execute() 
-	{
-		$this->prepare();
-		$items =  \Database::query($this->query);
-		$items->setFetchMode(\PDO::FETCH_CLASS, 'Model_'.ucwords($this->table));
-		while($obj = $items->fetch()) {
-			$return[] = $obj;
-		}
-		if(isset($return))
-		{
-			return $return;
-		}
-		else
-		{
-			return false;
-		}
 	}
 }

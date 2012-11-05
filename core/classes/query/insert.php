@@ -2,10 +2,19 @@
 
 namespace Baughss\Core;
 
+/**
+ * Insert Builder for the Query Class
+ */
 class Query_Insert extends Query {
-	// Misc stuff
-	var $table;
+	/**
+	 * Columns array
+	 * @var array
+	 */
 	var $columns;
+	/**
+	 * Values array
+	 * @var array
+	 */
 	var $values;
 
 	function __construct($table) 
@@ -13,11 +22,22 @@ class Query_Insert extends Query {
 		$this->table = $table;
 		$this->selector = array("*");
 	}
+	/**
+	 * Add columns to the builder
+	 * @param  array $columns Array of column names
+	 * @return class          Instance of the called class
+	 */
 	public function columns($columns)
 	{
 		$this->columns = $columns;
 		return $this;
 	}
+
+	/**
+	 * Add values to the builder
+	 * @param  array $values Array of values to add to database
+	 * @return class         Instance of the called class
+	 */
 	public function values($values)
 	{
 		$parsed = array();
@@ -35,6 +55,10 @@ class Query_Insert extends Query {
 		$this->values = $parsed;
 		return $this;
 	}
+	/**
+	 * Compiles to the specific insert query
+	 * @return string Compiled query
+	 */
 	public function compile()
 	{
 		$columns = implode(", ",$this->columns);
