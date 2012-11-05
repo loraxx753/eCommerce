@@ -62,5 +62,10 @@
 </html>
 
 <div id="loginBox">
-	<span>Form Content</span>
+	<form>
+		<label>Username:</label>
+		<input type="text">
+		<label>Password:</label>
+		<input type="password">
+	</form>
 </div>
