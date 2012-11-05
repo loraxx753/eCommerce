@@ -56,6 +56,10 @@ class Autoloader {
 		{
 			$class = strtolower($exploded[1]);
 		}
+		else if(count($exploded) > 1)
+		{
+			$class = strtolower(implode("/", $exploded));
+		}
 		else
 		{
 			$class = strtolower($class);

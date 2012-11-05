@@ -3,28 +3,19 @@
 namespace Baughss\Core;
 
 class Query {
-	// Misc stuff
 	var $table;
 	var $where = array();
 	var $or_where = array();
-	var $selector;
-	var $limit = 0;
 	var $query;
-	var $order_by;
-	var $type = "insert";
-
-	//Insert Stuff
-	var $columns = array();
-	var $values = array();
 
 	function __construct($table) 
 	{
 		$this->table = $table;
 		$this->selector = array("*");
 	}
-	public function insert()
+	public static function select($table)
 	{
-		$this->type = "insert";
+		return new \Query_Select($table);
 	}
 	public function where($column, $seperator, $value = null) {
 		if(!preg_match("/\=/", $seperator)) {
@@ -52,28 +43,6 @@ class Query {
 
 		return $this;	
 	}
-	public function selector($selector)
-	{
-		if(is_string($selector))
-		{
-			$this->selector = array($selector);
-		}
-		else
-		{
-			$this->selector = $selector;			
-		}
-		return $this;
-	}
-	public function order_by($order)
-	{
-		$this->order_by = $order;
-		return $this;
-	}
-	public function limit($amount)
-	{
-		$this->limit = $amount;
-		return $this;
-	}
 	public function prepare()
 	{
 		$query = $this->compile();
@@ -81,26 +50,7 @@ class Query {
 	}
 	public function compile()
 	{
-		$selector = implode(", ", $this->selector);
-		$query = "SELECT $selector FROM $this->table";
-		if(count($this->where) > 0 || count($this->or_where) > 0)
-		{
-			$where = implode(" AND ", $this->where);
-			if(count($this->where) > 0 && count($this->or_where) > 0)
-			{
-				$where .= " OR ";
-			}
-			$where .= implode(" OR ", $this->or_where);				
-			$query .= " WHERE ".$where;
-		}
-		if(!empty($this->order_by))
-		{
-			$query .= " ORDER BY ".$this->order_by;
-		}
-		if($this->limit > 0)
-		{
-			$query .= " LIMIT ".$this->limit;
-		}
+		$query = "";
 		return $query;
 	}
 	public function execute() 
