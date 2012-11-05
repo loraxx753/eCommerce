@@ -20,7 +20,7 @@
 					  `Product_Size` varchar(255) DEFAULT NULL,
 					  `Featured` tinyint(1) NOT NULL,
 					  `Sale_Price` int(11) DEFAULT NULL,
-					  `Total_Sold` int(11) DEFAULT NOT NULL,
+					  `Total_Sold` int(11) NOT NULL,
 		  			  PRIMARY KEY (`ProductID`)
 					) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -77,17 +77,17 @@
 		{
 			$queryArray = array(
 
-					array("INSERT INTO `Products` (`SKU`, `Product_Name`, `Product_Description`, `Category_ID`, `Stock`, `Product_Cost`, `Product_Price`, `Product_Image`, `Product_Weight`, `Product_Size`, `Featured`, `Sale_Price`) VALUES
-						(1, 'Red Thinking Chair', 'chair', 1, 5, 50, 100, 'products/chair_thumbnail.jpg', 20, '10x11x12', 0, NULL),
-						(2, 'Napoleon Chair', 'chair', 1, 5, 60, 100, 'products/chair2_thumbnail.jpg', 40, '10x11x12', 1, NULL),
-						(3, 'Wooden Chair', 'chair', 1, 5, 40, 100, 'products/chair3_thumbnail.jpg', 10, '10x11x12', 0, NULL),
-						(4, 'Thinking Couch', 'couch', 2, 5, 80, 100, 'products/couch1_thumbnail.jpg', 50, '20x21x22', 0, NULL),
-						(5, 'Chic Couch', 'couch', 2, 5, 90, 100, 't products/couch2_thumbnail.jpg', 60, '20x21x22', 0, NULL),
-						(6, 'Viewing Couch', 'couch', 2, 5, 80, 100, 'products/couch3_thumbnail.jpg', 60, '20x21x22', 0, NULL),
-						(7, 'Resting Couch', 'couch', 2, 5, 90, 100, 'products/couch4_thumbnail.jpg', 60, '20x21x22', 0, NULL),
-						(8, 'Apple Desk', 'desk', 3, 5, 70, 100, 'products/desk_thumbnail.jpg', 40, '30x31x32', 0, NULL),
-						(9, 'Writing Desk', 'desk', 3, 5, 80, 100, 'products/desk2_thumbnail.jpg', 90, '30x31x32', 0, NULL),
-						(10, 'Computer Desk', 'desk', 3, 5, 60, 100, 'products/desk3_thumbnail.jpg', 40, '30x31x32', 0, NULL);
+					array("INSERT INTO `Products` (`SKU`, `Product_Name`, `Product_Description`, `Category_ID`, `Stock`, `Product_Cost`, `Product_Price`, `Product_Image`, `Product_Weight`, `Product_Size`, `Featured`, `Sale_Price`, `Total_Sold`) VALUES
+						(1, 'Thinking Chair', 'chair', 1, 5, 50, 100, 'products/chair_thumbnail.jpg', 20, '10x11x12', 0, NULL, 0),
+						(2, 'Napoleon Chair', 'chair', 1, 5, 60, 100, 'products/chair2_thumbnail.jpg', 40, '10x11x12', 1, NULL, 0),
+						(3, 'Wooden Chair', 'chair', 1, 5, 40, 100, 'products/chair3_thumbnail.jpg', 10, '10x11x12', 0, NULL, 0),
+						(4, 'Thinking Couch', 'couch', 2, 5, 80, 100, 'products/couch1_thumbnail.jpg', 50, '20x21x22', 0, NULL, 0),
+						(5, 'Chic Couch', 'couch', 2, 5, 90, 100, 'products/couch2_thumbnail.jpg', 60, '20x21x22', 1, NULL, 9),
+						(6, 'Viewing Couch', 'couch', 2, 5, 80, 100, 'products/couch3_thumbnail.jpg', 60, '20x21x22', 0, NULL, 8),
+						(7, 'Resting Couch', 'couch', 2, 5, 90, 100, 'products/couch4_thumbnail.jpg', 60, '20x21x22', 1, NULL, 7),
+						(8, 'Apple Desk', 'desk', 3, 5, 70, 100, 'products/desk_thumbnail.jpg', 40, '30x31x32', 0, NULL, 4),
+						(9, 'Writing Desk', 'desk', 3, 5, 80, 100, 'products/desk2_thumbnail.jpg', 90, '30x31x32', 1, NULL, 2),
+						(10, 'Computer Desk', 'desk', 3, 5, 60, 100, 'products/desk3_thumbnail.jpg', 40, '30x31x32', 0, NULL, 1);
 									", "Filling Products Table."),
 					array("INSERT INTO `updates` (`id`, `current`) VALUES (1, 0);", "Filling Updater."),
 					array("skip", "Your database has been filled.")

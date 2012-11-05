@@ -7,11 +7,20 @@ class Home_Controller extends Controller
 		$render = new Render();
 		$render->addVar('title', "Home");
 
-		$products = \Model_Products::build();
-
-		$featured = $products->or_where('Featured', 1);
+		$featured = \Model_Products::build();
+		$featured = $featured->or_where('Featured', 1);
 		$featured = $featured->execute();
 		$render->addVar('featured', $featured);
+
+		$top = \Model_Products::build();
+		$top = $top->order_by('Total_Sold DESC');
+		$top = $top->execute();
+		$render->addVar('top', $top);
+
+		$new = \Model_Products::build();
+		$new = $new->order_by('ProductID DESC');
+		$new = $new->execute();
+		$render->addVar('new', $new);
 
 		$render->load('home', 'index');
 	}

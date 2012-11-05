@@ -24,67 +24,35 @@
 						</div>						
 					</div>
 					<div class="span12 featured">
-						<div class="span2 catalog_item">
-							<ul class="thumbnail">
-								<li><?=Load::image("/products/couch2_thumbnail.jpg", "Chic Couch")?></li>
-								<li><?=Load::link(array('product' => "Chic Couch"));?></li>
-								<li>$100.00</li>
-							</ul>
-						</div>
-						<div class="span2 catalog_item">
-							<ul class="thumbnail">
-								<li><?=Load::image("/products/couch2_thumbnail.jpg", "Chic Couch")?></li>
-								<li><?=Load::link(array('product' => "Chic Couch"));?></li>
-								<li>$100.00</li>
-							</ul>
-						</div>
-						<div class="span2 catalog_item">
-							<ul class="thumbnail">
-								<li><?=Load::image("/products/couch2_thumbnail.jpg", "Chic Couch")?></li>
-								<li><?=Load::link(array('product' => "Chic Couch"));?></li>
-								<li>$100.00</li>
-							</ul>
-						</div>
-						<div class="span2 catalog_item">
-							<ul class="thumbnail">
-								<li><?=Load::image("/products/couch2_thumbnail.jpg", "Chic Couch")?></li>
-								<li><?=Load::link(array('product' => "Chic Couch"));?></li>
-								<li>$100.00</li>
-							</ul>
-						</div>
+						<?php
+							for($x=0; $x<4; $x++)
+							{
+								echo '<div class="span2 catalog_item">';
+								echo '<ul class="thumbnail">';
+								echo '<li>'.Load::image($top[$x]->Product_Image, $top[$x]->Product_Name).'</li>';
+								echo '<li>'.Load::link(array('product/'.$top[$x]->ProductID => $top[$x]->Product_Name)).'</li>';
+								echo '<li>$'.number_format($top[$x]->Product_Price, 2).'</li>';
+								echo '</ul>';
+								echo '</div>';
+							} 
+						?>
 						<div class="span2 offset9">
 							<button class="btn btn-small featured_button">More Top Sellers</button>
 						</div>	
 					</div>
 					<div class="span12 featured">
-						<div class="span2 catalog_item">
-							<ul class="thumbnail">
-								<li><?=Load::image("/products/desk_thumbnail.jpg", "Apple Desk")?></li>
-								<li><?=Load::link(array('product' => "Apple Desk"));?></li>
-								<li>$100.00</li>
-							</ul>
-						</div>
-						<div class="span2 catalog_item">
-							<ul class="thumbnail">
-								<li><?=Load::image("/products/desk_thumbnail.jpg", "Apple Desk")?></li>
-								<li><?=Load::link(array('product' => "Apple Desk"));?></li>
-								<li>$100.00</li>
-							</ul>
-						</div>
-						<div class="span2 catalog_item">
-							<ul class="thumbnail">
-								<li><?=Load::image("/products/desk_thumbnail.jpg", "Apple Desk")?></li>
-								<li><?=Load::link(array('product' => "Apple Desk"));?></li>
-								<li>$100.00</li>
-							</ul>
-						</div>
-						<div class="span2 catalog_item">
-							<ul class="thumbnail">
-								<li><?=Load::image("/products/desk_thumbnail.jpg", "Apple Desk")?></li>
-								<li><?=Load::link(array('product' => "Apple Desk"));?></li>
-								<li>$100.00</li>
-							</ul>
-						</div>
+						<?php
+							for($x=0; $x<4; $x++)
+							{
+								echo '<div class="span2 catalog_item">';
+								echo '<ul class="thumbnail">';
+								echo '<li>'.Load::image($new[$x]->Product_Image, $new[$x]->Product_Name).'</li>';
+								echo '<li>'.Load::link(array('product/'.$new[$x]->ProductID => $new[$x]->Product_Name)).'</li>';
+								echo '<li>$'.number_format($new[$x]->Product_Price, 2).'</li>';
+								echo '</ul>';
+								echo '</div>';
+							} 
+						?>
 						<div class="span2 offset9">
 							<button class="btn btn-small featured_button">More Newly Added</button>
 						</div>	
