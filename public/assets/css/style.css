@@ -111,6 +111,13 @@ header {
 .thumbnail {
 	border-radius: 0px;
 }
+.thumbnail a {
+	font-size: 12px;
+	font-weight: bold;
+}
+.main_content .featured .catalog_item .thumbnail a:hover, a:link, a:visited, a:active {
+	color: #000000 !important;
+}
 .featured_button {
 	margin-top: 15px;
 	background: #FFFFFF;
