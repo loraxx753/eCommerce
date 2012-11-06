@@ -513,3 +513,9 @@ a:hover {
 #loginBox {
 	display: none;
 }
+#policies span {
+	font-weight: bold;
+	font-size: 18px;
+	margin: 20px 5px 0 0;
+	display: inline-block;
+}
