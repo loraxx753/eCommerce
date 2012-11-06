@@ -118,7 +118,7 @@ class Cart_Controller extends Controller
 		$render->addVar('title', "NWA Furniture | Checkout");
 
 		$cart = Shopper::load();
-		$render->addVar('total', $cart->subtotal(););
+		$render->addVar('total', $cart->subtotal());
 
 		$render->load('cart', 'checkout');
 	}
