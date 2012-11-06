@@ -14,16 +14,17 @@ class Review {
 	 * @param integer $productID What product this is associated with
 	 * @return bool              True on success, false on failure
 	 */
-	public static function add($review, $rating, $productID)
+	public static function add($text, $rating, $productID)
 	{
-		try
-		{
-			\Database::query("INSERT INTO reviews (product_id, rating, review, created) VALUES ($productID, $rating, '$review', ".time().")");
-		}
-		catch(Exception $e)
-		{
-			return false;
-		}
+		$review = new \Model_Reviews();
+		$review->product_id = $productID;
+		$review->review = $text;
+		$review->rating = 5;
+		$review->user = Session::get('username');
+		$review->created = time();
+
+		$review->save();
+
 		return true;
 	}
 	/**
@@ -60,6 +61,7 @@ class Review {
 	 */
 	public static function remove($id)
 	{
-		\Database::query('DELETE FROM reviews WHERE id='.$id);
+		$review = \Model_Reviews::build()->where('id', $id)->execute();
+		$review[0]->delete();
 	}
 }

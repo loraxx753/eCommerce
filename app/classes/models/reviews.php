@@ -5,6 +5,7 @@ class Model_Reviews extends Model
 	public $product_id;
 	public $review;
 	public $rating; 
+	public $user;
 	public $created; 
 }
 

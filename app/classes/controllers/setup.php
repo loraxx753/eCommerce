@@ -138,7 +138,9 @@
 							`rating` INT NOT NULL DEFAULT  '0',
 							`created` INT( 33 ) NOT NULL
 							) ENGINE = MYISAM ;
-					", "Creating Reviews Table")
+					", "Creating Reviews Table"),
+					array("ALTER TABLE  `reviews` ADD  `user` VARCHAR( 255 ) NOT NULL AFTER  `rating`
+						", "Adding user to review table")
 				);
 			if($currentUpdate['current'] > 0)
 			{

@@ -57,7 +57,6 @@ class Auth {
         $handler = Database::query('SELECT * FROM users WHERE user="'.$username.'"');
 
         $userInfo = $handler->fetch();
-
         if(sha1($password.$userInfo['created']) == $userInfo['pass'])
         {
         	Session::set('username', $username);

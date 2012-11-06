@@ -23,7 +23,7 @@ class Model {
 		$columns = self::get_columns();
 		$id = array_shift($columns);
 
-		if($this->ProductID == NULL)
+		if($this->$id == NULL)
 		{
 			$save = new Query_Insert($table);
 			$save->columns($columns);
@@ -37,6 +37,7 @@ class Model {
 				$values[] = $this->$column;
 			}
 			$save->values($values);
+			echo $save->compile();
 			$save->execute();
 			return true;
 		}
