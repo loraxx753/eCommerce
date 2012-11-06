@@ -4,14 +4,14 @@
 					<aside id="sidebar" class="span3">
 						<span>Item Categories</span>
 							<ul>
-								<li><a href="#">Chairs</a></li>
-								<li><a href="#">Couches</a></li>
-								<li><a href="#">Desks</a></li>
+								<?= '<li>'.Load::link(array('catalog/catagories/1' => "Chairs")).'</li>';?>
+								<?= '<li>'.Load::link(array('catalog/catagories/2' => "Couches")).'</li>';?>
+								<?= '<li>'.Load::link(array('catalog/catagories/3' => "Desks")).'</li>';?>
 							</ul>
 						<span>Narrow Results</span>
 						<p>Price</p>
 							<ul>
-								<li><a href="#">$0-$100</a></li>
+								<li><a href="">$0-$100</a></li>
 								<li><a href="#">$100-$200</a></li>
 								<li><a href="#">$200-$300</a></li>
 								<li><a href="#">$300-$400</a></li>
@@ -42,19 +42,19 @@
 						<div class="span2 catalog_item">
 							<ul class="thumbnail">
 								<li><?=Load::image("/products/chair2_thumbnail.jpg", "Chairs")?></li>
-								<li><a href="#">Chairs</a></li>
+								<?= '<li>'.Load::link(array('catalog/catagories/1' => "Chairs")).'</li>';?>
 							</ul>
 						</div>
 						<div class="span2 catalog_item">
 							<ul class="thumbnail">
 								<li><?=Load::image("/products/couch2_thumbnail.jpg", "Couches")?></li>
-								<li><a href="#">Couches</a></li>
+								<?= '<li>'.Load::link(array('catalog/catagories/2' => "Couches")).'</li>';?>
 							</ul>
 						</div>
 						<div class="span2 catalog_item">
 							<ul class="thumbnail">
 								<li><?=Load::image("/products/desk2_thumbnail.jpg", "Desks")?></li>
-								<li><a href="#">Desks</a></li>
+								<?= '<li>'.Load::link(array('catalog/catagories/3' => "Desks")).'</li>';?>
 							</ul>
 						</div>		
 					</div>

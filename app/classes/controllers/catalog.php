@@ -12,6 +12,31 @@ class Catalog_Controller extends Controller
 
 		$render->load('catalog', 'index');
 	}	
+	public static function action_catagories($catagory)
+	{
+		$render = new Render();
+		$render->addVar('title', "NWA Furniture | Catalog");
+
+		$items = Model_Products::build();
+		$items = $items->or_where("Category_ID", $catagory);
+		$items = $items->execute();
+
+		$render->addVar('items', $items);
+
+		$render->load('catalog', 'index');
+	}
+	public static function action_price()
+	{
+			
+	}
+	public static function action_material()
+	{
+		
+	}
+	public static function action_weight()
+	{
+		
+	}
 	public static function action_product($id)
 	{
 		$render = new Render();
