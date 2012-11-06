@@ -17,7 +17,7 @@
 			$render->load('client', 'admin');
 
 		}
-		public function authenticate($level)
+		public static function authenticate($level)
 		{
 			$user = Model_Users::build()->where('username', Session::get('username'))->execute();
 

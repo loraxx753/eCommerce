@@ -26,10 +26,10 @@
 							</ul>
 						<p>Weight</p>
 							<ul>
-								<li><a href="#">0<small>lbs</small>-50<small>lbs</small></a></li>
-								<li><a href="#">50<small>lbs</small>-100<small>lbs</small></a></li>
-								<li><a href="#">100<small>lbs</small>-150<small>lbs</small></a></li>
-								<li><a href="#">150<small>lbs</small>-200<small>lbs</small></a></li>
+								<?= '<li>'.Load::link(array('catalog/weight/0/50' => "0<small>lbs</small>-50<small>lbs</small>")).'</li>';?>
+								<?= '<li>'.Load::link(array('catalog/weight/50/100' => "50<small>lbs</small>-100<small>lbs</small>")).'</li>';?>
+								<?= '<li>'.Load::link(array('catalog/weight/100/150' => "100<small>lbs</small>-150<small>lbs</small>")).'</li>';?>
+								<?= '<li>'.Load::link(array('catalog/weight/150/200' => "150<small>lbs</small>-200<small>lbs</small>")).'</li>';?>
 							</ul>
 					</aside>
 				</div>

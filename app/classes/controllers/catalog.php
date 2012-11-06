@@ -48,18 +48,33 @@ class Catalog_Controller extends Controller
 			}
 		}
 
-
 		$render->addVar('items', $range);
-
 		$render->load('catalog', 'index');	
 	}
 	public static function action_material()
 	{
 		
 	}
-	public static function action_weight()
+	public static function action_weight($limit_min, $limit_max)
 	{
-		
+		$render = new Render();
+		$render->addVar('title', "NWA Furniture | Catalog");
+
+		$items = Model_Products::build();
+		$items = $items->execute();
+
+		$range = array();
+
+		foreach ($items as $key => $value) 
+		{
+			if($value->Product_Weight >= $limit_min && $value->Product_Weight <= $limit_max && $limit_max != -1)
+			{
+				$range[$key] = $value;
+			}
+		}
+
+		$render->addVar('items', $range);
+		$render->load('catalog', 'index');
 	}
 	public static function action_product($id)
 	{
