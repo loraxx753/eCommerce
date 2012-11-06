@@ -25,9 +25,33 @@ class Catalog_Controller extends Controller
 
 		$render->load('catalog', 'index');
 	}
-	public static function action_price()
+	public static function action_price($limit_min, $limit_max = -1)
 	{
-			
+		$render = new Render();
+		$render->addVar('title', "NWA Furniture | Catalog");
+
+		$items = Model_Products::build();
+		$items = $items->execute();
+
+		$range = array();
+
+		foreach ($items as $key => $value) 
+		{
+			if($value->Product_Price >= $limit_min && $value->Product_Price <= $limit_max && $limit_max != -1)
+			{
+				$range[$key] = $value;
+			}
+
+			if($limit_max == -1 && $value->Product_Price >= $limit_min)
+			{
+				$range[$key] = $value;
+			}
+		}
+
+
+		$render->addVar('items', $range);
+
+		$render->load('catalog', 'index');	
 	}
 	public static function action_material()
 	{

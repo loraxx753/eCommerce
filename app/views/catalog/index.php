@@ -11,11 +11,11 @@
 						<span>Narrow Results</span>
 						<p>Price</p>
 							<ul>
-								<li><a href="">$0-$100</a></li>
-								<li><a href="#">$100-$200</a></li>
-								<li><a href="#">$200-$300</a></li>
-								<li><a href="#">$300-$400</a></li>
-								<li><a href="#">$400+</a></li>
+								<?= '<li>'.Load::link(array('catalog/price/0/100' => "$0-$100")).'</li>';?>
+								<?= '<li>'.Load::link(array('catalog/price/100/200' => "$100-$200")).'</li>';?>
+								<?= '<li>'.Load::link(array('catalog/price/200/300' => "$200-$300")).'</li>';?>
+								<?= '<li>'.Load::link(array('catalog/price/300/400' => "$300-$400")).'</li>';?>
+								<?= '<li>'.Load::link(array('catalog/price/400' => "$400+")).'</li>';?>
 							</ul>
 						<p>Material</p>
 							<ul>
