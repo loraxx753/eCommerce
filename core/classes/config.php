@@ -2,7 +2,17 @@
 
 namespace Baughss\Core;
 
+/**
+ * Handles getting items out of the config file.
+ */
 class Config {
+	/**
+	 * Finds an item in the config array.
+	 *
+	 * If the config file doesn't exist, display error.
+	 * @param  string $item Item to find
+	 * @return string       Item's value
+	 */
     public static function find($item)
 	{
 		if(file_exists(BASE.'app/config/custom/config.php'))

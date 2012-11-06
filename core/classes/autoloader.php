@@ -1,20 +1,38 @@
 <?php
 
 namespace Baughss\Core;
-
+/**
+ * Autoloader class to load all classes nessicary for the framework
+ */
 class Autoloader {
 
+	/**
+	 * An array of classes to add
+	 * @var array
+	 */
 	protected static $classes = array();
 
+	/**
+	 * An array of core namespaces
+	 * @var array
+	 */
 	protected static $core_namespaces = array(
 		'Baughss\Core',
 	);
 
+	/**
+	 * Redeclares the autoloder class
+	 * @return void
+	 */
 	public static function start()
 	{
 		spl_autoload_register('Autoloader::init', true, true);
 	}
 
+	/**
+	 * Adds classes to the autoloader
+	 * @param array $classes
+	 */
 	public static function add_classes($classes)
 	{
 		foreach($classes as $class => $path)
@@ -23,6 +41,12 @@ class Autoloader {
 		}
 	}
 
+	/**
+	 * Aliases the classes to the proper namespace
+	 * @param  string $class     
+	 * @param  string $namespace
+	 * @return void
+	 */
 	public static function alias_to_namespace($class, $namespace = '')
 	{
 		empty($namespace) or $namespace = rtrim($namespace, '\\').'\\';
@@ -31,7 +55,10 @@ class Autoloader {
 		class_alias($root_class, $class);
 	}
 
-
+	/**
+	 * Aliases core classes to the global namespace
+	 * @return void
+	 */
 	public static function alias_core_classes()
 	{
 		foreach (self::$classes as $class) {
@@ -42,6 +69,10 @@ class Autoloader {
 		}
 	}
 
+	/**
+	 * The actual autoloader
+	 * @param  string $class
+	 */
 	public static function init($class)
 	{
 		$class = explode('\\', $class);

@@ -2,10 +2,20 @@
 
 namespace Baughss\Core;
 
+/**
+ * Class to get items from the database.
+ */
 class Database {
-	
+	/**
+	 * The current pdo connection
+	 * @var class PDO
+	 */
 	public $pdo;
 
+	/**
+	 * Opens a connection to the database
+	 * @return class PDO class
+	 */
 	private static function dbConnect()
 	{
 		$database = Config::find('database');
@@ -13,7 +23,12 @@ class Database {
 		$password = Config::find('dbPassword');
 		return new \PDO("mysql:host=localhost;dbname=$database", "$user", "$password");
 	}
-	public static function query($query, $return = false)
+	/**
+	 * Executes a query on the database
+	 * @param  string  $query  Query to run
+	 * @return class          PDO handler
+	 */
+	public static function query($query)
 	{
 		$pdo = self::dbConnect();
 		$sth = $pdo->prepare($query);

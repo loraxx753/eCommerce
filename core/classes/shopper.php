@@ -1,9 +1,14 @@
 <?php
 
 namespace Baughss\Core;
-
+/**
+ * Custom shopping cart class
+ */
 class Shopper {
-
+	/**
+	 * Variable to hold the cart session
+	 * @var array
+	 */
 	var $cart;
 
 	public function __construct($cart)

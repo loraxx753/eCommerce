@@ -1,8 +1,15 @@
 <?php
 
 namespace Baughss\Core;
-
+/**
+ * Class to encrypt/decrypt values
+ */
 class Encryption {
+	/**
+	 * Encrypts a value
+	 * @param  string $string Value to be encrypted.
+	 * @return string         The encrypted value
+	 */
 	public function encrypt($string)
 	{
 		$key = Config::find('salt');
@@ -10,6 +17,11 @@ class Encryption {
 		return $encrypted;
 
 	}
+	/**
+	 * Decrypts an encrypted string
+	 * @param  string $string The encrypted string.
+	 * @return string         The decrypted string.
+	 */
 	public function decrypt($string)
 	{
 		$key = Config::find('salt');

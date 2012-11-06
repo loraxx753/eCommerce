@@ -1,12 +1,22 @@
 <?php
 
 namespace Baughss\Core;
-
+/**
+ * Model base class to handle ORM-y model functions
+ */
 class Model {
+	/**
+	 * Starts a select builder
+	 * @return class Instance of select builder
+	 */
 	static function build() {
 		$table = self::get_table();
 		return Query::select($table);
 	}
+	/**
+	 * Saves the row to the database, if the ID exists already, it's an update. If not, it's an insert.
+	 * @return bool True on success
+	 */
 	public function save()
 	{
 		$table = self::get_table();
@@ -46,6 +56,10 @@ class Model {
 			return true;
 		}
 	}
+	/**
+	 * Deletes a row from the table.
+	 * @return bool True on success, false on failure.
+	 */
 	public function delete()
 	{
 		$table = self::get_table();
@@ -65,12 +79,20 @@ class Model {
 			return false;
 		}
 	}
+	/**
+	 * Gets all column names for the model
+	 * @return array List of column names
+	 */
 	public static function get_columns()
 	{
 		$class = get_called_class();
 		$variables = get_class_vars($class);
 		return array_keys($variables);
 	}
+	/**
+	 * Gets table name based on model name
+	 * @return string Name of table.
+	 */
 	public static function get_table()
 	{
 		$class = get_called_class();

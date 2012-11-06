@@ -2,7 +2,19 @@
 
 namespace Baughss\Core;
 
+/**
+ * Auth class for building users
+ */
 class Auth {
+	/**
+	 * Register a new user
+	 * @param  string  $username  
+	 * @param  string  $password1 
+	 * @param  string  $password2 
+	 * @param  string  $email     
+	 * @param  integer $access    
+	 * @return array              Array containing results
+	 */
 	static public function register($username, $password1, $password2, $email, $access = 1) {
 		$error = array();
 		if(strlen($username) < 5) 
@@ -34,7 +46,12 @@ class Auth {
 			return array('error' => $error);
 		}
 	}
-
+	/**
+	 * Logs the user in and sets a session for the username
+	 * @param  string $username 
+	 * @param  string $password 
+	 * @return mixed           true or an error array
+	 */
 	static public function login($username, $password)
 	{
         $handler = Database::query('SELECT * FROM users WHERE user="'.$username.'"');
@@ -53,12 +70,18 @@ class Auth {
         }
 
 	}
+	/**
+	 * Logs the user out and destroys the session
+	 * @return bool True on logout
+	 */
 	static public function logout()
 	{
 		Session::destroy('username');
 		return true;
 	}
 	/**
+	 * Checks the access level of the current user
+	 * 
 	 * Access levels are ints as follows
 	 *
 	 * banned = 0
