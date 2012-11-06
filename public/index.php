@@ -6,9 +6,12 @@ define("BASE", substr(dirname(__FILE__), 0, -6)); //removes the string "public"
 define("APPBASE", BASE."app".DIRECTORY_SEPARATOR ); //removes the string "public" 
 define("COREBASE", BASE."core".DIRECTORY_SEPARATOR ); //removes the string "public" 
 
+// Turn on error reporting and display errors....just in case
+// TODO: Move this to the config file so it can be changed on production.
 ini_set('error_reporting', E_ALL);
 ini_set('display_errors', 1);
 
+//Include the bootstrap to start everything up!
 include APPBASE."bootstrap.php";
 
 //Defines the base used for assets.

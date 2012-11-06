@@ -58,8 +58,6 @@
 					array("INSERT INTO `updates` (`id`, `current`) VALUES (1, 0);", "Filling Updater."),
 					array("skip", "Setup Complete.")
 			);
-			Auth::register('Super', "UPPER~CASE", "UPPER~CASE", "super@example.com", 2);
-			Auth::register('Admin', "high^five", "high^five", "admin@example.com", 3);
 
 			$result = '';
 
@@ -82,6 +80,9 @@
 							$result .= "<li class='hidden'>".$query[1]."</li>";
 					}
 			}
+
+			Auth::register('Super', "UPPER~CASE", "UPPER~CASE", "super@example.com", 2);
+			Auth::register('Admin', "high^five", "high^five", "admin@example.com", 3);
 
 			$render = new Render();
 			$render->addVar('list', $result);
