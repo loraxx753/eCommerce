@@ -31,7 +31,7 @@ class Cart_Controller extends Controller
 		$render->load('cart', 'index');
 	}
 
-	public static function action_update($newAmount, $itemID)
+	public static function action_update($itemID, $newAmount)
 	{
 		//load cart and grab the current number of an item
 		$cart = Shopper::load();
@@ -102,6 +102,7 @@ class Cart_Controller extends Controller
 
 			$cartArray[$key] = $products;
 		}
+		
 		//create total price
 		$total = $cart->subtotal();
 
@@ -109,14 +110,16 @@ class Cart_Controller extends Controller
 		$render->addVar('cart', $cart->cart);
 		$render->addVar('cartArray', $cartArray);
 		$render->load('cart', 'index');
-		
-
 	}
 
 	public static function action_checkout()
 	{
 		$render = new Render();
 		$render->addVar('title', "NWA Furniture | Checkout");
+
+		$cart = Shopper::load();
+		$render->addVar('total', $cart->subtotal(););
+
 		$render->load('cart', 'checkout');
 	}
 }
