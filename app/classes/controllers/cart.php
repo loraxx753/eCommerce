@@ -66,10 +66,11 @@ class Cart_Controller extends Controller
 
 		foreach($cart -> cart as $key => $value)
 		{
-			$query = new Query("products");
-			$query -> where("ProductID", "=", (string)$key);
-			$cartArray[$key] = $query -> execute($query);
-			$cartArray[$key][0]->Quantity = $cart->cart[$key];
+			$products = \Model_Products::build();
+			$products = $products -> or_where("ProductID", $key);
+			$products = $products -> execute();
+
+			$cartArray[$key] = $products;
 		}
 
 		//create total price
@@ -95,11 +96,12 @@ class Cart_Controller extends Controller
 		//grabbing product information from the database
 		foreach($cart -> cart as $key => $value)
 		{
-			$query = new Query("products");
-			$query -> where("ProductID", "=", (string)$key);
-			$cartArray[$key] = $query -> execute($query);
-		}
+			$products = \Model_Products::build();
+			$products = $products -> or_where("ProductID", $key);
+			$products = $products -> execute();
 
+			$cartArray[$key] = $products;
+		}
 		//create total price
 		$total = $cart->subtotal();
 
