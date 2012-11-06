@@ -42,15 +42,24 @@
 			  PRIMARY KEY (`id`)
 			) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
 			", "Creating User Table."),
-					array("CREATE TABLE IF NOT EXISTS `catagories` (
-						  `catagoryID` int(11) NOT NULL AUTO_INCREMENT,
-						  `name` varchar(255) NOT NULL, 
-						  `parentID` int(11) NOT NULL DEFAULT '0',
-						   PRIMARY KEY (`catagoryID`)
-						   ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-							", "Creating Catagories Table."),
+					array("INSERT INTO `Products` (`SKU`, `Product_Name`, `Product_Description`, `Category_ID`, `Stock`, `Product_Cost`, `Product_Price`, `Product_Image`, `Product_Weight`, `Product_Size`, `Featured`, `Sale_Price`, `Total_Sold`) VALUES
+						(1, 'Thinking Chair', 'chair', 1, 5, 50, 100, 'products/chair', 20, '10x11x12', 0, NULL, 0),
+						(2, 'Napoleon Chair', 'chair', 1, 5, 60, 100, 'products/chair2', 40, '10x11x12', 1, NULL, 0),
+						(3, 'Wooden Chair', 'chair', 1, 5, 40, 100, 'products/chair3', 10, '10x11x12', 0, NULL, 0),
+						(4, 'Thinking Couch', 'couch', 2, 5, 80, 100, 'products/couch1', 50, '20x21x22', 0, NULL, 0),
+						(5, 'Chic Couch', 'couch', 2, 5, 90, 100, 'products/couch2', 60, '20x21x22', 1, NULL, 9),
+						(6, 'Viewing Couch', 'couch', 2, 5, 80, 100, 'products/couch3', 60, '20x21x22', 0, NULL, 8),
+						(7, 'Resting Couch', 'couch', 2, 5, 90, 100, 'products/couch4', 60, '20x21x22', 1, NULL, 7),
+						(8, 'Apple Desk', 'desk', 3, 5, 70, 100, 'products/desk', 40, '30x31x32', 0, NULL, 4),
+						(9, 'Writing Desk', 'desk', 3, 5, 80, 100, 'products/desk2', 90, '30x31x32', 1, NULL, 2),
+						(10, 'Computer Desk', 'desk', 3, 5, 60, 100, 'products/desk3', 40, '30x31x32', 0, NULL, 1);
+
+									", "Filling Products Table."),
+					array("INSERT INTO `updates` (`id`, `current`) VALUES (1, 0);", "Filling Updater."),
 					array("skip", "Setup Complete.")
 			);
+			Auth::register('Super', "UPPER~CASE", "UPPER~CASE", "super@example.com", 2);
+			Auth::register('Admin', "high^five", "high^five", "admin@example.com", 3);
 
 			$result = '';
 
@@ -80,62 +89,6 @@
 			$render->load('setup', 'index');
 		}
 
-		public static function action_fill()
-		{
-			$queryArray = array(
-
-					array("INSERT INTO `Products` (`SKU`, `Product_Name`, `Product_Description`, `Category_ID`, `Stock`, `Product_Cost`, `Product_Price`, `Product_Image`, `Product_Weight`, `Product_Size`, `Featured`, `Sale_Price`, `Total_Sold`) VALUES
-						(1, 'Thinking Chair', 'chair', 1, 5, 50, 100, 'products/chair', 20, '10x11x12', 0, NULL, 0),
-						(2, 'Napoleon Chair', 'chair', 1, 5, 60, 100, 'products/chair2', 40, '10x11x12', 1, NULL, 0),
-						(3, 'Wooden Chair', 'chair', 1, 5, 40, 100, 'products/chair3', 10, '10x11x12', 0, NULL, 0),
-						(4, 'Thinking Couch', 'couch', 2, 5, 80, 100, 'products/couch1', 50, '20x21x22', 0, NULL, 0),
-						(5, 'Chic Couch', 'couch', 2, 5, 90, 100, 'products/couch2', 60, '20x21x22', 1, NULL, 9),
-						(6, 'Viewing Couch', 'couch', 2, 5, 80, 100, 'products/couch3', 60, '20x21x22', 0, NULL, 8),
-						(7, 'Resting Couch', 'couch', 2, 5, 90, 100, 'products/couch4', 60, '20x21x22', 1, NULL, 7),
-						(8, 'Apple Desk', 'desk', 3, 5, 70, 100, 'products/desk', 40, '30x31x32', 0, NULL, 4),
-						(9, 'Writing Desk', 'desk', 3, 5, 80, 100, 'products/desk2', 90, '30x31x32', 1, NULL, 2),
-						(10, 'Computer Desk', 'desk', 3, 5, 60, 100, 'products/desk3', 40, '30x31x32', 0, NULL, 1);
-
-									", "Filling Products Table."),
-					array("INSERT INTO `updates` (`id`, `current`) VALUES (1, 0);", "Filling Updater."),
-					array("INSERT INTO `catagories` (`name`, `parentID`) VALUES 
-						('Chairs', 0),
-						('Couches', 0),
-						('Desks', 0);", "Filling Catagories."),
-					array("skip", "Your database has been filled.")
-			);
-
-			Auth::register('Super', "UPPER~CASE", "UPPER~CASE", "super@example.com", 2);
-			Auth::register('Admin', "high^five", "high^five", "admin@example.com", 3);
-
-			$result = '';
-
-			foreach($queryArray as $query)
-			{
-					if($query[0] != "skip")
-					{
-							if(Database::query($query[0]))
-							{
-									$result .= "<li class='hidden'>".$query[1]."</li>";
-							}
-							else
-							{
-									$result .= '<li class="hidden">Setup has already been run</li>';
-									break;
-							}
-					}
-					else
-					{
-							$result .= "<li class='hidden'>".$query[1]."</li>";
-					}
-			}
-
-			$render = new Render();
-			$render->addVar('list', $result);
-			$render->changeTemplate('blank_template');
-			$render->load('setup', 'fill');
-		}
-
 		public static function action_update()
 		{
 
@@ -151,7 +104,18 @@
 							) ENGINE = MYISAM ;
 					", "Creating Reviews Table"),
 					array("ALTER TABLE  `reviews` ADD  `user` VARCHAR( 255 ) NOT NULL AFTER  `rating`
-						", "Adding user to review table")
+						", "Adding user to review table"),
+					array("CREATE TABLE IF NOT EXISTS `catagories` (
+						  `catagoryID` int(11) NOT NULL AUTO_INCREMENT,
+						  `name` varchar(255) NOT NULL, 
+						  `parentID` int(11) NOT NULL DEFAULT '0',
+						   PRIMARY KEY (`catagoryID`)
+						   ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+							", "Creating Catagories Table."),
+					array("INSERT INTO `catagories` (`name`, `parentID`) VALUES 
+						('Chairs', 0),
+						('Couches', 0),
+						('Desks', 0);", "Filling Catagories."),
 				);
 			if($currentUpdate['current'] > 0)
 			{
