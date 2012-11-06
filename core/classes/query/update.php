@@ -41,7 +41,6 @@ class Query_Update extends Query {
 	 */
 	public function compile()
 	{
-		$selector = implode(", ", $this->selector);
 		$query = "UPDATE $this->table SET ";
 		$query .= implode(", ", $this->set);
 
