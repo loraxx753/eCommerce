@@ -42,6 +42,13 @@
 			  PRIMARY KEY (`id`)
 			) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
 			", "Creating User Table."),
+					array("CREATE TABLE IF NOT EXISTS `catagories` (
+						  `catagoryID` int(11) NOT NULL AUTO_INCREMENT,
+						  `name` varchar(255) NOT NULL, 
+						  `parentID` int(11) NOT NULL DEFAULT '0',
+						   PRIMARY KEY (`catagoryID`)
+						   ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+							", "Creating Catagories Table."),
 					array("skip", "Setup Complete.")
 			);
 
@@ -91,6 +98,10 @@
 
 									", "Filling Products Table."),
 					array("INSERT INTO `updates` (`id`, `current`) VALUES (1, 0);", "Filling Updater."),
+					array("INSERT INTO `catagories` (`name`, `parentID`) VALUES 
+						('Chairs', 0),
+						('Couches', 0),
+						('Desks', 0);", "Filling Catagories."),
 					array("skip", "Your database has been filled.")
 			);
 
