@@ -55,34 +55,3 @@
 				</div>
 			</div>
 		</div>
-		<div class="row">
-			<div class="span12">
-				<h3>Other Recommended Items</h3>
-				<div class="span12">
-						<div class="span2 featured_catalog_item">
-							<ul class="thumbnail">
-								<li><?=Load::image("/products/chair2_thumbnail.jpg", "Napoleon Chair")?></li>
-								<li><a href="product">Napoleon Chair</a></li>
-								<li>$100.00</li>
-							</ul>
-						</div>
-						<div class="span2 featured_catalog_item">
-							<ul class="thumbnail">
-								<li><?=Load::image("/products/desk2_thumbnail.jpg", "Writing Desk")?></li>
-								<li><a href="product">Writing Desk</a></li>
-								<li>$100.00</li>
-							</ul>
-						</div>
-						<div class="span2 featured_catalog_item">
-							<ul class="thumbnail">
-								<li><?=Load::image("/products/chair3_thumbnail.jpg", "Wooden Chair")?></li>
-								<li><a href="product">Wooden Chair</a></li>
-								<li>$100.00</li>
-							</ul>
-						</div>
-						<div class="span3 offset8">
-							<a href="#" class="btn btn-small recommended_button">More Recommended Items</a>
-						</div>	
-					</div>
-			</div>
-		</div>
