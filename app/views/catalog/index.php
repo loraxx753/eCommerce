@@ -17,13 +17,6 @@
 								<?= '<li>'.Load::link(array('catalog/price/300/400' => "$300-$400")).'</li>';?>
 								<?= '<li>'.Load::link(array('catalog/price/400' => "$400+")).'</li>';?>
 							</ul>
-						<p>Material</p>
-							<ul>
-								<li><a href="#">Cotton</a></li>
-								<li><a href="#">Leather</a></li>
-								<li><a href="#">Wool</a></li>
-								<li><a href="#">Polyester</a></li>
-							</ul>
 						<p>Weight</p>
 							<ul>
 								<?= '<li>'.Load::link(array('catalog/weight/0/50' => "0<small>lbs</small>-50<small>lbs</small>")).'</li>';?>
