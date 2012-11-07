@@ -50,7 +50,7 @@ class Query {
 	 * @return class             Current instance of class.
 	 */
 	public function where($column, $seperator, $value = null) {
-		if(!preg_match("/\=/", $seperator)) {
+		if(!$value) {
 			$value = $seperator;
 			$seperator = "=";
 		}
