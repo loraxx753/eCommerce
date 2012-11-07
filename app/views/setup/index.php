@@ -108,7 +108,7 @@
                                 {
 
                                         $('#loader').fadeOut('fast', function() {
-                                                $(this).after('<p class="link hidden"><a href="'+document.URL+'/fill">Fill your Database with information</a></p>');
+                                                $(this).after('<p class="link hidden"><a href="'+document.URL+'/update">Run Latest Updates</a></p>');
                                                 $(".link").fadeIn('slow');
                                         });
                                 }
@@ -124,7 +124,6 @@
         <body>
                 <ul id='results'>
                         <li class='hidden'>Baughss Database Setup</li>
-                        <li class='hidden'>Preparing to set up ...</li>
                         <?php echo $list; ?>
                 </ul>
 
