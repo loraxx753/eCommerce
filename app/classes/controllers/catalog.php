@@ -138,9 +138,9 @@ class Catalog_Controller extends Controller
 	 			}
 	 		}
 		}
-
+		$render->addVar('term', implode(' ', $search));
 		$render->addVar('items', $products);
-		$render->load('catalog', 'index');
+		$render->load('catalog', 'search');
 	}
 	public static function action_product($id)
 	{
