@@ -18,9 +18,9 @@
 				<a id="login" class="btn btn-small">Log-In</a>
 			</div>
 			<div id="search" class="span7">
-				<form class="form-search pull-right" action="#">
+				<form class="form-search pull-right" action="<?=WEB_BASE?>catalog/search/">
 					<div class="input-append">
-						<input class="span6 search_field" type="text" /><button class="btn" type="button">Search</button>
+						<input class="span6 search_field" type="text" /><a href="<?=WEB_BASE?>catalog/search/" class="btn" type="submit">Search</a>
 					</div>
 				</form>
 			</div>

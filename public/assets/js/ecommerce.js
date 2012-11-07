@@ -16,5 +16,27 @@ $(document).ready(function() {
 	});
 	function signin() {
 		console.log('save');
-	};	
+	};
+
+	$('form.form-search a').click(function(event) {
+		event.preventDefault();
+		var location = $(this).attr('href');
+		// console.log(location);
+		var query = $('form.form-search input').val();
+		// console.log(query);
+		var search = location + query;
+		// console.log(search);
+		window.location = search;
+	});	
+	$('form.form-search').on('submit', function(event) {
+		event.preventDefault();
+		// console.log('prevented');
+		var location = $('form.form-search a').attr('href');
+		// console.log(location);
+		var query = $('input').val();
+		// console.log(query);
+		var search = location + query;
+		// console.log(search);
+		window.location = search;
+	});
 });
