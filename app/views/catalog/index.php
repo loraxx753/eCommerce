@@ -62,7 +62,7 @@
 								echo '<ul class="thumbnail">';
 								echo '<li>'.Load::image($value->Product_Image."_thumbnail.jpg", "Chairs").'</li>';	
 								echo '<li>'.Load::link(array('product/'.$value->ProductID => $value->Product_Name)).'</li>';
-								echo '<li>'.number_format($value->Product_Price,2).'</li>';
+								echo '<li>$'.number_format($value->Product_Price,2).'</li>';
 								echo '</ul>';
 								echo '</div>';
 							}
