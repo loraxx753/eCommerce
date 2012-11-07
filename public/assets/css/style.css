@@ -30,10 +30,13 @@ header {
 #admin_buttons {
 	height: 30px;
 }
+#admin_buttons a:link, a:hover, a:active, a:visited {
+	color: #000000;
+}
 #admin_buttons form {
 	margin:0;
 }
-#admin_buttons button {
+#admin_buttons button, #admin_buttons a {
 	float:right;
 	margin-top: 7px;
 	margin-left:5px;
@@ -65,6 +68,9 @@ header {
 #nav ul {
 	list-style: none;
 }
+#nav ul li {
+	margin: 0;
+}
 #nav a:link, a:hover, a:active, a:visited {
 	color: #000000;
 }
@@ -72,6 +78,13 @@ header {
 /* Footer Styles */
 #footer {
 	margin-top: 40px;
+}
+#footer_links {
+	text-align: center;
+	font-size: 10px;
+}
+#footer_links a:link, a:hover, a:active, a:visited {
+	color: #000000;
 }
 #disclaimer {
 	text-align: center;
@@ -97,6 +110,13 @@ header {
 }
 .thumbnail {
 	border-radius: 0px;
+}
+.thumbnail a {
+	font-size: 12px;
+	font-weight: bold;
+}
+.main_content .featured .catalog_item .thumbnail a:hover, a:link, a:visited, a:active {
+	color: #000000 !important;
 }
 .featured_button {
 	margin-top: 15px;
@@ -130,12 +150,15 @@ header {
 	list-style: none;
 	padding-bottom: 10px;
 }
-#sidebar h4 {
+#sidebar span {
 	text-decoration: underline;
+	font-weight: bold;
+	font-size: 16px;
 }
-#sidebar h5 {
+#sidebar p {
 	padding-left: 10px;
 	margin-bottom: 0px;
+	font-weight: bold;
 }
 ul.thumbnail li {
 	list-style: none;
@@ -144,17 +167,29 @@ ul.thumbnail li {
 ul.thumbnail li img {
 	margin: auto;
 	height: 87px;
+	width: 130px;
 }
 ul.thumbnail {
 	margin: 0 0 20px 0;
+}
+.catalog_item ul.thumbnail li a:link {
+	color: #000000;
+	font-size: 12px;
 }
 .catalog_item {
 	margin-left: 30px;
 	margin-right: 60px;
 }
+.featured .catalog_item:first-child {
+	margin-left: 50px;
+	margin-right: 60px;
+}
 .featured_catalog_item {
 	margin-left: 90px;
 	margin-right: 60px;
+}
+.featured_catalog_item a:link, a:hover, a:visited, a:active {
+	color: #000000;
 }
 
 /* Cart Page Styles */
@@ -244,6 +279,7 @@ ul.thumbnail {
 .product h3 {
 	margin: 0;
 	line-height: 25px;
+	font-size: 20px;
 }
 .rating div {
 	float:right;
@@ -260,13 +296,19 @@ ul.thumbnail {
 .product_options h3 {
 	float:right;
 }
-.add_to_cart button {
+.add_to_cart a {
 	float:right;
 	margin-top: 10px;
 	background: none;
 	border-radius: 0;
+	border: thin solid #C5C5C5;
+	width: 90px;
+	text-align: center;
+	color: #000000 !important;
+	font-weight: bold;
+	padding: 5px 10px;
 }
-.add_to_cart button:hover {
+.add_to_cart a:hover {
 	background: none;
 }
 #product_sidebar {
@@ -277,6 +319,10 @@ ul.thumbnail {
 	background: none;
 	margin-top: 15px;
 	width: 180px;
+	border-radius: 0;
+}
+.recommended_button:link {
+	color: #000000;
 }
 .recommended_button:hover {
 	background: none;
@@ -427,9 +473,10 @@ form#card_info div select.expir_month, select.expir_year {
 #client_sidebar ul li a:visited, a:link, a:active, a:hover {
 	color: #08C;
 }
-#client_sidebar h5 {
+#client_sidebar span {
 	padding-left: 10px;
 	margin-bottom: 0px;
+	font-weight: bold;
 }
 
 /* Admin Page Styles */
@@ -453,11 +500,22 @@ form#card_info div select.expir_month, select.expir_year {
 #admin_sidebar ul li a:visited, a:link, a:active, a:hover {
 	color: #08C;
 }
-#admin_sidebar h5 {
+#admin_sidebar span {
 	padding-left: 10px;
 	margin-bottom: 0px;
+	font-weight: bold;
 }
 a:hover {
 	color: #000000;
 	text-decoration: none;
+}
+
+#loginBox {
+	display: none;
+}
+#policies span {
+	font-weight: bold;
+	font-size: 18px;
+	margin: 20px 5px 0 0;
+	display: inline-block;
 }

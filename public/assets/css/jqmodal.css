@@ -1,0 +1,34 @@
+#popupback { 
+	background:#000000; 
+	opacity:.5; 
+	z-index:1000; 
+	position:fixed; 
+	left:0; 
+	top:0; 
+	margin-top:-21px; 
+}
+#popup 
+{ 
+	z-index:1050; 
+	position:absolute; 
+	padding: 10px; 
+}
+/**
+ * BACKGROUND STYLE CLASSES
+ * 
+ * To make a new background style, just add a class here and call that class with 
+ * the backgroundStyle parameter
+ */
+#popup.dark
+{
+	background:#262626; 
+	-moz-border-radius: 5px; 
+	-webkit-border-radius: 5px; 
+	border: 3px solid #888; 
+	color: #FFFFFF;
+}
+#popup.default 
+{
+	background:#ffffff; 
+	color: #000000;
+}
