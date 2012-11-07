@@ -7,6 +7,7 @@
 			<div class="span8">
 				<div class="row">
 					<div class="span12 featured">
+						<span class="span12">Featured Items</span>
 						<?php
 							for($x=0; $x<4; $x++)
 							{
@@ -18,12 +19,10 @@
 								echo '</ul>';
 								echo '</div>';
 							}
-						?>
-						<div class="span2 offset9">
-							<button class="btn btn-small featured_button">More Featured Items</button>
-						</div>						
+						?>					
 					</div>
 					<div class="span12 featured">
+						<span class="span12">Top Sellers</span>
 						<?php
 							for($x=0; $x<4; $x++)
 							{
@@ -36,11 +35,9 @@
 								echo '</div>';
 							} 
 						?>
-						<div class="span2 offset9">
-							<button class="btn btn-small featured_button">More Top Sellers</button>
-						</div>	
 					</div>
 					<div class="span12 featured">
+						<span class="span12">Recently Added Items</span>
 						<?php
 							for($x=0; $x<4; $x++)
 							{
@@ -52,10 +49,7 @@
 								echo '</ul>';
 								echo '</div>';
 							} 
-						?>
-						<div class="span2 offset9">
-							<button class="btn btn-small featured_button">More Newly Added</button>
-						</div>	
+						?>	
 					</div>
 				</div>
 			</div>
