@@ -3,33 +3,9 @@
 				<div class="row">
 					<div id="client_sidebar" class="span4">
 						<span>Account Home</span>
-							<ul>
-								<li><a href="#">Dashboard</a></li>
-								<li><a href="#">Messages</a></li>
-							</ul>
-						<span>Orders</span>
-							<ul>
-								<li><a href="#">Order History</a></li>
-								<li><a href="#">Returns</a></li>
-							</ul>
-						<span>Options</span>
-							<ul>
-								<li><a href="#">Account Settings</a></li>
-								<li><a href="#">Address Book</a></li>
-								<li><a href="#">Payment Types</a></li>
-								<li><a href="#">Subscriptions</a></li>
-								<li><a href="#">Academic Info</a></li>
-							</ul>
-						<span>Shopping</span>
-							<ul>
-								<li><a href="#">Shopping Cart</a></li>
-								<li><a href="#">Wish Lists</a></li>
-								<li><a href="#">Products Purchased</a></li>
-								<li><a href="#">Auto Notifications</a></li>
-								<li><a href="#">Price Alerts</a></li>
-								<li><a href="#">Rebate Center</a></li>
-								<li><a href="#">Gift Cards</a></li>
-							</ul>
+						<ul>
+							<li><a href="#">Dashboard</a></li>
+						</ul>
 					</div>
 				</div>
 			</div>
@@ -51,10 +27,7 @@
 						<div class="span8">
 							<h5>Recent Order Status</h5>
 							<hr />
-							<p class="span2">Invoice #:</p>
-							<p class="span4"><a href="#">12345678</a></p>
-							<p class="span2">Status:</p>
-							<p class="span4">Shipped</p>
+							<p class="span3">None Currently Available</p>
 						</div>	
 						<div class="span8">
 							<h5>Recent RMA Status</h5>
