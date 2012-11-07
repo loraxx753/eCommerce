@@ -35,19 +35,25 @@
 					<div class="span12 featured">
 						<div class="tabbable">
 							<ul class="nav nav-tabs">
-								<li class="active"><a href="#tab1" data-toggle="tab">Product Specifications</a></li>
-								<li><a href="#tab2" data-toggle="tab">Product Reviews</a></li>
-								<li><a href="#tab3" data-toggle="tab">Policies</a></li>
+								<li class="active"><a href="#tab1" data-toggle="tab">Product Reviews</a></li>
+								<li><a href="#tab2" data-toggle="tab">Policies</a></li>
 							</ul>
 							<div class="tab-content">
 								<div class="tab-pane active" id="tab1">
 									<p>Lorem ipsum dolor sit amet, maiores ornare ac fermentum, imperdiet ut vivamus a, nam lectus at nunc. Quam euismod sem, semper ut potenti pellentesque quisque. In eget sapien sed, sit duis vestibulum ultricies, placerat morbi amet vel, nullam in in lorem vel. In molestie elit dui dictum, praesent nascetur pulvinar sed, in dolor pede in aliquam, risus nec error quis pharetra. Eros metus quam augue suspendisse, metus rutrum risus erat in.</p>
 								</div>
 								<div class="tab-pane" id="tab2">
-									<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
-								</div>
-								<div class="tab-pane" id="tab3">
-									<p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+									<span>Return Policy</span>
+									<p>We will accept merchandise returns of items at our stores within 90 days of customer receipt. Please understand, however, that bedding items may be returned or exchanged only if in their original packaging.</p>
+
+									<p>Depending on the nature of the return/exchange and the presence of an original receipt or packing slip, we will issue an appropriate credit or refund in one of the following ways:</p>
+
+									<ul>
+										<li>If accompanied by the Original Sales Receipt or Packing Slip, the item’s purchase price will be refunded in the Original Form of Tender.</li>
+										<li>If accompanied by an Original Gift Receipt, the item’s purchase price will be refunded via a Shop Card.</li>
+										<li>If an Original Sales or Gift Receipt is not present, the item’s current retail price will be refunded via a Shop Card, regardless of amount. Valid photo ID is required for store returns without an Original Sales or Gift Receipt.</li>
+										<li>For store returns of cash purchases accompanied by the Original Sales Receipt, a cash refund will be given up to $100. If the purchase exceeds $100, a check in the amount of the balance of the refund will be mailed to the customer.</li>
+									</ul>
 								</div>
 							</div>
 						</div>
