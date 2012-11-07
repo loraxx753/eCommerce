@@ -293,8 +293,13 @@ ul.thumbnail {
 	line-height: 25px;
 	font-size: 20px;
 }
-.rating div {
-	float:right;
+.rating ul li {
+	float:left;
+	list-style: none;
+	margin: 0 3px 0 0;
+}
+.rating ul {
+	margin: 0 0 0 50px;
 }
 .product_description {
 	margin-top: 10px;

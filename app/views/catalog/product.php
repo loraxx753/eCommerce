@@ -9,13 +9,13 @@
 				<small>SKU# <?=$product->SKU?></small>
 			</div>
 			<div class="span2 offset1 rating">
-				<div>
-					<i class="icon-star"></i>
-					<i class="icon-star"></i>
-					<i class="icon-star"></i>
-					<i class="icon-star-empty"></i>
-					<i class="icon-star-empty"></i>
-				</div>
+				<ul>
+					<li><i class="icon-star"></i></li>
+					<li><i class="icon-star"></i></li>
+					<li><i class="icon-star"></i></li>
+					<li><i class="icon-star-empty"></i></li>
+					<li><i class="icon-star-empty"></i></li>
+				</ul>
 			</div>
 			<div class="span6 product_description">
 				<p><?=$product->Product_Description?></p>
