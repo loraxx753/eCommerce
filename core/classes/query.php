@@ -72,7 +72,8 @@ class Query {
 	 * @return class             Current instance of class.
 	 */
 	public function or_where($column, $seperator, $value = null) {
-		if(!preg_match("/\=/", $seperator)) {
+		if(!preg_match("/\=/", $seperator)) 
+		{
 			$value = $seperator;
 			$seperator = "=";
 		}

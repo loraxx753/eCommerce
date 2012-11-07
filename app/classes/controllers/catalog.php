@@ -76,6 +76,33 @@ class Catalog_Controller extends Controller
 		$render->addVar('items', $range);
 		$render->load('catalog', 'index');
 	}
+	public static function action_search($search)
+	{
+		$render = new Render();
+		$render->addVar('title', "NWA Furniture | Catalog");
+
+		//initialize products array and items array
+		$items = Model_Products::build();
+
+		$products = array();
+
+		//split up a trimmed search query into individual words 
+		//go through each and compile a list of associated products
+		$search = explode(" ", trim($search));
+		foreach ($search as $key => $tag)
+	 	{
+	 		//grab products from product_name 
+	 		$items = $items->where("Product_Name", "LIKE" ,"Desk");
+	 		$items = $items->execute();
+	 		//grab products from product_description
+	 		//grab products from product_catagory
+
+	 		//check each section for existing items 
+		}
+
+		$render->addVar('items', $range);
+		$render->load('catalog', 'index');
+	}
 	public static function action_product($id)
 	{
 		$render = new Render();
@@ -90,10 +117,20 @@ class Catalog_Controller extends Controller
 	}
 	public static function action_cart($item, $quantity)
 	{
+		$render = new Render();
+		$render->addVar('title', "NWA Furniture | Product");
+
 		$cart = Shopper::load();
 		for($x=0; $x<$quantity; $x++)
 		{
 			$cart->add_item($item);
 		}
+
+		$products = \Model_Products::build();
+		$products->or_where("ProductID", $item);
+		$product = $products->execute();
+		$render->addVar('product', $product[0]);
+
+		$render->load('catalog', 'product');
 	}
 }
