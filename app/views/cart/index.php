@@ -36,6 +36,7 @@
 									<input type="text" class="span1" value="'.$quantity.'" />
 								</div>
 								<div class="span2 pull-right action_buttons">
+									<a href="'.WEB_BASE.'whatever/whoo">Like this</a>
 									<button class="btn btn-small span1">Update</button>
 									<button class="btn btn-small">Delete</button>
 								</div>
