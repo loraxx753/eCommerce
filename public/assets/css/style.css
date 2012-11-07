@@ -219,12 +219,12 @@ ul.thumbnail {
 .item_details {
 	padding-bottom: 10px;
 }
-.cart_item button {
+.cart_item a {
 	background: none;
 	border-radius: 0px;
 	margin-left: 5px;
 }
-.cart_item button:hover {
+.cart_item a:hover {
 	background: none;
 }
 .cart_item input {
@@ -248,8 +248,15 @@ ul.thumbnail {
 .additional_options {
 	margin-top: 30px;
 }
-.action_buttons button {
+.action_buttons a {
 	float:right;
+}
+#checkout a {
+	background: none;
+	border-radius: 0;
+}
+#checkout a:hover {
+	background: none;
 }
 .item_name {
 	font-weight: bold;
