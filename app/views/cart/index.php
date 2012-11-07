@@ -33,11 +33,10 @@
 							<div class="span3 pull-right additional_options">
 								<div class="span2 pull-right">
 									<p class="span1">Quantity:</p>
-									<input type="text" class="span1" value="'.$quantity.'" />
+									<input type="text" disabled="true" class="span1" value="'.$quantity.'" />
 								</div>
 								<div class="span2 pull-right action_buttons">
-									<button class="btn btn-small span1">Update</button>
-									<button class="btn btn-small">Delete</button>
+									<a href="'.WEB_BASE.'cart/delete/'.$product->ProductID.'" class="btn btn-small">Delete</a>
 								</div>
 							</div>
 						</div>';
@@ -55,8 +54,8 @@
 				<div id="sub-total" class="span3 pull-right">
 					<p class="sub_total"><?=number_format($total, 2)?></p>
 				</div>
-				<span class="span2 pull-right">
-					<button class="btn btn-small">Proceed to Checkout</button>
+				<span id="checkout" class="span2 pull-right">
+					<a href="<?=WEB_BASE?>/checkout"class="btn btn-small">Proceed to Checkout</a>
 				</span>
 			</div>
 		</div>
