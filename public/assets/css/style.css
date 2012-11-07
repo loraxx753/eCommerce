@@ -256,6 +256,9 @@ ul.thumbnail {
 .action_buttons a {
 	float:right;
 }
+.action_buttons a:first-child {
+	margin-bottom: 5px;
+}
 #checkout a {
 	background: none;
 	border-radius: 0;
