@@ -81,26 +81,65 @@ class Catalog_Controller extends Controller
 		$render = new Render();
 		$render->addVar('title', "NWA Furniture | Catalog");
 
-		//initialize products array and items array
-		$items = Model_Products::build();
-
+		//initialize variables
 		$products = array();
 
 		//split up a trimmed search query into individual words 
 		//go through each and compile a list of associated products
 		$search = explode(" ", trim($search));
+
 		foreach ($search as $key => $tag)
 	 	{
-	 		//grab products from product_name 
-	 		$items = $items->where("Product_Name", "LIKE" ,"Desk");
-	 		$items = $items->execute();
-	 		//grab products from product_description
-	 		//grab products from product_catagory
+	 		//build new products model and catagories model
+	 		$catagories = Model_Catagories::build();
 
-	 		//check each section for existing items 
+	 		//get collection of items that match the search results
+	 		$name = Model_Products::build();
+	 		$name = $name->where("LOWER(Product_Name)", "LIKE" ,"%$tag%");
+	 		$name = $name->execute();
+	 		$description = Model_Products::build();
+	 		$description = $description->where("LOWER(Product_Description)", "LIKE" ,"%$tag%");
+	 		$description = $description->execute();
+	 		
+	 		//get the catagory id based on the search term
+	 		$catagory_id = $catagories->where("LOWER(name)", "LIKE", "%$tag%");
+	 		$catagory_id = $catagory_id->execute();
+	 		
+	 		//get collection of items based on catagory id or set to false
+	 		if($catagory_id)
+	 		{
+	 			$catagory_id = $catagory_id[0]->catagoryID;
+	 			
+	 			$catagory = Model_Products::build();
+		 		$catagory = $catagory->where("Category_ID", $catagory_id);
+		 		$catagory = $catagory->execute();
+	 		}
+	 		else
+	 		{
+	 			$catagory = false;
+	 		}
+	 		
+	 		//add all collections of items to an array
+	 		$collections = array($name, $description, $catagory);
+
+	 		//go through each set of items and check if a collection exists
+	 		//go through each item in the collection and add it to the array if it does not already exist
+	 		foreach ($collections as $key => $collection) 
+	 		{
+	 			if($collection)
+	 			{
+	 				foreach ($collection as $key => $value) 
+	 				{
+			 			if(!array_key_exists($value->ProductID, $products))
+				 		{
+				 			$products[$value->ProductID] = $value;
+				 		}
+	 				}
+	 			}
+	 		}
 		}
 
-		$render->addVar('items', $range);
+		$render->addVar('items', $products);
 		$render->load('catalog', 'index');
 	}
 	public static function action_product($id)
