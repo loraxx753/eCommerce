@@ -13,7 +13,7 @@ $(document).ready(function() {
 		// Since it's a get request, use the $.get() function
 		$.get(location, function(data) {
 			// This is what you want to happen once the request has finished
-			alert('item added');
+			// alert('item added');
 		});
 	});
 });
