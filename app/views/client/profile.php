@@ -18,7 +18,7 @@
 							<h5>Account Info</h5>
 							<hr />
 							<p class="span2">Account ID:</p>
-							<p class="span4">j.ferraro@hotmail.com</p>
+							<p class="span4"><?=$email?></p>
 							<p class="span2">Account #:</p>
 							<p class="span4"><?=$name?></p>
 							<p class="span2">Address:</p>
