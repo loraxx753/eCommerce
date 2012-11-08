@@ -1,6 +1,6 @@
 <?php
 
-class Login_Controller {
+class User_Controller {
 
 	public function action_index() 
 	{
@@ -20,24 +20,10 @@ class Login_Controller {
 
 		if(isset($response['success']))
 		{
-			Auth::login($name, $pass_alpga);
+			Auth::login($name, $pass_alpha);
 		}
 		
-		if(isset($response['error']))
-		{
-			unset($_POST['pass_alpha']);
-			unset($_POST['pass_beta']);
-			return $response;
-		}
-		
-
-		//unset post variables for registration 
-		unset($_POST['name']);
-		unset($_POST['email']);
-		unset($_POST['pass_alpha']);
-		unset($_POST['pass_beta']);
-
-		return $response; 
+		echo json_encode($response); 
 	}
 
 	public function action_login()
@@ -45,12 +31,12 @@ class Login_Controller {
 		$name = $_POST['name'];
 		$pass = $_POST['pass'];
 		$response = Auth::login($name, $pass);
-		return $response; 
+		echo json_encode($response); 
 	}
 
 	public function action_logout()
 	{
-		$response = Auth::logout();
-		return $response;
+		Auth::logout();
+		header("Location: ".WEB_BASE);
 	}
 }

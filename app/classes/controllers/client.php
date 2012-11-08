@@ -18,26 +18,10 @@
 
 		}
 		public static function authenticate($level)
-		{
-			$user = Model_Users::build()->where('username', Session::get('username'))->execute();
-
-			if(isset($user->access))
-			{
-				if($user->access == $level)
-				{
-					return true;
-				}
-				else
-				{
-					header('HTTP/1.1 403 Forbidden');
-				}
-
-			}
-			else
+		{	
+			if(!Auth::check_access($level))
 			{
 				header('HTTP/1.1 403 Forbidden');
-				die();
 			}
-
 		}
 	}

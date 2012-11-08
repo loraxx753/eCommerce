@@ -61,7 +61,7 @@ class Auth {
         {
         	Session::set('username', $username);
 			Database::query('UPDATE users SET updated='.time().' WHERE user="'.$username.'"');	
-            return true;
+            return array('success' => true);
         }
         else
         {
@@ -91,11 +91,16 @@ class Auth {
 	 * @param  int/string an int or a string of the access level to check
 	 * @return bool       whether the user has that access level or not
 	 */
-	static public function check_access($level)
+	static public function check_access($level = null)
 	{
 
 		$user = \Model_Users::build()->where('user', Session::get('username'))->execute();
-		if(!is_int($level))
+		$user = $user[0];
+		if($level == null)
+		{
+			return $user->access;
+		}
+		if(is_string($level))
 		{
 			switch ($level) 
 			{
