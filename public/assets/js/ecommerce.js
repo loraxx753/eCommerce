@@ -94,4 +94,34 @@ $(document).ready(function() {
 		// console.log(search);
 		window.location = search;
 	});
+
+	$('.delete_product').click(function(e) {
+		e.preventDefault();
+		$this = $(this);
+		var href = $this.attr('href');
+		$.get(href, function() {
+			$this.closest('.cart_item').remove();
+			if($('.cart_item').length == 0)
+			{
+				$('.page_header').after("<p>You have no items in your cart</p>");
+			}
+			update_total();
+		});
+	});
+	$('.update_product').click(function(e) {
+		e.preventDefault();
+		var href = $(this).attr('href');
+		var quantity = $(this).closest('.additional_options').find('.quantity').val()
+		$.get(href+quantity, function() {
+			update_total();
+		});
+	});
+
+	function update_total()
+	{
+		$.get(WEB_BASE+"cart/total", function(total) {
+			$('#subtotal_price').html(parseInt(total).toFixed(2));
+		});
+	}
+
 });
