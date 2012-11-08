@@ -117,7 +117,7 @@
 						('Chairs', 0),
 						('Couches', 0),
 						('Desks', 0);", "Filling Catagories."),
-					array("UPDATE products SET Product_Description='Have a seat in the Napoleon Chair and drink, dine, or just relax. This chair is both stylish and comfortable, making it the perfect fit for any home.' WHERE Product_Name='products/chair'
+					array("UPDATE products SET Product_Description='Have a seat in the Napoleon Chair and drink, dine, or just relax. This chair is both stylish and comfortable, making it the perfect fit for any home.' WHERE Product_Image='products/chair'
 						", "Updating Chair"),
 					array("UPDATE products SET Product_Description='Classic bentwood seating with a retro modern shape curves with a generous seat.' WHERE Product_Image='products/chair2'
 						", "Updating Chair 2"),
