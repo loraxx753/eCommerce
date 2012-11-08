@@ -16,34 +16,34 @@
  				<?php if(!Session::get('username')) {?>
 				<a id="login" class="btn btn-small">Log-In/Register</a>
 				<?php } else { ?>
-				<a id="logout" href="<?=WEB_BASE?>/user/logout" class="btn btn-small">Logout</a>
-				<a id="account" href="<?=WEB_BASE?>client" class="btn btn-small">My Account</a>
+				<a id="logout" href="<?=LINK_BASE?>user/logout" class="btn btn-small">Logout</a>
+				<a id="account" href="<?=LINK_BASE?>client" class="btn btn-small">My Account</a>
 				<?php if(Auth::check_access('admin')) {?>
-					<a href="<?=WEB_BASE?>client/manage" class="btn btn-small">Manage</a>
+					<a href="<?=LINK_BASE?>client/manage" class="btn btn-small">Manage</a>
 				<?php } ?>
-				<a id="username" class="btn btn-small" href="<?=WEB_BASE?>client"><?=Session::get('username')?></a>
+				<a id="username" class="btn btn-small" href="<?=LINK_BASE?>client"><?=Session::get('username')?></a>
 				<?php } ?>				
 			</div>
 			<div id="search" class="span7">
-				<form class="form-search pull-right" action="<?=WEB_BASE?>catalog/search/">
+				<form class="form-search pull-right" action="<?=LINK_BASE?>catalog/search/">
 					<div class="input-append">
-						<input class="span6 search_field" type="text" /><a href="<?=WEB_BASE?>catalog/search/" class="btn" type="submit">Search</a>
+						<input class="span6 search_field" type="text" /><a href="<?=LINK_BASE?>catalog/search/" class="btn" type="submit">Search</a>
 					</div>
 				</form>
 			</div>
 		</div>
 		<nav id="nav" class="row">
 			<ul>
-				<li class="span3"><a href="<?=WEB_BASE?>">HOME</a></li>
-				<li class="span3"><a href="<?=WEB_BASE?>catalog">PRODUCTS</a></li>
-				<li class="span3"><a href="<?=WEB_BASE?>cart">CART</a></li>
-				<li class="span3"><a href="<?=WEB_BASE?>checkout">CHECKOUT</a></li>
+				<li class="span3"><a href="<?=HOME_LINK_BASE?>">HOME</a></li>
+				<li class="span3"><a href="<?=LINK_BASE?>catalog">PRODUCTS</a></li>
+				<li class="span3"><a href="<?=LINK_BASE?>cart">CART</a></li>
+				<li class="span3"><a href="<?=LINK_BASE?>checkout">CHECKOUT</a></li>
 			</ul>
 		</nav>
 		<?php require_once($page_location); ?>
 		<div class="row">
 			<footer id="footer" class="span12">
-				<div id="footer_links" class="span12"><a href="<?=WEB_BASE?>about">About Us</a> | <a href="<?=WEB_BASE?>about/policies">Policies</a></div>
+				<div id="footer_links" class="span12"><a href="<?=LINK_BASE?>about">About Us</a> | <a href="<?=LINK_BASE?>about/policies">Policies</a></div>
 				<span id="disclaimer" class="span12">
 					This site is not official and is an assignment for a UCF Digital Media course.<br />
 					Designed by NWA Furniture
@@ -52,8 +52,10 @@
 		</div>
 	</div>
 	<script type="text/javascript">
-		// To dynamically get the web_base from php and assign it to js
+		// To dynamically get the web_base, link_base, and home_link_base from php and assign it to js
 		var WEB_BASE = <?='"'.WEB_BASE.'"'?>;
+		var LINK_BASE = <?='"'.LINK_BASE.'"'?>;
+		var HOME_LINK_BASE = <?='"'.HOME_LINK_BASE.'"'?>;
 	</script>
 	<?=Load::js(array('http://code.jquery.com/jquery-1.8.2.js', 'http://code.jquery.com/ui/1.9.1/jquery-ui.js', 'bootstrap.js', 'ecommerce.js', 'product.js'));?>
 
@@ -73,7 +75,7 @@
 </html>
 
 <div id="loginBox">
-	<form id="loginArea" method="post" action="<?=WEB_BASE?>user/login">
+	<form id="loginArea" method="post" action="<?=LINK_BASE?>user/login">
 		<label>Username:</label>
 		<input type="text" name="user">
 		<label>Password:</label>
@@ -82,7 +84,7 @@
 	</form>
 </div>
 <div id="regBox">
-	<form id="regArea" method="post" action="<?=WEB_BASE?>user/register">
+	<form id="regArea" method="post" action="<?=LINK_BASE?>user/register">
 		<label>Username:</label>
 		<input name="name" type="text">
 		<label>Password:</label>

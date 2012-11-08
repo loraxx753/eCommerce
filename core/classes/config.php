@@ -20,7 +20,14 @@ class Config {
 			$default = include BASE.'app/config/custom/config.php';
 			$custom  = include BASE.'app/config/config.php';
 			$config  = array_merge($custom, $default);
-			return $config[$item];
+			if(isset($config[$item]))
+			{
+				return $config[$item];
+			}
+			else
+			{
+				echo '$config['.$item.'] not found.';
+			}
 		}
 		else
 		{

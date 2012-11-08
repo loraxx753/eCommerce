@@ -2,11 +2,6 @@
 
 class User_Controller extends Controller {
 
-	public function action_index() 
-	{
-		
-	}
-
 	public function action_register()
 	{	
 		//get post data
@@ -38,6 +33,6 @@ class User_Controller extends Controller {
 	public function action_logout()
 	{
 		Auth::logout();
-		header("Location: ".WEB_BASE);
+		header("Location: ".HOME_LINK_BASE);
 	}
 }

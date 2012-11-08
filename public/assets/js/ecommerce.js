@@ -119,7 +119,7 @@ $(document).ready(function() {
 
 	function update_total()
 	{
-		$.get(WEB_BASE+"cart/total", function(total) {
+		$.get(LINK_BASE+"cart/total", function(total) {
 			$('#subtotal_price').html(parseInt(total).toFixed(2));
 		});
 	}

@@ -26,7 +26,7 @@
 				<div class="span2 pull-right"><h3>$<?=number_format($product->Product_Price, 2)?></h3></div>
 			</div>
 			<div class="span3 pull-right add_to_cart">
-				<a href="<?=WEB_BASE?>catalog/cart/<?=$product->ProductID?>/1" class="btn btn-small">Add To Cart</a>
+				<a href="<?=LINK_BASE?>catalog/cart/<?=$product->ProductID?>/1" class="btn btn-small">Add To Cart</a>
 			</div>
 		</div>
 		<div class="row">
