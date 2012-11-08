@@ -160,12 +160,14 @@ class Catalog_Controller extends Controller
 		$render->addVar('title', "NWA Furniture | Product");
 
 		$cart = Shopper::load();
+
 		for($x=0; $x<$quantity; $x++)
 		{
 			$cart->add_item($item);
 		}
 
 		$products = \Model_Products::build();
+		
 		$products->or_where("ProductID", $item);
 		$product = $products->execute();
 		$render->addVar('product', $product[0]);

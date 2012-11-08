@@ -124,6 +124,8 @@ class Cart_Controller extends Controller
 
 		$cart = Shopper::load();
 		$render->addVar('total', $cart->subtotal());
+		$render->addVar('shipping', 15);
+		$render->addVar('tax', ($cart->subtotal() + 15) *  0.065);
 
 		$render->load('cart', 'checkout');
 	}
