@@ -20,24 +20,15 @@ class Login_Controller {
 
 		if(isset($response['success']))
 		{
-			Auth::login($name, $pass_alpga);
+			Auth::login($name, $pass_alpha);
 		}
 		
 		if(isset($response['error']))
 		{
-			unset($_POST['pass_alpha']);
-			unset($_POST['pass_beta']);
-			return $response;
+			return json_encode($response);
 		}
-		
 
-		//unset post variables for registration 
-		unset($_POST['name']);
-		unset($_POST['email']);
-		unset($_POST['pass_alpha']);
-		unset($_POST['pass_beta']);
-
-		return $response; 
+		return json_encode($response); 
 	}
 
 	public function action_login()
@@ -45,7 +36,7 @@ class Login_Controller {
 		$name = $_POST['name'];
 		$pass = $_POST['pass'];
 		$response = Auth::login($name, $pass);
-		return $response; 
+		return json_encode($response); 
 	}
 
 	public function action_logout()
