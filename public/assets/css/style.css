@@ -59,7 +59,7 @@ header {
 	height: 20px;
 	border-radius: 0px;
 }
-#search button {
+#search a {
 	border-radius: 0px;
 	background:none;
 }
