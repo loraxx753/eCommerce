@@ -33,11 +33,11 @@
 							<div class="span3 pull-right additional_options">
 								<div class="span2 pull-right">
 									<p class="span1">Quantity:</p>
-									<input type="text" class="span1" value="'.$quantity.'" />
+									<input type="text" class="span1 quantity" value="'.$quantity.'" />
 								</div>
 								<div class="span2 pull-right action_buttons">
-								 	<a class="btn btn-small span1">Update</a>
-									<a href="'.WEB_BASE.'cart/delete/'.$product->ProductID.'" class="btn btn-small span1">Delete</a>
+								 	<a href="'.WEB_BASE.'cart/update/'.$product->ProductID.'/"class="btn btn-small span1 update_product">Update</a>
+									<a href="'.WEB_BASE.'cart/delete/'.$product->ProductID.'" class="btn btn-small span1 delete_product">Delete</a>
 								</div>
 							</div>
 						</div>';
@@ -53,7 +53,7 @@
 					<p class="sub_total">Sub-Total:</p>
 				</div>
 				<div id="sub-total" class="span3 pull-right">
-					<p class="sub_total"><?=number_format($total, 2)?></p>
+					<p id="subtotal_price" class="sub_total"><?=number_format($total, 2)?></p>
 				</div>
 				<span id="checkout" class="span2 pull-right">
 					<a href="<?=WEB_BASE?>/checkout"class="btn btn-small">Proceed to Checkout</a>

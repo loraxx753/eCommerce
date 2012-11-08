@@ -1,6 +1,6 @@
 <?php
 
-class Login_Controller {
+class User_Controller {
 
 	public function action_index() 
 	{
@@ -23,12 +23,7 @@ class Login_Controller {
 			Auth::login($name, $pass_alpha);
 		}
 		
-		if(isset($response['error']))
-		{
-			return json_encode($response);
-		}
-
-		return json_encode($response); 
+		echo json_encode($response); 
 	}
 
 	public function action_login()
@@ -36,12 +31,13 @@ class Login_Controller {
 		$name = $_POST['name'];
 		$pass = $_POST['pass'];
 		$response = Auth::login($name, $pass);
-		return json_encode($response); 
+
+		echo json_encode($response); 
 	}
 
 	public function action_logout()
 	{
-		$response = Auth::logout();
-		return $response;
+		Auth::logout();
+		header("Location: ".WEB_BASE);
 	}
 }
