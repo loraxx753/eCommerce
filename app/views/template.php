@@ -19,9 +19,9 @@
 				<a id="logout" href="<?=WEB_BASE?>/user/logout" class="btn btn-small">Logout</a>
 				<a id="account" href="<?=WEB_BASE?>client" class="btn btn-small">My Account</a>
 				<?php if(Auth::check_access('admin')) {?>
-					<a href="<?=WEB_BASE?>admin" class="btn btn-small">Manage</a>
+					<a href="<?=WEB_BASE?>client/manage" class="btn btn-small">Manage</a>
 				<?php } ?>
-				<a id="username" class="btn btn-small"><?=Session::get('username')?></a>
+				<a id="username" class="btn btn-small" href="<?=WEB_BASE?>client"><?=Session::get('username')?></a>
 				<?php } ?>				
 			</div>
 			<div id="search" class="span7">
@@ -53,7 +53,7 @@
 	</div>
 	<script type="text/javascript">
 		// To dynamically get the web_base from php and assign it to js
-		var WEB_BASE = <?=WEB_BASE?>;
+		var WEB_BASE = <?='"'.WEB_BASE.'"'?>;
 	</script>
 	<?=Load::js(array('http://code.jquery.com/jquery-1.8.2.js', 'http://code.jquery.com/ui/1.9.1/jquery-ui.js', 'bootstrap.js', 'ecommerce.js', 'product.js'));?>
 

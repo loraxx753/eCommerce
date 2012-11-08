@@ -4,7 +4,7 @@
 					<div id="client_sidebar" class="span4">
 						<span>Account Home</span>
 						<ul>
-							<li><a href="#">Dashboard</a></li>
+							<?='<li>'.Load::link(array('client' => "Dashboard")).'</li>';?>
 						</ul>
 					</div>
 				</div>
@@ -20,7 +20,7 @@
 							<p class="span2">Account ID:</p>
 							<p class="span4">j.ferraro@hotmail.com</p>
 							<p class="span2">Account #:</p>
-							<p class="span4">12345678</p>
+							<p class="span4"><?=$name?></p>
 							<p class="span2">Address:</p>
 							<p class="span4">4000 Central Florida Blvd, Orlando FL 32816</p>
 						</div>	

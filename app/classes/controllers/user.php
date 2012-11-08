@@ -1,6 +1,6 @@
 <?php
 
-class User_Controller {
+class User_Controller extends Controller {
 
 	public function action_index() 
 	{
