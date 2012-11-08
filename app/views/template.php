@@ -71,27 +71,27 @@
 			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 		})();
 	</script>
+
+	<div id="loginBox">
+		<form id="loginArea" method="post" action="<?=LINK_BASE?>user/login">
+			<label>Username:</label>
+			<input type="text" name="user">
+			<label>Password:</label>
+			<input type="password" name="password">
+			<p><a id="regLink" href="#">Register an Account</a></p>
+		</form>
+	</div>
+	<div id="regBox">
+		<form id="regArea" method="post" action="<?=LINK_BASE?>user/register">
+			<label>Username:</label>
+			<input name="name" type="text">
+			<label>Password:</label>
+			<input name="pass_alpha" type="password">
+			<label>Re-type Password:</label>
+			<input name="pass_beta" type="password">
+			<label>Email:</label>
+			<input name="email" type="text">
+		</form>
+	</div>
 </body>
 </html>
-
-<div id="loginBox">
-	<form id="loginArea" method="post" action="<?=LINK_BASE?>user/login">
-		<label>Username:</label>
-		<input type="text" name="user">
-		<label>Password:</label>
-		<input type="password" name="password">
-		<p><a id="regLink" href="#">Register an Account</a></p>
-	</form>
-</div>
-<div id="regBox">
-	<form id="regArea" method="post" action="<?=LINK_BASE?>user/register">
-		<label>Username:</label>
-		<input name="name" type="text">
-		<label>Password:</label>
-		<input name="pass_alpha" type="password">
-		<label>Re-type Password:</label>
-		<input name="pass_beta" type="password">
-		<label>Email:</label>
-		<input name="email" type="text">
-	</form>
-</div>
