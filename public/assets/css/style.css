@@ -530,6 +530,9 @@ form#card_info div select.expir_month, select.expir_year {
 #admin_dashboard #order_info {
 	margin-top: 20px;
 }
+#admin_dashboard ul {
+	margin: 15px 0 10px 0;
+}
 #admin_sidebar {
 	min-height: 500px;
 	border-right: 2px solid #F5F6F7;
