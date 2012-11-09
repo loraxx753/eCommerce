@@ -60,6 +60,7 @@ $(document).ready(function() {
 			$('#editArea input[name=Stock]').val(data.Stock);
 			$('#editArea input[name=Weight]').val(data.Product_Weight);
 			$('#editArea input[name=Product_Price]').val(data.Product_Price);
+			$('#editArea input[name=Product_Cost]').val(data.Product_Cost);
 			$('#editArea input[name=Size]').val(data.Product_Size);
 			if(data.Featured == 1)
 			{
@@ -261,6 +262,14 @@ $(document).ready(function() {
 				}
 			}, 'json');
 		}
+	});
+	$('.chage_access').click(function(e) {
+		e.preventDefault();
+		$this = $(this);
+		var href = $(this).attr('href');
+		$.get(href, function(data) {
+			$this.parent().parent().prev().children('p').html(data);
+		});
 	});
 
 });

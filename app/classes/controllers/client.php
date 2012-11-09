@@ -18,14 +18,37 @@
 			self::authenticate('privilege');
 			$render = new Render();
 			$render->addVar('title', "NWA Furniture | User Management");
-			$render->addVar('access', Auth::check_access());
+			$render->addVar('access', Auth::get_access());
 			
-			$render->addVar('name',Session::get('username'));
-			$user = Model_Users::build()->where('user', Session::get('username'))->execute();
-			$render->addVar('email', $user[0]->email);
+			$users = Model_Users::build()->where('user', '!=', Session::get('username'))->execute();
+			$render->addVar('users', $users);
 			
 			$render->load('client', 'user');
 
+		}
+		public static function action_demote($id)
+		{
+			self::authenticate('admin');
+			$user = Model_Users::build()->where('id', $id)->execute();
+			$user = $user[0];
+			if($user->access > 0)
+			{
+				$user->access--;
+			}
+			$user->save();
+			echo ucwords(Auth::get_access($user->access));
+		}
+		public static function action_promote($id)
+		{
+			self::authenticate('admin');
+			$user = Model_Users::build()->where('id', $id)->execute();
+			$user = $user[0];
+			if($user->access < 3)
+			{
+				$user->access++;
+			}
+			$user->save();
+			echo ucwords(Auth::get_access($user->access));
 		}
 		public static function action_product()
 		{
