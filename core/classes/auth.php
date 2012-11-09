@@ -134,4 +134,36 @@ class Auth {
 			return false;
 		}
 	}
+	/**
+	 * Gets the access level string for the current user or returns an array of all access levels.
+	 * @param  int   $level Access level of user
+	 * @return mixed        String for single person, or array for all.
+	 */
+	static public function get_access($level = null)
+	{
+		if($level != null)
+		{
+			switch ($level) 
+			{
+				case 0:
+					$level = 'banned';
+					break;
+				case 1:
+					$level = 'customer';
+					break;
+				case 2:
+					$level = 'privilege';
+					break;
+				case 3:
+					$level = 'admin';
+					break;
+			}
+			return $level;
+		}
+		else
+		{
+			return array('banned', 'customer', 'privilege', 'admin');
+		}
+	}
+
 }

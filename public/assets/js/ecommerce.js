@@ -264,5 +264,14 @@ $(document).ready(function() {
 			}, 'json');
 		}
 	});
+	$('.chage_access').click(function(e) {
+		e.preventDefault();
+		$this = $(this);
+		var href = $(this).attr('href');
+		$.get(href, function(data) {
+			console.log($this.parent());
+			$this.parent().parent().prev().children('p').html(data);
+		});
+	});
 
 });

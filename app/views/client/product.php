@@ -9,6 +9,9 @@
 						<span>Product Management</span>
 							<ul>
 								<li><a href="<?=LINK_BASE?>client/product">Manage Products</a></li>
+								<?php if(Auth::check_access('admin')) { ?>
+								<li><a href="<?=LINK_BASE?>client/user">Manage Users</a></li>
+								<?php } ?>
 							</ul>
 					</aside>
 				</div>
