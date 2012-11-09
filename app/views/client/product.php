@@ -47,7 +47,11 @@
                             </div>
                             <div class="span3">
                            		<label>Category:</label>
-                           		<input type="text" name="Category_ID" placeholder="Enter Category ID here" />
+                           		<select name="Category_ID">
+                           			<?php foreach ($categories as $category) { ?>
+	                           			<option value="<?=$category->id?>"><?=$category->name?></option>
+                           			<?php } ?>
+                           		</select>
                             </div>
                             <div class="span3">
                            		<label>Stock:</label>

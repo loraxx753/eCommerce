@@ -35,6 +35,8 @@
 			$render->addVar('access', Auth::check_access());
 			
 			$render->addVar('name',Session::get('username'));
+			$render->addVar('products', Model_Products::build()->execute());
+			$render->addVar('categories', Model_Catagories::build()->execute());
 			$user = Model_Users::build()->where('user', Session::get('username'))->execute();
 			$render->addVar('email', $user[0]->email);
 			
