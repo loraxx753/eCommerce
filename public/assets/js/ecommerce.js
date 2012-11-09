@@ -60,6 +60,7 @@ $(document).ready(function() {
 			$('#editArea input[name=Stock]').val(data.Stock);
 			$('#editArea input[name=Weight]').val(data.Product_Weight);
 			$('#editArea input[name=Product_Price]').val(data.Product_Price);
+			$('#editArea input[name=Product_Cost]').val(data.Product_Cost);
 			$('#editArea input[name=Size]').val(data.Product_Size);
 			if(data.Featured == 1)
 			{
