@@ -4,25 +4,15 @@
 					<aside id="admin_sidebar" class="span4">
 						<span>Admin Home</span>
 							<ul>
-								<li><a href="#">Dashboard</a></li>
-								<li><a href="#">Messages</a></li>
+								<li><a href="<?=LINK_BASE?>client/manage">Dashboard</a></li>
 							</ul>
-						<span>Order Management</span>
+						<span>User Management</span>
 							<ul>
-								<li><a href="#">Manage Orders</a></li>
-								<li><a href="#">Manage Returns</a></li>
+								<li><a href="<?=LINK_BASE?>client/user">Manage Users</a></li>
 							</ul>
 						<span>Product Management</span>
 							<ul>
-								<li><a href="#">Manage Products</a></li>
-								<li><a href="#">Manage Inventory</a></li>
-							</ul>
-						<span>Options</span>
-							<ul>
-								<li><a href="#">Shipping Settings</a></li>
-								<li><a href="#">Promotions</a></li>
-								<li><a href="#">Cart Options</a></li>
-								<li><a href="#">Payment Settings</a></li>
+								<li><a href="<?=LINK_BASE?>client/product">Manage Products</a></li>
 							</ul>
 					</aside>
 				</div>
