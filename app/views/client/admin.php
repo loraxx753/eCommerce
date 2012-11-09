@@ -6,10 +6,6 @@
 							<ul>
 								<li><a href="<?=LINK_BASE?>client/manage">Dashboard</a></li>
 							</ul>
-						<span>User Management</span>
-							<ul>
-								<li><a href="<?=LINK_BASE?>client/user">Manage Users</a></li>
-							</ul>
 						<span>Product Management</span>
 							<ul>
 								<li><a href="<?=LINK_BASE?>client/product">Manage Products</a></li>

@@ -23,7 +23,7 @@
 				<?php if(Auth::check_access('admin')) {?>
 					<span><a href="<?=LINK_BASE?>client/manage" class="btn btn-small">Manage</a></span>
 				<?php } ?>
-				<span><a id="username" class="btn btn-small" href="<?=LINK_BASE?>client"><?=Session::get('username')?></a></span>
+				<span id="welcome">Welcome, <?=Session::get('username')?></span>
 				<?php } ?>				
 			</div>
 			<div id="search" class="span7">

@@ -20,6 +20,12 @@ a:active, a:visited, a:hover, a:link {
 .success {
 	color: #0A0;
 }
+#welcome {
+	margin: 10px 0 0 0;
+	display: inline-block;
+	font-size: 12px;
+	font-style: italic;
+}
 
 /* Header Styles */
 
@@ -546,7 +552,7 @@ a:hover {
 }
 #admin_dashboard form fieldset div {
 	float: left;
-	margin: 0 5px 10px 5px;
+	margin: 0 5px 0px 5px;
 }
 #admin_dashboard form fieldset div textarea {
 	height: 120px;
@@ -556,7 +562,31 @@ a:hover {
 	background: none;
 	border-radius: 0;
 	font-weight: bold;
-	margin: 0 180px 0 0;
+	margin: 0 165px 0 0;
+}
+.product_snapshot {
+	margin: 5px 2px 0 2px;
+	padding: 10px 0 10px 0;
+	border: 1px solid #DDD;
+}
+.product_snapshot ul {
+	margin: 0;
+}
+.product_snapshot ul li {
+	list-style: none;
+}
+.product_snapshot ul li:nth-child(2) {
+	font-weight: bold;
+}
+.product_snapshot ul li:last-child {
+	margin-top: 12px;
+}
+.product_snapshot ul li button {
+	background: none;
+	border-radius: 0;
+	margin: 0 2px 0 2px;
+	padding: 3px 10px 3px 10px;
+	font-weight: bold;
 }
 
 

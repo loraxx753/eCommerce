@@ -6,10 +6,6 @@
 							<ul>
 								<li><a href="<?=LINK_BASE?>client/manage">Dashboard</a></li>
 							</ul>
-						<span>User Management</span>
-							<ul>
-								<li><a href="<?=LINK_BASE?>client/user">Manage Users</a></li>
-							</ul>
 						<span>Product Management</span>
 							<ul>
 								<li><a href="<?=LINK_BASE?>client/product">Manage Products</a></li>
@@ -27,7 +23,7 @@
 							<li><a href="#tab1" data-toggle="tab">Add Product</a></li>
 						</ul>
 						<div class="tab-content">
-							<div class="tab-pane active" id="tab1">
+							<div class="tab-pane" id="tab1">
 						<form id="contact" method="post" enctype="multipart/form-data" action="<?=LINK_BASE?>catalog/add_product">
                 		<fieldset>
                            	<div class="span3">
@@ -82,8 +78,31 @@
 	                    <button type="submit" id="saveProducts" class="btn btn-small span2 pull-right offset-2">Save</button>
 	                	</form>	
 		                </div>
-		                <div class="tab-pane" id="tab2">
-		                	<h1>Modify Shit Goes Here</h1>
+		                <div class="tab-pane active" id="tab2">
+		                	<div class="span4 product_snapshot">
+		                		<ul>
+		                			<li class="product_image span2"><img src="http://localhost/4530c/assignment03/public/assets/img/products/couch1_thumbnail.jpg" /></li>
+		                			<li class="product_name">Derp Product</li>
+		                			<li class="product_sku">#1</li>
+		                			<li><button type="button" class="btn btn-small">Edit</button><button type="button" class="btn btn-small">Delete</button></li>
+		                		</ul>
+		                	</div>
+		                	<div class="span4 product_snapshot">
+		                		<ul>
+		                			<li class="product_image span2"><img src="http://localhost/4530c/assignment03/public/assets/img/products/couch1_thumbnail.jpg" /></li>
+		                			<li class="product_name">Derp Product</li>
+		                			<li class="product_sku">#1</li>
+		                			<li><button type="button" class="btn btn-small">Edit</button><button type="button" class="btn btn-small">Delete</button></li>
+		                		</ul>
+		                	</div>
+		                	<div class="span4 product_snapshot">
+		                		<ul>
+		                			<li class="product_image span2"><img src="http://localhost/4530c/assignment03/public/assets/img/products/couch1_thumbnail.jpg" /></li>
+		                			<li class="product_name">Derp Product</li>
+		                			<li class="product_sku">#1</li>
+		                			<li><button type="button" class="btn btn-small">Edit</button><button type="button" class="btn btn-small">Delete</button></li>
+		                		</ul>
+		                	</div>
 		                </div>
 		                <div class="tab-pane" id="tab3">
 		                	<h1>Delete Shit Goes Here</h1>
