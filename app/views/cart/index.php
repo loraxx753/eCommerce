@@ -6,7 +6,7 @@
 		<?php 
 			if(count($cartArray) <= 0)
 			{
-				echo "<p>You have no items in your cart</p>";
+				echo '<div class="alert alert-info"><button type="button" class="close" data-dismiss="alert">×</button><strong>Missing Something?</strong> <p>You have no items in your cart!</p></div>';
 			}
 			else
 			{
@@ -57,7 +57,7 @@
 				</div>
 				<?php if(count($cartArray) > 0) {?>
 				<span id="checkout" class="span2 pull-right">
-					<a href="<?=LINK_BASE?>/checkout"class="btn btn-small">Proceed to Checkout</a>
+					<a href="<?=LINK_BASE?>checkout"class="btn btn-small">Proceed to Checkout</a>
 				</span>
 				<?php } ?>
 			</div>
