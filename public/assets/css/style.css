@@ -541,6 +541,24 @@ a:hover {
 	color: #000000;
 	text-decoration: none;
 }
+#admin_dashboard form {
+	margin: 20px 0 0 0;
+}
+#admin_dashboard form fieldset div {
+	float: left;
+	margin: 0 5px 10px 5px;
+}
+#admin_dashboard form fieldset div textarea {
+	height: 120px;
+	width: 447px;
+}
+#saveProducts {
+	background: none;
+	border-radius: 0;
+	font-weight: bold;
+	margin: 0 180px 0 0;
+}
+
 
 #loginBox {
 	display: none;
