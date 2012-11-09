@@ -30,6 +30,11 @@ class Cart_Controller extends Controller
 		$render->addVar('cartArray', $cartArray);
 		$render->load('cart', 'index');
 	}
+	public static function action_total()
+	{
+		$cart = Shopper::load();
+		echo $cart->subtotal();
+	}
 
 	public static function action_update($itemID, $newAmount)
 	{
