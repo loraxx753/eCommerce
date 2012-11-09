@@ -103,6 +103,8 @@ $(document).ready(function() {
 			'feat' 					: $('#editArea input[name=feat]').val()
 		};
 
+
+
 		$.post(href, obj, function(data){
 			if(data.success)
 			{
@@ -111,15 +113,15 @@ $(document).ready(function() {
 			}
 			else
 			{
-
-				console.log(obj);
 				$('#editBox p.error').remove();
 				for(i in data.error)
 				{
-					$('#edit').before("<p class='error'>"+data.error[i]+"</p>")
+					$('#edit').before("<p class='error'>"+data.error[i]+"</p>");
 				}
 			}
 		}, 'json');
+
+		console.log(obj);
 	};
 
 	$('form.form-search a').click(function(event) {
