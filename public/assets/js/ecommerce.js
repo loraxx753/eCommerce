@@ -88,28 +88,31 @@ $(document).ready(function() {
 		}, 'json');
 	};
 	function editProduct(){
-		var href = $('#edit').attr('action');
+		var href = $('#editArea').attr('action');
+
 		var obj = {
-			'Product_ID' : $('#edit input[name=Product_ID]').val(),
-			'Product_Name' : $('#edit input[name=Product_Name]').val(),
-			'SKU' : $('#edit input[name=SKU]').val(),
-			'Product_Description' : $('#edit input[name=Product_Description]').val(),
-			'Stock' : $('#edit input[name=Stock]').val(),
-			'Product_Cost' : $('#edit input[name=Product_Cost]').val(),
-			'Product_Price' : $('#edit input[name=Product_Price]').val(),
-			'Weight' : $('#edit input[name=Weight]').val(),
-			'Size' : $('#edit input[name=Size]').val(),
-			'feat' : $('#edit input[name=feat]').val()
+			'ProductID' 			: $('#editArea input[name=ProductID]').val(),
+			'Product_Name'  		: $('#editArea input[name=Product_Name]').val(),
+			'SKU' 					: $('#editArea input[name=SKU]').val(),
+			'Product_Description'   : $('#editArea input[name=Product_Description]').val(),
+			'Stock' 				: $('#editArea input[name=Stock]').val(),
+			'Product_Cost' 			: $('#editArea input[name=Product_Cost]').val(),
+			'Product_Price' 		: $('#editArea input[name=Product_Price]').val(),
+			'Weight' 				: $('#editArea input[name=Weight]').val(),
+			'Size' 					: $('#editArea input[name=Size]').val(),
+			'feat' 					: $('#editArea input[name=feat]').val()
 		};
 
 		$.post(href, obj, function(data){
 			if(data.success)
 			{
-				alert("hello");
+				
 				location.reload();
 			}
 			else
 			{
+
+				console.log(obj);
 				$('#editBox p.error').remove();
 				for(i in data.error)
 				{
@@ -117,7 +120,7 @@ $(document).ready(function() {
 				}
 			}
 		}, 'json');
-	}
+	};
 
 	$('form.form-search a').click(function(event) {
 		event.preventDefault();

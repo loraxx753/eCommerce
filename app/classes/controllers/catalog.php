@@ -96,7 +96,7 @@ class Catalog_Controller extends Controller
 
 	public static function action_edit_product()
 	{
-		$product = Model_Products::build()->where('ProductID', $id)->execute();
+		$product = Model_Products::build()->where('ProductID', $_POST["ProductID"])->execute();
 		$product->ProductID = $_POST["ProductID"];
 		$product->Product_Name = $_POST["Product_Name"]; 
 		$product->SKU = $_POST["SKU"];
