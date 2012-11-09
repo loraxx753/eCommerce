@@ -95,7 +95,7 @@
 		                		<ul>
 		                			<li class="product_image span2"><?=Load::image($product->Product_Image."_thumbnail.jpg", "Chairs")?></li>
 		                			<li class="product_name"><?=$product->Product_Name?></li>
-		                			<li class="product_sku"><?=$product->SKU?></li>
+		                			<li class="product_sku">SKU# <?=$product->SKU?></li>
 		                			<li><button class="btn btn-small edit_product product_<?=$product->ProductID?>">Edit</button><button class="btn btn-small delete_product product_<?=$product->ProductID?>">Delete</button></li>
 		                		</ul>
 		                	</div>
