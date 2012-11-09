@@ -100,8 +100,8 @@
 		                						<li class="product_name">'.$value->Product_Name.'</li>
 		                						<li class="product_sku">#'.$value->SKU.'</li>
 		                						<li>
-		                							<span><a class="editLink" href="'.LINK_BASE.'catalog/get_info/'.$value->ProductID.'" class="btn btn-small">Edit</a></span>
-		      										<a class="delete_product" href="'.LINK_BASE.'catalog/delete_product/'.$value->ProductID.'"/>Delete</a>
+		                							<span><a class="editLink btn btn-small" href="'.LINK_BASE.'catalog/get_info/'.$value->ProductID.'" class="btn btn-small">Edit</a></span>
+		      										<a class="delete_product btn btn-small" href="'.LINK_BASE.'catalog/delete_product/'.$value->ProductID.'"/>Delete</a>
 		                						</li>
 		                					</ul>
 		                				</div>
