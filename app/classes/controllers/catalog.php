@@ -151,7 +151,7 @@ class Catalog_Controller extends Controller
 		$products->or_where("ProductID", $id);
 		$product = $products->execute();
 
-		$reviews = \Model_Reviews::build()->where('product_id', $product[0]->ProductID)->execute();
+		$reviews = \Model_Reviews::build()->where('product_id', $product[0]->ProductID)->order_by('id DESC')->execute();
 
 		$totalRating = 0;
 		$runningTotal = 0;
@@ -198,11 +198,9 @@ class Catalog_Controller extends Controller
 	{
 		$review = new Model_Reviews();
 
-		// $review->review = $_POST['review'];
-		// $review->rating = $_POST['rating'];;
+		$review->review = $_POST['review'];
+		$review->rating = $_POST['rating'];;
 		$review->product_id = $productID;
-		$review->review = "review";
-		$review->rating = 4;
 		$review->user = (Session::get('username')) ? Session::get('username') : 'Guest';
 		$review->created = time();
 
@@ -212,9 +210,9 @@ class Catalog_Controller extends Controller
 		}
 		catch(Exception $e)
 		{
-			echo false;
+			echo json_encode(array('fail' => false));
 			die();
 		}
-		echo true;
+		echo json_encode(array('success'=> $review->user." ".date("n/j/Y h:ia",$review->created)));
 	}
 }

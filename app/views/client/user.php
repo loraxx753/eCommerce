@@ -20,21 +20,10 @@
 			<div class="span8">
 				<div class="row">
 					<div id="admin_dashboard" class="span8">
-							<h3>Administrator Dashboard</h3>
-							<small>A summary of all recent activity on your account.</small>
+							<h3>Manage Users</h3>
+							<small>Manage all of your users!</small>
 						<div id="order_info" class="span8">
-							<h5>Order Statistics</h5>
-							<hr />
-							<p class="span3">October Daily Average:</p>
-							<p class="span3 pull-right">$100.00</p>
-							<p class="span3">Today's Total:</p>
-							<p class="span3 pull-right">$100.00</p>
-							<p class="span3">Yesterday's Total:</p>
-							<p class="span3 pull-right">$100.00</p>
-							<p class="span3">October Total:</p>
-							<p class="span3 pull-right">$100.00</p>
-							<p class="span3">Estimated October Total:</p>
-							<p class="span3 pull-right">$100.00</p>
+							<h5>Content Goes Here</h5>
 						</div>	
 					</div>
 				</div>

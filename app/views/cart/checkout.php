@@ -176,12 +176,30 @@
 							<h4 class="span2">$<?=number_format($total + $shipping + $tax, 2);?></h4>
 						</div>
 						
-						<?php
-						echo'
-						<form action="'.WEB_BASE.'cart/transaction" METHOD="POST">
-							<input type="image" name="submit" src="https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif" border="0" align="top" alt="Check out with PayPal"/>
-						</form>';
-						?>
+					<form method="POST"
+  action="https://sandbox.google.com/checkout/api/checkout/v2/checkoutForm/Merchant/474976065546649"
+      accept-charset="utf-8">
+
+  <input type="hidden" name="item_name_1" value="Peanut Butter"/>
+  <input type="hidden" name="item_description_1" value="Chunky peanut butter."/>
+  <input type="hidden" name="item_quantity_1" value="1"/>
+  <input type="hidden" name="item_price_1" value="3.99"/>
+  <input type="hidden" name="item_currency_1" value="USD"/>
+
+  <input type="hidden" name="ship_method_name_1" value="UPS Ground"/>
+  <input type="hidden" name="ship_method_price_1" value="10.99"/>
+  <input type="hidden" name="ship_method_currency_1" value="USD"/>
+
+  <input type="hidden" name="tax_rate" value="0.0875"/>
+  <input type="hidden" name="tax_us_state" value="NY"/>
+
+  <input type="hidden" name="_charset_"/>
+
+  <input type="image" name="Google Checkout" alt="Fast checkout through Google"
+src="https://sandbox.google.com/checkout/buttons/checkout.gif?merchant_id=474976065546649&w=180&h=46&style=white&variant=text&loc=en_US"
+height="46" width="180"/>
+
+</form>
 					</div>
 				</div>
 			</div>

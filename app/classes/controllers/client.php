@@ -13,6 +13,34 @@
 			
 			$render->load('client', 'profile');
 		}
+		public static function action_user()
+		{
+			self::authenticate('privilege');
+			$render = new Render();
+			$render->addVar('title', "NWA Furniture | User Management");
+			$render->addVar('access', Auth::check_access());
+			
+			$render->addVar('name',Session::get('username'));
+			$user = Model_Users::build()->where('user', Session::get('username'))->execute();
+			$render->addVar('email', $user[0]->email);
+			
+			$render->load('client', 'user');
+
+		}
+		public static function action_product()
+		{
+			self::authenticate('privilege');
+			$render = new Render();
+			$render->addVar('title', "NWA Furniture | Product Management");
+			$render->addVar('access', Auth::check_access());
+			
+			$render->addVar('name',Session::get('username'));
+			$user = Model_Users::build()->where('user', Session::get('username'))->execute();
+			$render->addVar('email', $user[0]->email);
+			
+			$render->load('client', 'product');
+
+		}		
 		public static function action_manage()
 		{
 			self::authenticate('admin');

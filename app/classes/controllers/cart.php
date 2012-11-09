@@ -205,8 +205,7 @@ class Cart_Controller extends Controller
 
 		$total = $cart->subtotal();
 		$tax = 0.00;
-		$total = $total + $tax;
-
+		// $total = $total + $tax;
 		$shipping = 15.00;
 		
 		$net = $total + $shipping;
@@ -256,16 +255,18 @@ class Cart_Controller extends Controller
 		$url .="STREET=".$validated['address1']."&";
 		$url .="ZIP=".$validated['zipcode']."&";
 
-		$url.= "AMT=500&";
-		$url.= "ITEMAMT=496&";
+		$url.= "AMT=500.00&";
+		$url.= "ITEMAMT=496.00&";
 		$url.= "SHIPPINGAMT=4&";
 		$url.= "CURRENCYCODE=USD&";
 		
 		$url.= "L_NAME0=Your%20Purchase&";
 		$url.= "L_DESC0=Your%20Purchase&";
-		$url.= "L_AMT0=496&";
-		$url.= "L_QTY0=1&";
-		
+		$url.= "L_AMT0=496.00&";
+		$url.= "L_QTY0=1";
+
+		// var_dump($url);
+		// die();		
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL, $url);
 		curl_setopt($ch, CURLOPT_VERBOSE, true);
