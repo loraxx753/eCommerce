@@ -43,7 +43,7 @@
 			self::authenticate('admin');
 			$user = Model_Users::build()->where('id', $id)->execute();
 			$user = $user[0];
-			if($user->access > 0)
+			if($user->access < 3)
 			{
 				$user->access++;
 			}
