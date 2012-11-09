@@ -220,7 +220,7 @@ class Cart_Controller extends Controller
 		$_POST['card_type'] = "Visa";
 		$_POST['card_number'] = "4929802607281663";
 		$_POST['expir_month'] = "06";
-		$_POST['expir_year'] = "2012";
+		$_POST['expir_year'] = "2014";
 		$_POST['cvv2_code'] = "984";
 		$_POST['first_name'] = "John";
 		$_POST['last_name'] = "Doe";
@@ -228,6 +228,11 @@ class Cart_Controller extends Controller
 		$_POST['city'] = "New York";
 		$_POST['address1'] = "14 Argyle Rd.";
 		$_POST['zipcode'] = "10010";
+
+		foreach ($_POST as $key => $value) 
+		{
+			$validated[$key] = urlencode($value);
+		}
 
 		$url.="USER=nwa_1352355423_biz_api1.gmail.com&";
 		$url.="PWD=1352355443&";
@@ -238,23 +243,23 @@ class Cart_Controller extends Controller
 		$url.= "PAYMENTACTION=Sale&";
 		$url.= "IPADDRESS=".$_SERVER['REMOTE_ADDR']."&";
 
-		$url.= "CREDITCARDTYPE=".$_POST['card_type']."&";
-		$url.= "ACCT=".$_POST['card_number']."&";
-		$url.= "EXPDATE=".$_POST['expir_month'].$_POST['expir_year']."&";
-		$url.= "CVV2=".$_POST['cvv2_code']."&";
+		$url.= "CREDITCARDTYPE=".$validated['card_type']."&";
+		$url.= "ACCT=".$validated['card_number']."&";
+		$url.= "EXPDATE=".$validated['expir_month'].$_POST['expir_year']."&";
+		$url.= "CVV2=".$validated['cvv2_code']."&";
 
-		$url .="FIRSTNAME=".$_POST['first_name']."&";
-		$url .="LASTNAME=".$_POST['last_name']."&";
+		$url .="FIRSTNAME=".$validated['first_name']."&";
+		$url .="LASTNAME=".$validated['last_name']."&";
 		$url .="COUNTRYCODE=US&";
-		$url .="STATE=".$_POST['state']."&";
-		$url .="CITY=".$_POST['city']."&";
-		$url .="STREET=".$_POST['address1']."&";
-		$url .="ZIP=".$_POST['zipcode']."&";
+		$url .="STATE=".$validated['state']."&";
+		$url .="CITY=".$validated['city']."&";
+		$url .="STREET=".$validated['address1']."&";
+		$url .="ZIP=".$validated['zipcode']."&";
 
 		$url.= "AMT=500&";
 		$url.= "ITEMAMT=496&";
 		$url.= "SHIPPINGAMT=4&";
-		$url.= "URRENCYCODE=USD&";
+		$url.= "CURRENCYCODE=USD&";
 		
 		$url.= "L_NAME0=Your%20Purchase&";
 		$url.= "L_DESC0=Your%20Purchase&";
