@@ -141,12 +141,12 @@ class Cart_Controller extends Controller
 		$cart = Shopper::load();
 
 		$total = $cart->subtotal();
-		$tax = ($cart->subtotal() + 15) *  0.065;
-		$total = number_format($total + $tax, 2);
+		$tax = 0.00;
+		$total = $total + $tax;
 
-		$shipping = 15;
+		$shipping = 15.00;
 		
-		$net = number_format($total, 2) + $shipping;
+		$net = $total + $shipping;
 
 		$cancel = 'localhost'.WEB_BASE.'checkout';
 		$return = WEB_BASE;
@@ -189,6 +189,89 @@ class Cart_Controller extends Controller
 		$response = curl_exec($ch);
 
 		//var_dump(urldecode($response)); die();
+
+		$response = parse_str($response, $output);
+
+		
+		//var_dump($output["TOKEN"]);
+		//die();
+		header('Location: https://sandbox.paypal.com/webscr?cmd=_express-checkout&token='.urlencode($output["TOKEN"]));
+
+		curl_close($ch);
+	}
+	public static function action_transaction()
+	{
+		$cart = Shopper::load();
+
+		$total = $cart->subtotal();
+		$tax = 0.00;
+		$total = $total + $tax;
+
+		$shipping = 15.00;
+		
+		$net = $total + $shipping;
+
+		$cancel = 'localhost'.WEB_BASE.'checkout';
+		$return = WEB_BASE;
+		$base = "https://api-3t.sandbox.paypal.com/nvp?";
+		
+		$url = $base;
+
+		$_POST['card_type'] = "Visa";
+		$_POST['card_number'] = "4929802607281663";
+		$_POST['expir_month'] = "06";
+		$_POST['expir_year'] = "2012";
+		$_POST['cvv2_code'] = "984";
+		$_POST['first_name'] = "John";
+		$_POST['last_name'] = "Doe";
+		$_POST['state'] = "NY";
+		$_POST['city'] = "New York";
+		$_POST['address1'] = "14 Argyle Rd.";
+		$_POST['zipcode'] = "10010";
+
+		$url.="USER=nwa_1352355423_biz_api1.gmail.com&";
+		$url.="PWD=1352355443&";
+		$url.="SIGNATURE=AhkOVhEp.ZNDDIvBMtziApG1jzcBAYnkta3KPlXId.VRVedUS--I0BrW&";
+		$url.="VERSION=72&";
+
+		$url.= "METHOD=DoDirectPayment&";
+		$url.= "PAYMENTACTION=Sale&";
+		$url.= "IPADDRESS=".$_SERVER['REMOTE_ADDR']."&";
+
+		$url.= "CREDITCARDTYPE=".$_POST['card_type']."&";
+		$url.= "ACCT=".$_POST['card_number']."&";
+		$url.= "EXPDATE=".$_POST['expir_month'].$_POST['expir_year']."&";
+		$url.= "CVV2=".$_POST['cvv2_code']."&";
+
+		$url .="FIRSTNAME=".$_POST['first_name']."&";
+		$url .="LASTNAME=".$_POST['last_name']."&";
+		$url .="COUNTRYCODE=US&";
+		$url .="STATE=".$_POST['state']."&";
+		$url .="CITY=".$_POST['city']."&";
+		$url .="STREET=".$_POST['address1']."&";
+		$url .="ZIP=".$_POST['zipcode']."&";
+
+		$url.= "AMT=500&";
+		$url.= "ITEMAMT=496&";
+		$url.= "SHIPPINGAMT=4&";
+		$url.= "URRENCYCODE=USD&";
+		
+		$url.= "L_NAME0=Your%20Purchase&";
+		$url.= "L_DESC0=Your%20Purchase&";
+		$url.= "L_AMT0=496&";
+		$url.= "L_QTY0=1&";
+		
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_URL, $url);
+		curl_setopt($ch, CURLOPT_VERBOSE, true);
+		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		curl_setopt($ch, CURLOPT_HEADER, false);
+
+		$response = curl_exec($ch);
+
+		var_dump(urldecode($response)); die();
 
 		$response = parse_str($response, $output);
 
