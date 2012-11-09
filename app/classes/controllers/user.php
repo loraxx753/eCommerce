@@ -2,7 +2,7 @@
 
 class User_Controller {
 
-	public function action_register()
+	public static function action_register()
 	{	
 		//get post data
 		$name = $_POST['name'];
@@ -21,7 +21,7 @@ class User_Controller {
 		echo json_encode($response); 
 	}
 
-	public function action_login()
+	public static function action_login()
 	{
 		$name = $_POST['name'];
 		$pass = $_POST['pass'];
@@ -30,7 +30,7 @@ class User_Controller {
 		echo json_encode($response); 
 	}
 
-	public function action_logout()
+	public static function action_logout()
 	{
 		Auth::logout();
 		header("Location: ".HOME_LINK_BASE);
