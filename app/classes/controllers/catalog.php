@@ -150,7 +150,27 @@ class Catalog_Controller extends Controller
 		$products = \Model_Products::build();
 		$products->or_where("ProductID", $id);
 		$product = $products->execute();
+
+		$reviews = \Model_Reviews::build()->where('product_id', $product[0]->ProductID)->execute();
+
+		$totalRating = 0;
+		$runningTotal = 0;
+		if($reviews)
+		{
+			foreach ($reviews as $review) {
+				$totalRating += (int)$review->rating;
+				$runningTotal++;
+			}			
+			$rating = round($totalRating/$runningTotal);
+		}
+		else
+		{
+			$rating = 0;
+		}
+
 		$render->addVar('product', $product[0]);
+		$render->addVar('reviews', $reviews);
+		$render->addVar('rating', $rating);
 
 		$render->load('catalog', 'product');		
 	}
@@ -173,5 +193,28 @@ class Catalog_Controller extends Controller
 		$render->addVar('product', $product[0]);
 
 		$render->load('catalog', 'product');
+	}
+	public static function action_review($productID)
+	{
+		$review = new Model_Reviews();
+
+		// $review->review = $_POST['review'];
+		// $review->rating = $_POST['rating'];;
+		$review->product_id = $productID;
+		$review->review = "review";
+		$review->rating = 4;
+		$review->user = (Session::get('username')) ? Session::get('username') : 'Guest';
+		$review->created = time();
+
+		try
+		{
+			$review->save();
+		}
+		catch(Exception $e)
+		{
+			echo false;
+			die();
+		}
+		echo true;
 	}
 }

@@ -36,8 +36,8 @@
 									<input type="text" class="span1 quantity" value="'.$quantity.'" />
 								</div>
 								<div class="span2 pull-right action_buttons">
-								 	<a href="'.LINK_BASE.'cart/update/'.$product->ProductID.'/"class="btn btn-small span1 update_product">Update</a>
-									<a href="'.LINK_BASE.'cart/delete/'.$product->ProductID.'" class="btn btn-small span1 delete_product">Delete</a>
+								 	<span><a href="'.LINK_BASE.'cart/update/'.$product->ProductID.'/"class="btn btn-small span1 update_product">Update</a></span>
+									<span><a href="'.LINK_BASE.'cart/delete/'.$product->ProductID.'" class="btn btn-small span1 delete_product">Delete</a></span>
 								</div>
 							</div>
 						</div>';
