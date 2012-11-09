@@ -20,6 +20,12 @@ a:active, a:visited, a:hover, a:link {
 .success {
 	color: #0A0;
 }
+#welcome {
+	margin: 10px 0 0 0;
+	display: inline-block;
+	font-size: 12px;
+	font-style: italic;
+}
 
 /* Header Styles */
 
@@ -67,6 +73,10 @@ header {
 	margin: 5px 0 0 0;
 	padding: 0 0 5px 0;
 	text-align: center;
+	border-bottom: thin solid #DDD;
+}
+aside {
+	padding-top: 10px;
 }
 #nav div {
 	margin-left: 0;
@@ -111,14 +121,6 @@ header {
 	font-weight: bold;
 	margin: 0 0 15px 0;
 }
-#ad_sidebar {
-	min-height: 660px;
-	border-left: thin solid #F5F6F7;
-	padding-left: 5px;
-}
-#ad_sidebar img {
-	margin: 10px 0 5px 0;
-}
 .thumbnail {
 	border-radius: 0px;
 }
@@ -155,7 +157,7 @@ header {
 }
 #sidebar {
 	min-height: 500px;
-	border-right: 2px solid #F5F6F7;
+	border-right: 1px solid #DDD;
 }
 #sidebar ul {
 	list-style: none;
@@ -339,7 +341,7 @@ ul.thumbnail {
 }
 #product_sidebar {
 	text-align: center;
-	border-left: thin solid #F5F6F7;
+	border-left: thin solid #DDD;
 }
 .recommended_button {
 	background: none;
@@ -370,7 +372,7 @@ ul.thumbnail {
 #checkout_sidebar {
 	padding-left:10px;
 	padding-top: 10px;
-	border-left: thin solid #F5F6F7;
+	border-left: thin solid #DDD;
 	height: 100%;
 }
 #checkout_sidebar h3 {
@@ -494,9 +496,12 @@ form#card_info div select.expir_month, select.expir_year {
 #dashboard #account_info {
 	margin-top: 20px;
 }
+#dashboard #account_info span {
+	font-weight: bold;
+}
 #client_sidebar {
 	min-height: 500px;
-	border-right: 2px solid #F5F6F7;
+	border-right: 1px solid #DDD;
 }
 #client_sidebar ul {
 	list-style: none;
@@ -521,9 +526,12 @@ form#card_info div select.expir_month, select.expir_year {
 #admin_dashboard #order_info {
 	margin-top: 20px;
 }
+#admin_dashboard ul {
+	margin: 15px 0 10px 0;
+}
 #admin_sidebar {
 	min-height: 500px;
-	border-right: 2px solid #F5F6F7;
+	border-right: 1px solid #DDD;
 }
 #admin_sidebar ul {
 	list-style: none;
@@ -546,7 +554,7 @@ a:hover {
 }
 #admin_dashboard form fieldset div {
 	float: left;
-	margin: 0 5px 10px 5px;
+	margin: 0 5px 0px 5px;
 }
 #admin_dashboard form fieldset div textarea {
 	height: 120px;
@@ -556,7 +564,34 @@ a:hover {
 	background: none;
 	border-radius: 0;
 	font-weight: bold;
-	margin: 0 180px 0 0;
+	margin: 0 165px 0 0;
+}
+.product_snapshot {
+	margin: 5px 2px 0 2px;
+	padding: 10px 0 10px 0;
+	border: 1px solid #DDD;
+}
+.product_snapshot ul {
+	margin: 0;
+}
+.product_snapshot ul li {
+	list-style: none;
+}
+.product_snapshot ul li:nth-child(2) {
+	font-weight: bold;
+}
+.product_snapshot ul li:last-child {
+	margin-top: 12px;
+}
+.product_snapshot ul li button {
+	background: none;
+	border-radius: 0;
+	margin: 0 2px 0 2px;
+	padding: 3px 10px 3px 10px;
+	font-weight: bold;
+}
+.product_snapshot ul li button:hover {
+	background: none;
 }
 
 

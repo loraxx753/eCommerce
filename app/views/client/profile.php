@@ -1,12 +1,12 @@
 		<div class="row">
 			<div class="span4">
 				<div class="row">
-					<div id="client_sidebar" class="span4">
+					<aside id="client_sidebar" class="span4">
 						<span>Account Home</span>
 						<ul>
 							<?='<li>'.Load::link(array('client' => "Dashboard")).'</li>';?>
 						</ul>
-					</div>
+					</aside>
 				</div>
 			</div>
 			<div class="span8">
