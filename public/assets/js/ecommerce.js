@@ -175,8 +175,8 @@ $(document).ready(function() {
 		$this = $(this);
 		var href = $this.attr('href');
 		$.get(href, function() {
-			$this.closest('.product_snapshot').remove();
-			if($('.product_snapshot').length == 0)
+			$this.closest('.cart_item').remove();
+			if($('.cart_item').length == 0)
 			{
 				$('.page_header').after('<div class="alert alert-info"><button type="button" class="close" data-dismiss="alert">×</button><strong>Missing Something?</strong> <p>You have no products!</p></div>');
 				$('#checkout').hide();

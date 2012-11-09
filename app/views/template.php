@@ -20,7 +20,7 @@
 				<?php } else { ?>
 				<span><a id="logout" href="<?=LINK_BASE?>user/logout" class="btn btn-small">Logout</a></span>
 				<span><a id="account" href="<?=LINK_BASE?>client" class="btn btn-small">My Account</a></span>
-				<?php if(Auth::check_access('admin')) {?>
+				<?php if(Auth::check_access('privilege')) {?>
 					<span><a href="<?=LINK_BASE?>client/manage" class="btn btn-small">Manage</a></span>
 				<?php } ?>
 				<span id="welcome">Welcome, <?=Session::get('username')?></span>
