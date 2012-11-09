@@ -103,8 +103,8 @@ $(document).ready(function() {
 			'feat' 					: $('#editArea input[name=feat]').val()
 		};
 
-
-
+		console.log(href);
+		
 		$.post(href, obj, function(data){
 			if(data.success)
 			{
