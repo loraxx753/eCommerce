@@ -60,7 +60,7 @@
 
 								</form>
 								<?php } else { ?>
-								<p><em><div class="alert alert-info"><button type="button" class="close" data-dismiss="alert">×</button><strong>Missing Something?</strong> <p>You have no items in your cart!</p></div></em></p>
+								<div class="alert alert-info"><button type="button" class="close" data-dismiss="alert">×</button><strong>Missing Something?</strong> <p>You have no items in your cart!</p></div>
 								<?php } ?>
 							</div>
 						</div>
