@@ -89,7 +89,10 @@ class Catalog_Controller extends Controller
 	public static function action_delete_product($id)
 	{
 		$product = Model_Products::build()->where('ProductID', $id)->execute();
-		$product -> delete(); 
+
+		var_dump($product);
+
+		$product[0] -> delete(); 
 		header("Location: ".LINK_BASE."client/product");
 	}
 

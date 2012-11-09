@@ -95,7 +95,10 @@
 		                						<li class="product_image span2">'.Load::image($value->Product_Image."_thumbnail.jpg", "Chairs").'</li>
 		                						<li class="product_name">'.$value->Product_Name.'</li>
 		                						<li class="product_sku">#'.$value->SKU.'</li>
-		                						<li><button type="button" class="btn btn-small">Edit</button><button type="button" class="btn btn-small">Delete</button></li>
+		                						<li>
+		                							<a href="'.LINK_BASE.'catalog/edit_product/'.$value->ProductID.'"/>Edit</a>
+		      										<a href="'.LINK_BASE.'catalog/delete_product/'.$value->ProductID.'"/>Delete</a>
+		                						</li>
 		                					</ul>
 		                				</div>
 		                			';	
