@@ -137,20 +137,20 @@ $(document).ready(function() {
 
 		if(isNaN(obj.rating))
 		{
-			$('#review_form').prepend('<p class="error">The rating has to be a number 0 - 5</p>');
+			$('#review_form').prepend('<div class="error alert alert-error"><button type="button" class="close" data-dismiss="alert">×</button><strong>Hold Up!</strong> <p class="error">The rating has to be a number 0 - 5</p></div>');
 			valid = false;
 		}
 		else
 		{
 			if(obj.rating > 5 || obj.rating < 0)
 			{
-				$('#review_form').prepend('<p class="error">The rating has to be a number 0 - 5</p>');
+				$('#review_form').prepend('<div class="error alert alert-error"><button type="button" class="close" data-dismiss="alert">×</button><strong>Hold Up!</strong> <p>The rating has to be a number 0 - 5</p></div>');
 				valid = false;				
 			}
 		}
 		if(obj.review.length == 0)
 		{
-				$('#review_form').prepend('<p class="error">There must be a review!</p>');
+				$('#review_form').prepend('<div class="error alert alert-error"><button type="button" class="close" data-dismiss="alert">×</button><strong>Hold Up!</strong> <p>There must be a review!</p></div>');
 				valid = false;				
 		}
 
@@ -176,14 +176,14 @@ $(document).ready(function() {
 
 					$('#review_set').prepend('<hr /><ul class="review_rating">'+stars+"</ul><p>"+obj.review+"</p><div class='review_user'><p>"+data.success+"</p></div>");
 					$('#review_form').slideUp(function() {
-						$('#review_form').after('<div class="success alert alert-success"><button type="button" class="close" data-dismiss="alert">×</button><p><strong>Success!</strong>Thanks for the review!</p></div>');
+						$('#review_form').after('<div class="success alert alert-success"><button type="button" class="close" data-dismiss="alert">×</button><p><strong>Success!</strong> Thanks for the review!</p></div>');
 					});
 					$('#review_form textarea').val("");
 					$('#review_form input type=[text]').val("");
 				}
 				else
 				{
-					$('#review_form').prepend('<p class="error">Something went wrong!</p>');
+					$('#review_form').prepend('<div class="error alert alert-error"><button type="button" class="close" data-dismiss="alert">×</button><strong>Hold Up!</strong> <p>Something went wrong!</p></div>');
 				}
 			}, 'json');
 		}
