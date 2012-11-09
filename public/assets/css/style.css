@@ -500,6 +500,9 @@ form#card_info div select.expir_month, select.expir_year {
 #dashboard #account_info {
 	margin-top: 20px;
 }
+#dashboard #account_info span {
+	font-weight: bold;
+}
 #client_sidebar {
 	min-height: 500px;
 	border-right: 2px solid #F5F6F7;
