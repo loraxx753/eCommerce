@@ -57,7 +57,7 @@
 				</div>
 				<?php if(count($cartArray) > 0) {?>
 				<span id="checkout" class="span2 pull-right">
-					<a href="<?=LINK_BASE?>/checkout"class="btn btn-small">Proceed to Checkout</a>
+					<a href="<?=LINK_BASE?>checkout"class="btn btn-small">Proceed to Checkout</a>
 				</span>
 				<?php } ?>
 			</div>
