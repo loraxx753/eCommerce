@@ -94,10 +94,10 @@ class Catalog_Controller extends Controller
 		header("Location: ".LINK_BASE."client/product");
 	}
 
-	public static function action_edit_product($id)
+	public static function action_edit_product()
 	{
 		$product = Model_Products::build()->where('ProductID', $id)->execute();
-		$product -> 
+		$product->ProductID = $_POST["ProductID"];
 		$product->Product_Name = $_POST["Product_Name"]; 
 		$product->SKU = $_POST["SKU"];
 		$product->Stock = $_POST["Stock"];

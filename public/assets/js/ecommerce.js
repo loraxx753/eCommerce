@@ -21,6 +21,17 @@ $(document).ready(function() {
 		modal: true,
 		title: 'Register'
 	});
+	$('#editBox').dialog({
+		autoOpen: false,
+		draggable: false,
+		resizable: false,
+		width: 600,	
+		buttons: {
+			'Edit' : function(e) {editProduct(e);},
+		},
+		modal: true,
+		title: 'Edit'
+	})
 
 	$('#login').on('click', function (){
 		$('#loginBox').dialog('open');
@@ -28,6 +39,10 @@ $(document).ready(function() {
 	$('#regLink').on('click', function(e) {
 		$('#regBox').dialog('open');
 	});
+	$('.editLink').on('click', function(e){
+		$('#editBox').dialog('open');
+	});
+
 	function signin() {
 		var href = $('#loginArea').attr('action');
 		var obj = {
@@ -72,6 +87,37 @@ $(document).ready(function() {
 			}
 		}, 'json');
 	};
+	function editProduct(){
+		var href = $('#edit').attr('action');
+		var obj = {
+			'Product_ID' : $('#edit input[name=Product_ID]').val(),
+			'Product_Name' : $('#edit input[name=Product_Name]').val(),
+			'SKU' : $('#edit input[name=SKU]').val(),
+			'Product_Description' : $('#edit input[name=Product_Description]').val(),
+			'Stock' : $('#edit input[name=Stock]').val(),
+			'Product_Cost' : $('#edit input[name=Product_Cost]').val(),
+			'Product_Price' : $('#edit input[name=Product_Price]').val(),
+			'Weight' : $('#edit input[name=Weight]').val(),
+			'Size' : $('#edit input[name=Size]').val(),
+			'feat' : $('#edit input[name=feat]').val()
+		};
+
+		$.post(href, obj, function(data){
+			if(data.success)
+			{
+				alert("hello");
+				location.reload();
+			}
+			else
+			{
+				$('#editBox p.error').remove();
+				for(i in data.error)
+				{
+					$('#edit').before("<p class='error'>"+data.error[i]+"</p>")
+				}
+			}
+		}, 'json');
+	}
 
 	$('form.form-search a').click(function(event) {
 		event.preventDefault();

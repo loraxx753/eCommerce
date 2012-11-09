@@ -100,7 +100,7 @@
 		                						<li class="product_name">'.$value->Product_Name.'</li>
 		                						<li class="product_sku">#'.$value->SKU.'</li>
 		                						<li>
-		                							<a href="'.LINK_BASE.'catalog/edit_product/'.$value->ProductID.'"/>Edit</a>
+		                							<span><a class="editLink" class="btn btn-small">Edit</a></span>
 		      										<a href="'.LINK_BASE.'catalog/delete_product/'.$value->ProductID.'"/>Delete</a>
 		                						</li>
 		                					</ul>
@@ -113,3 +113,4 @@
 				</div>
 			</div>
 		</div>
+		

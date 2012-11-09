@@ -95,5 +95,51 @@
 			<input name="email" type="text">
 		</form>
 	</div>
+	<div id="editBox">
+		<form id="edit" method="post" action="<?=LINK_BASE?>catalog/edit_product">
+		<fieldset>
+			<div class="span3">
+	       		<label>Product ID:</label>
+	       		<input type="text" name="ProductID" placeholder="Enter product id here" />
+	       	</div>
+	       	<div class="span3">
+	       		<label>Product Name:</label>
+	       		<input type="text" name="Product_Name" placeholder="Enter product name here" />
+	       	</div>
+	    	<div class="span">
+	        	<label>SKU:</label>
+	       		<input type="text" name="SKU" class="span3" placeholder="Enter SKU here" />
+	        </div>
+	        <div class="span6">
+	        	<label>Product Description:</label>
+	       		<textarea name="Product_Description"></textarea>
+	        </div>
+	        <div class="span3">
+	       		<label>Stock:</label>
+	       		<input type="text" name="Stock" placeholder="Enter stock amount here" />
+	       	</div>
+	       	<div class="span3">
+	       		<label>Cost:</label>
+	       		<input type="text" name="Product_Cost" placeholder="Enter product cost here" />
+	       	</div>
+	       	<div class="span3">
+	       		<label>Product Price:</label>
+	       		<input type="text" name="Product_Price" placeholder="Enter product price here" />
+	       	</div>
+	       	<div class="span3">
+	       		<label>Product Weight:</label>
+	       		<input type="text" name="Weight" placeholder="Enter product weight here" />
+	       	</div>
+	       	<div class="span3">
+	       		<label>Product Size:</label>
+	       		<input type="text" name="Size" placeholder="Enter product size here" />
+	       	</div>
+	       	<div class="span3">
+	       		<label>Featured Product:</label>
+	       		<input type="checkbox" name="feat" value="true">
+	       	</div>                           	
+	    </fieldset>
+		</form>	
+	</div>
 </body>
 </html>
