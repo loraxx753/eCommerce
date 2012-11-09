@@ -31,8 +31,6 @@
 				<p><?=$product->Product_Description?></p>
 			</div>
 			<div class="span6 product_options pull-right">
-<!-- 				<p class="span1 quantity">Quantity:</p>
-				<input type="text" class="span1" value="1" /> -->
 				<div class="span2 pull-right"><h3>$<?=number_format($product->Product_Price, 2)?></h3></div>
 			</div>
 			<div class="span3 pull-right add_to_cart">
