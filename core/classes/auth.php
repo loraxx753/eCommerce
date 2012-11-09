@@ -120,7 +120,7 @@ class Auth {
 		}
 		if(isset($user->access))
 		{
-			if($user->access == $level)
+			if($user->access >= $level)
 			{
 				return true;
 			}
