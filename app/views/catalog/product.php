@@ -66,41 +66,43 @@
 								</div>
 								<div class="tab-pane" id="tab3">
 									<span>Reviews</span>
-									<form method="post" action="<?=LINK_BASE?>/catalog/review/<?=$product->ProductID?>">
+									<form id="review_form" method="post" action="<?=LINK_BASE?>catalog/review/<?=$product->ProductID?>">
 										<p>Add A Review</p>
 										<p><textarea class="field span5 review_textarea" name="review"></textarea></p>
 										<p>Rating: <input type="text" name="rating" class="rating_input"/> out of 5 <input type="submit" class="padding-left btn" value="Add Review" /></p>
 									</form>
-									<?php if($reviews) { 
-										foreach ($reviews as $review) {
-										?>
-									<hr />
-									<ul class="review_rating">
-										<?php 
-										$counter = 0;
-										for($x=0; $x < 5; $x++)
-										{
-											if($counter < $review->rating)
+									<div id="review_set">
+										<?php if($reviews) { 
+											foreach ($reviews as $review) {
+											?>
+										<hr />
+										<ul class="review_rating">
+											<?php 
+											$counter = 0;
+											for($x=0; $x < 5; $x++)
 											{
-												echo '<li><i class="icon-star"></i></li>';
-												$counter++;
+												if($counter < $review->rating)
+												{
+													echo '<li><i class="icon-star"></i></li>';
+													$counter++;
+												}
+												else
+												{
+													echo '<li><i class="icon-star-empty"></i></li>';
+												}
 											}
-											else
-											{
-												echo '<li><i class="icon-star-empty"></i></li>';
-											}
-										}
-										?>
-									</ul>
+											?>
+										</ul>
 
-									<p><?=$review->review?></p>
-									<div class="review_user">
-										<p><?=$review->user?> <?=date("n/j/Y h:ia",$review->created)?></p>
+										<p><?=$review->review?></p>
+										<div class="review_user">
+											<p><?=$review->user?> <?=date("n/j/Y h:ia",$review->created)?></p>
+										</div>
+										<?php }
+											} else { ?>
+											<p id="no_reviews"><em>There doesn't seem to be any reviews for this product</em></p>
+										<?php } ?>
 									</div>
-									<?php }
-										} else { ?>
-										<p><em>There doesn't seem to be any reviews for this product</em></p>
-									<?php } ?>
 								</div>
 							</div>
 						</div>

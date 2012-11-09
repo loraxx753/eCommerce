@@ -125,4 +125,68 @@ $(document).ready(function() {
 		});
 	}
 
+	$('#review_form input[type=submit]').click(function(e) {
+		e.preventDefault();
+		$('.error').remove();
+		var href = $('#review_form').attr('action');
+		var obj = {
+			'review' : $('#review_form textarea').val(),
+			'rating' : parseInt($('#review_form input[type=text]').val())
+		}
+		var valid = true;
+
+		if(isNaN(obj.rating))
+		{
+			$('#review_form').prepend('<p class="error">The rating has to be a number 0 - 5</p>');
+			valid = false;
+		}
+		else
+		{
+			if(obj.rating > 5 || obj.rating < 0)
+			{
+				$('#review_form').prepend('<p class="error">The rating has to be a number 0 - 5</p>');
+				valid = false;				
+			}
+		}
+		if(obj.review.length == 0)
+		{
+				$('#review_form').prepend('<p class="error">There must be a review!</p>');
+				valid = false;				
+		}
+
+		if(valid)
+		{
+			$.post(href, obj, function(data) {
+				if(data.success)
+				{
+					var counter = 0;
+					var stars = '';
+					for(var x=0; x < 5; x++)
+					{
+						if(counter < obj.rating)
+						{
+							stars += '<li><i class="icon-star"></i></li>';
+							counter++;
+						}
+						else
+						{
+							stars += '<li><i class="icon-star-empty"></i></li>';
+						}
+					}
+
+					$('#review_set').prepend('<hr /><ul class="review_rating">'+stars+"</ul><p>"+obj.review+"</p><div class='review_user'><p>"+data.success+"</p></div>");
+					$('#review_form').slideUp(function() {
+						$('#review_form').after('<p class="success">Thanks for the review!</p>');
+					});
+					$('#review_form textarea').val("");
+					$('#review_form input type=[text]').val("");
+				}
+				else
+				{
+					$('#review_form').prepend('<p class="error">Something went wrong!</p>');
+				}
+			}, 'json');
+		}
+	});
+
 });
