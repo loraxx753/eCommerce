@@ -57,18 +57,36 @@ class Catalog_Controller extends Controller
 	}
 	public static function action_add_product()
 	{
-		var_dump($_FILES);
-		// $product = new Model_Products();
-		// $product->Product_Name        = $_POST['Product_Name'];
-		// $product->SKU                 = $_POST['SKU'];
-		// $product->Stock               = $_POST['Stock'];
-		// $product->Product_Description = $_POST['Product_Description'];
-		// $product->Product_Cost        = $_POST['Product_Cost'];
-		// $product->Product_Price       = $_POST['Product_Price'];
-		// $product->Weight              = $_POST['Weight'];
-		// $product->Size                = $_POST['Size']; 
-		// $product->Featured            = ($_POST['Featured']) ? 1 : 0;
-		// $product->Weight              = $_POST['Weight'];
+		$uuid=uniqid();
+		$explodedimg = explode(".", $_FILES['image']['name']);
+		$extentionimg = array_pop($explodedimg);
+
+		move_uploaded_file($_FILES["image"]["tmp_name"], BASE."public/assets/img/products/".$uuid.$_FILES["image"]["name"]);
+		$exploded = explode(".", $_FILES['thumbnail']['name']);
+		$extention = array_pop($exploded);
+		$name = implode(".", $exploded)."_thumbnail.".$extention;
+		move_uploaded_file($_FILES["thumbnail"]["tmp_name"], BASE."public/assets/img/products/".$uuid.$name);
+
+
+		$cat = Model_Catagories::build()->where('LOWER(name)', strtolower($_POST['Category_ID']))->execute();
+
+		$product = new Model_Products();
+		$product->Product_Name        = $_POST['Product_Name'];
+		$product->SKU                 = $_POST['SKU'];
+		$product->Stock               = $_POST['Stock'];
+		$product->Product_Description = $_POST['Product_Description'];
+		$product->Product_Cost        = $_POST['Product_Cost'];
+		$product->Category_ID         = $cat[0]->catagoryID;
+		$product->Product_Price       = $_POST['Product_Price'];
+		$product->Product_Weight      = $_POST['Weight'];
+		$product->Product_Size        = $_POST['Size']; 
+		$product->Featured            = ($_POST['feat']) ? 1 : 0;
+		$product->Product_Image       = "products/".$uuid.implode(".", $exploded);
+		$product->save();
+
+		Session::set_single('success', array('Product Added'));
+		header("Location: ".LINK_BASE."client/product");
+
 	}
 
 	public static function action_weight($limit_min, $limit_max)

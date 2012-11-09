@@ -21,6 +21,13 @@
 				<div class="row">
 					<div id="admin_dashboard" class="span8">
 						<h3>Manage Products</h3>
+						<?php if($success = Session::get_single('success'))
+						{
+							foreach ($success as $item) {
+								echo "<p class='success'>".$item."</p>";
+							}
+						}
+						?>
 						<small>Manage all of your store products!</small>
 						<ul class="nav nav-tabs">
 							<li class="active"><a href="#tab2" data-toggle="tab">Products</a></li>
@@ -40,7 +47,7 @@
                             </div>
                             <div class="span6">
                             	<label>Product Description:</label>
-                           		<textarea></textarea>
+                           		<textarea name="Product_Description"></textarea>
                             </div>
                             <div class="span3">
                            		<label>Category:</label>
@@ -84,9 +91,6 @@
 		                </div>
 		                <div class="tab-pane" id="tab2">
 		                	<h1>Modify Shit Goes Here</h1>
-		                </div>
-		                <div class="tab-pane" id="tab3">
-		                	<h1>Delete Shit Goes Here</h1>
 		                </div>
 					</div>
 				</div>

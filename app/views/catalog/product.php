@@ -1,7 +1,7 @@
 		<div class="row product">
 			<div class="span6">
 				<div class="thumbnail">
-					<span><?=Load::image($product->Product_Image."_big.jpg", "Desk")?></span>
+					<span><?=Load::image($product->Product_Image.".jpg", "Desk")?></span>
 				</div>
 			</div>
 			<div class="span3">
