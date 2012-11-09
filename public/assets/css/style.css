@@ -568,7 +568,7 @@ a:hover {
 }
 .product_snapshot {
 	margin: 5px 2px 0 2px;
-	padding: 10px 0 10px 0;
+	padding: 0px 0 14px 0;
 	border: 1px solid #DDD;
 }
 .product_snapshot ul {
