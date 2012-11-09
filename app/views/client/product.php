@@ -90,30 +90,16 @@
 	                	</form>	
 		                </div>
 		                <div class="tab-pane active" id="tab2">
+		                	<?php foreach($products as $product) { ?>
 		                	<div class="span4 product_snapshot">
 		                		<ul>
-		                			<li class="product_image span2"><img src="http://localhost/4530c/assignment03/public/assets/img/products/couch1_thumbnail.jpg" /></li>
-		                			<li class="product_name">Derp Product</li>
-		                			<li class="product_sku">#1</li>
-		                			<li><button type="button" class="btn btn-small">Edit</button><button type="button" class="btn btn-small">Delete</button></li>
+		                			<li class="product_image span2"><?=Load::image($product->Product_Image."_thumbnail.jpg", "Chairs")?></li>
+		                			<li class="product_name"><?=$product->Product_Name?></li>
+		                			<li class="product_sku"><?=$product->SKU?></li>
+		                			<li><button class="btn btn-small edit_product product_<?=$product->ProductID?>">Edit</button><button class="btn btn-small delete_product product_<?=$product->ProductID?>">Delete</button></li>
 		                		</ul>
 		                	</div>
-		                	<div class="span4 product_snapshot">
-		                		<ul>
-		                			<li class="product_image span2"><img src="http://localhost/4530c/assignment03/public/assets/img/products/couch1_thumbnail.jpg" /></li>
-		                			<li class="product_name">Derp Product</li>
-		                			<li class="product_sku">#1</li>
-		                			<li><button type="button" class="btn btn-small">Edit</button><button type="button" class="btn btn-small">Delete</button></li>
-		                		</ul>
-		                	</div>
-		                	<div class="span4 product_snapshot">
-		                		<ul>
-		                			<li class="product_image span2"><img src="http://localhost/4530c/assignment03/public/assets/img/products/couch1_thumbnail.jpg" /></li>
-		                			<li class="product_name">Derp Product</li>
-		                			<li class="product_sku">#1</li>
-		                			<li><button type="button" class="btn btn-small">Edit</button><button type="button" class="btn btn-small">Delete</button></li>
-		                		</ul>
-		                	</div>
+		                	<?php } ?>
 		                </div>
 					</div>
 				</div>
