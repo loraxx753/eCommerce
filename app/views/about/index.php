@@ -12,9 +12,9 @@
 	<div class="row">
 		<div class="span5">
 			<ul>
-				<li><strong>Jesse Ferraro</strong> - Front End</li>
+				<li><strong>Jesse Ferraro</strong> - Front End, Design</li>
 				<li><strong>Rodney Ritchey</strong> - Front End</li>
-				<li><strong>Liat Stilman</strong> - Front End</li>
+				<li><strong>Liat Stilman</strong> - Front End, Content</li>
 				<li><strong>Kevin Baugh</strong> - Back End</li>
 				<li><strong>Chris McLean</strong> - Back End</li>
 			</ul>
