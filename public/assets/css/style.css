@@ -556,7 +556,7 @@ a:hover {
 	float: left;
 	margin: 0 5px 0px 5px;
 }
-#admin_dashboard form fieldset div textarea {
+.product_description_textarea {
 	height: 120px;
 	width: 447px;
 }

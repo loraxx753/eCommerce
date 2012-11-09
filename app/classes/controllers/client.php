@@ -48,7 +48,7 @@
 		}		
 		public static function action_manage()
 		{
-			self::authenticate('admin');
+			self::authenticate('privilege');
 			$render = new Render();
 			$render->addVar('title', "NWA Furniture | Administrator Dashboard");
 			$render->addVar('access', Auth::check_access());

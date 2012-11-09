@@ -18,20 +18,6 @@
 					<div id="admin_dashboard" class="span8">
 							<h3>Administrator Dashboard</h3>
 							<small>A summary of all recent activity on your account.</small>
-						<div id="order_info" class="span8">
-							<h5>Order Statistics</h5>
-							<hr />
-							<p class="span3">October Daily Average:</p>
-							<p class="span3 pull-right">$100.00</p>
-							<p class="span3">Today's Total:</p>
-							<p class="span3 pull-right">$100.00</p>
-							<p class="span3">Yesterday's Total:</p>
-							<p class="span3 pull-right">$100.00</p>
-							<p class="span3">October Total:</p>
-							<p class="span3 pull-right">$100.00</p>
-							<p class="span3">Estimated October Total:</p>
-							<p class="span3 pull-right">$100.00</p>
-						</div>	
 					</div>
 				</div>
 			</div>
