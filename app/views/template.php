@@ -14,14 +14,14 @@
 			</div>
 			<div id="admin_buttons" class="span6 offset1">
  				<?php if(!Session::get('username')) {?>
-				<a id="login" class="btn btn-small">Log-In/Register</a>
+				<span><a id="login" class="btn btn-small">Log-In/Register</a></span>
 				<?php } else { ?>
-				<a id="logout" href="<?=LINK_BASE?>user/logout" class="btn btn-small">Logout</a>
-				<a id="account" href="<?=LINK_BASE?>client" class="btn btn-small">My Account</a>
+				<span><a id="logout" href="<?=LINK_BASE?>user/logout" class="btn btn-small">Logout</a></span>
+				<span><a id="account" href="<?=LINK_BASE?>client" class="btn btn-small">My Account</a></span>
 				<?php if(Auth::check_access('admin')) {?>
-					<a href="<?=LINK_BASE?>client/manage" class="btn btn-small">Manage</a>
+					<span><a href="<?=LINK_BASE?>client/manage" class="btn btn-small">Manage</a></span>
 				<?php } ?>
-				<a id="username" class="btn btn-small" href="<?=LINK_BASE?>client"><?=Session::get('username')?></a>
+				<span><a id="username" class="btn btn-small" href="<?=LINK_BASE?>client"><?=Session::get('username')?></a></span>
 				<?php } ?>				
 			</div>
 			<div id="search" class="span7">
