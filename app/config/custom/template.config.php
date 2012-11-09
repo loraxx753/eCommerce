@@ -16,7 +16,7 @@ return array(
 	'base' => 'WEB BASE',
 
 	// Whether to turn shorttags on or not (true results in /catalog/cart, while false looks like /public/index.php?url=catalog/cart) 
-	'shorttags' => false,
+	'shorttags' => true,
 
 );
 

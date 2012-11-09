@@ -42,7 +42,7 @@
 			  PRIMARY KEY (`id`)
 			) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
 			", "Creating User Table."),
-					array("INSERT INTO `Products` (`SKU`, `Product_Name`, `Product_Description`, `Category_ID`, `Stock`, `Product_Cost`, `Product_Price`, `Product_Image`, `Product_Weight`, `Product_Size`, `Featured`, `Sale_Price`, `Total_Sold`) VALUES
+					array("INSERT INTO `products` (`SKU`, `Product_Name`, `Product_Description`, `Category_ID`, `Stock`, `Product_Cost`, `Product_Price`, `Product_Image`, `Product_Weight`, `Product_Size`, `Featured`, `Sale_Price`, `Total_Sold`) VALUES
 						(1, 'Thinking Chair', 'chair', 1, 5, 50, 100, 'products/chair', 20, '10x11x12', 0, NULL, 0),
 						(2, 'Napoleon Chair', 'chair', 1, 5, 60, 100, 'products/chair2', 40, '10x11x12', 1, NULL, 0),
 						(3, 'Wooden Chair', 'chair', 1, 5, 40, 100, 'products/chair3', 10, '10x11x12', 0, NULL, 0),
