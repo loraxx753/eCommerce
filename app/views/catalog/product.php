@@ -69,7 +69,7 @@
 									<form method="post" action="<?=LINK_BASE?>/catalog/review/<?=$product->ProductID?>">
 										<p>Add A Review</p>
 										<p><textarea class="field span5 review_textarea" name="review"></textarea></p>
-										<p>Rating: <input type="text" name="rating" class="rating_input"/> out of 5 <input type="submit" class="padding-left" value="Add Review" /></p>
+										<p>Rating: <input type="text" name="rating" class="rating_input"/> out of 5 <input type="submit" class="padding-left btn" value="Add Review" /></p>
 									</form>
 									<?php if($reviews) { 
 										foreach ($reviews as $review) {
