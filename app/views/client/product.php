@@ -86,30 +86,21 @@
 	                	</form>	
 		                </div>
 		                <div class="tab-pane active" id="tab2">
-		                	<div class="span4 product_snapshot">
-		                		<ul>
-		                			<li class="product_image span2"><img src="http://localhost/4530c/assignment03/public/assets/img/products/couch1_thumbnail.jpg" /></li>
-		                			<li class="product_name">Derp Product</li>
-		                			<li class="product_sku">#1</li>
-		                			<li><button type="button" class="btn btn-small">Edit</button><button type="button" class="btn btn-small">Delete</button></li>
-		                		</ul>
-		                	</div>
-		                	<div class="span4 product_snapshot">
-		                		<ul>
-		                			<li class="product_image span2"><img src="http://localhost/4530c/assignment03/public/assets/img/products/couch1_thumbnail.jpg" /></li>
-		                			<li class="product_name">Derp Product</li>
-		                			<li class="product_sku">#1</li>
-		                			<li><button type="button" class="btn btn-small">Edit</button><button type="button" class="btn btn-small">Delete</button></li>
-		                		</ul>
-		                	</div>
-		                	<div class="span4 product_snapshot">
-		                		<ul>
-		                			<li class="product_image span2"><img src="http://localhost/4530c/assignment03/public/assets/img/products/couch1_thumbnail.jpg" /></li>
-		                			<li class="product_name">Derp Product</li>
-		                			<li class="product_sku">#1</li>
-		                			<li><button type="button" class="btn btn-small">Edit</button><button type="button" class="btn btn-small">Delete</button></li>
-		                		</ul>
-		                	</div>
+		                	<?php
+		                		foreach ($items as $key => $value) 
+		                		{
+		                			echo'
+		                				<div class="span4 product_snapshot">
+		                					<ul>
+		                						<li class="product_image span2">'.Load::image($value->Product_Image."_thumbnail.jpg", "Chairs").'</li>
+		                						<li class="product_name">'.$value->Product_Name.'</li>
+		                						<li class="product_sku">#'.$value->SKU.'</li>
+		                						<li><button type="button" class="btn btn-small">Edit</button><button type="button" class="btn btn-small">Delete</button></li>
+		                					</ul>
+		                				</div>
+		                			';	
+		                		}
+		                	?>
 		                </div>
 					</div>
 				</div>

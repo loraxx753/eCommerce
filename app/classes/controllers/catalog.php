@@ -51,10 +51,7 @@ class Catalog_Controller extends Controller
 		$render->addVar('items', $range);
 		$render->load('catalog', 'index');	
 	}
-	public static function action_material()
-	{
-		
-	}
+	
 	public static function action_add_product()
 	{
 		$uuid=uniqid();
@@ -87,6 +84,32 @@ class Catalog_Controller extends Controller
 		Session::set_single('success', array('Product Added'));
 		header("Location: ".LINK_BASE."client/product");
 
+	}
+
+	public static function action_delete_product($id)
+	{
+		$product = Model_Products::build()->where('ProductID', $id)->execute();
+		$product -> delete(); 
+		header("Location: ".LINK_BASE."client/product");
+	}
+
+	public static function action_edit_product($id)
+	{
+		$product = Model_Products::build()->where('ProductID', $id)->execute();
+		$product -> 
+		$product->Product_Name = $_POST["Product_Name"]; 
+		$product->SKU = $_POST["SKU"];
+		$product->Stock = $_POST["Stock"];
+		$product->Product_Description = $_POST["Product_Description"];
+		$product->Product_Cost = $_POST["Product_Cost"];
+		$product->Product_Price = $_POST["Product_Price"];
+		$product->Weight = $_POST["Weight"];
+		$product->Size = $_POST["Size"];
+		$product->Featured = $_POST["feat"] ? 1: 0;
+		
+		$product -> save(); 
+
+		header("Location: ".LINK_BASE."client/product");
 	}
 
 	public static function action_weight($limit_min, $limit_max)

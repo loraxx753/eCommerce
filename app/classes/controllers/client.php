@@ -38,6 +38,9 @@
 			$user = Model_Users::build()->where('user', Session::get('username'))->execute();
 			$render->addVar('email', $user[0]->email);
 			
+			$items = Model_Products::build()->execute();
+			$render->addVar('items', $items);
+
 			$render->load('client', 'product');
 
 		}		
@@ -47,6 +50,7 @@
 			$render = new Render();
 			$render->addVar('title', "NWA Furniture | Administrator Dashboard");
 			$render->addVar('access', Auth::check_access());
+
 			$render->load('client', 'admin');
 
 		}
