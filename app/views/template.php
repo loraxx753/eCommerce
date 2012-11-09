@@ -95,6 +95,9 @@
 			<input name="email" type="text">
 		</form>
 	</div>
+	<div id="addBox">
+		<p>Item has been added to the cart.</p>
+	</div>
 	<div id="editBox">
 		<form id="editArea" method="post" action="<?=LINK_BASE?>catalog/edit_product">
 		<fieldset>
