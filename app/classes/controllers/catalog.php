@@ -68,15 +68,13 @@ class Catalog_Controller extends Controller
 		move_uploaded_file($_FILES["thumbnail"]["tmp_name"], BASE."public/assets/img/products/".$uuid.$name);
 
 
-		$cat = Model_Catagories::build()->where('LOWER(name)', strtolower($_POST['Category_ID']))->execute();
-
 		$product = new Model_Products();
 		$product->Product_Name        = $_POST['Product_Name'];
 		$product->SKU                 = $_POST['SKU'];
 		$product->Stock               = $_POST['Stock'];
 		$product->Product_Description = $_POST['Product_Description'];
 		$product->Product_Cost        = $_POST['Product_Cost'];
-		$product->Category_ID         = $cat[0]->catagoryID;
+		$product->Category_ID         = $_POST['Category_ID'];
 		$product->Product_Price       = $_POST['Product_Price'];
 		$product->Product_Weight      = $_POST['Weight'];
 		$product->Product_Size        = $_POST['Size']; 
