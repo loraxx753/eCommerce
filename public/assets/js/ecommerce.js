@@ -176,7 +176,7 @@ $(document).ready(function() {
 
 					$('#review_set').prepend('<hr /><ul class="review_rating">'+stars+"</ul><p>"+obj.review+"</p><div class='review_user'><p>"+data.success+"</p></div>");
 					$('#review_form').slideUp(function() {
-						$('#review_form').after('<p class="success">Thanks for the review!</p>');
+						$('#review_form').after('<div class="success alert alert-success"><button type="button" class="close" data-dismiss="alert">×</button><p><strong>Success!</strong>Thanks for the review!</p></div>');
 					});
 					$('#review_form textarea').val("");
 					$('#review_form input type=[text]').val("");
