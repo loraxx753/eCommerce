@@ -43,15 +43,11 @@
 					<div class="span12 featured">
 						<div class="tabbable">
 							<ul class="nav nav-tabs">
-								<li class="active"><a href="#tab1" data-toggle="tab">Product Reviews</a></li>
-								<li><a href="#tab2" data-toggle="tab">Policies</a></li>
-								<li><a href="#tab3" data-toggle="tab">Reviews</a></li>
+								<li class="active"><a href="#tab1" data-toggle="tab">Policies</a></li>
+								<li><a href="#tab2" data-toggle="tab">Reviews</a></li>
 							</ul>
 							<div class="tab-content">
 								<div class="tab-pane active" id="tab1">
-									<p><?=$product->Product_Description?></p>
-								</div>
-								<div class="tab-pane" id="tab2">
 									<span>Return Policy</span>
 									<p>We will accept merchandise returns of items at our stores within 90 days of customer receipt. Please understand, however, that bedding items may be returned or exchanged only if in their original packaging.</p>
 
@@ -64,12 +60,12 @@
 										<li>For store returns of cash purchases accompanied by the Original Sales Receipt, a cash refund will be given up to $100. If the purchase exceeds $100, a check in the amount of the balance of the refund will be mailed to the customer.</li>
 									</ul>
 								</div>
-								<div class="tab-pane" id="tab3">
+								<div class="tab-pane" id="tab2">
 									<span>Reviews</span>
 									<form id="review_form" method="post" action="<?=LINK_BASE?>catalog/review/<?=$product->ProductID?>">
 										<p>Add A Review</p>
 										<p><textarea class="field span5 review_textarea" name="review"></textarea></p>
-										<p>Rating: <input type="text" name="rating" class="rating_input"/> out of 5 <input type="submit" class="padding-left btn" value="Add Review" /></p>
+										<p>Rating: <input type="text" name="rating" class="rating_input"/> out of 5 <input type="submit" class="padding-left btn btn-small" id="reviewSubmit" value="Add Review" /></p>
 									</form>
 									<div id="review_set">
 										<?php if($reviews) { 

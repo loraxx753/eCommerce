@@ -2,6 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="For furniture, home decor, gifts, housewares, registry items and more, visit NWA Furniture today and look no further for style." />
+	<meta name="keywords" content="Sale, Catalog, Decorating, Interior Design, Entertain, Design, Bed Room, Dining Room, Home Office, Living Room, Office, Outdoor, Home, Home Accessories, Housewares, Furniture, Sofa, Couch, Chair" />
 	<title><?=$title;?></title>
 	<link rel="stylesheet" href="http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css" />
 	<?=Load::css(array("bootstrap.css", "style.css"))?>

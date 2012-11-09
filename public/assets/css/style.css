@@ -353,6 +353,12 @@ ul.thumbnail {
 .recommended_button:hover {
 	background: none;
 }
+#reviewSubmit {
+	background: none;
+	border-radius: 0;
+	font-weight: bold;
+	padding: 5px 19px 5px 19px;
+}
 
 /* Checkout Page Styles */
 .form_row {
