@@ -103,7 +103,7 @@ $(document).ready(function() {
 			$this.closest('.cart_item').remove();
 			if($('.cart_item').length == 0)
 			{
-				$('.page_header').after("<p>You have no items in your cart</p>");
+				$('.page_header').after('<div class="alert alert-info"><button type="button" class="close" data-dismiss="alert">×</button><strong>Missing Something?</strong> <p>You have no items in your cart!</p></div>');
 				$('#checkout').hide();
 			}
 			update_total();
