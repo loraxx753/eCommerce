@@ -22,6 +22,12 @@
 					<div id="admin_dashboard" class="span8">
 						<h3>Manage Products</h3>
 						<small>Manage all of your store products!</small>
+						<ul class="nav nav-tabs">
+							<li class="active"><a href="#tab2" data-toggle="tab">Products</a></li>
+							<li><a href="#tab1" data-toggle="tab">Add Product</a></li>
+						</ul>
+						<div class="tab-content">
+							<div class="tab-pane active" id="tab1">
 						<form id="contact" method="post" enctype="multipart/form-data" action="<?=LINK_BASE?>catalog/add_product">
                 		<fieldset>
                            	<div class="span3">
@@ -75,6 +81,13 @@
 	                    </fieldset>
 	                    <button type="submit" id="saveProducts" class="btn btn-small span2 pull-right offset-2">Save</button>
 	                	</form>	
+		                </div>
+		                <div class="tab-pane" id="tab2">
+		                	<h1>Modify Shit Goes Here</h1>
+		                </div>
+		                <div class="tab-pane" id="tab3">
+		                	<h1>Delete Shit Goes Here</h1>
+		                </div>
 					</div>
 				</div>
 			</div>
