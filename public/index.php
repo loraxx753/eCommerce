@@ -60,7 +60,7 @@ else
 	$url = $_GET['url'];
 
 	foreach($routes as $preg => $replacement) {
-		$preg = "/$preg/";
+		$preg = "/^$preg/";
 		if(preg_match($preg, $_GET['url']))
 		{
 			$url = preg_replace($preg, $replacement, $url);
