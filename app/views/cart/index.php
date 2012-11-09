@@ -55,8 +55,10 @@
 				<div id="sub-total" class="span3 pull-right">
 					<p id="subtotal_price" class="sub_total"><?=number_format($total, 2)?></p>
 				</div>
+				<?php if(count($cartArray) > 0) {?>
 				<span id="checkout" class="span2 pull-right">
 					<a href="<?=WEB_BASE?>/checkout"class="btn btn-small">Proceed to Checkout</a>
 				</span>
+				<?php } ?>
 			</div>
 		</div>

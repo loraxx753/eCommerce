@@ -53,7 +53,7 @@
 	</div>
 	<script type="text/javascript">
 		// To dynamically get the web_base from php and assign it to js
-		var WEB_BASE = <?=WEB_BASE?>;
+		var WEB_BASE = "<?=WEB_BASE?>";
 	</script>
 	<?=Load::js(array('http://code.jquery.com/jquery-1.8.2.js', 'http://code.jquery.com/ui/1.9.1/jquery-ui.js', 'bootstrap.js', 'ecommerce.js', 'product.js'));?>
 

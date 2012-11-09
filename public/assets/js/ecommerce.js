@@ -104,6 +104,7 @@ $(document).ready(function() {
 			if($('.cart_item').length == 0)
 			{
 				$('.page_header').after("<p>You have no items in your cart</p>");
+				$('#checkout').hide();
 			}
 			update_total();
 		});

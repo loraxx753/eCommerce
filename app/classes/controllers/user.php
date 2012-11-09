@@ -2,11 +2,6 @@
 
 class User_Controller {
 
-	public function action_index() 
-	{
-		
-	}
-
 	public function action_register()
 	{	
 		//get post data
