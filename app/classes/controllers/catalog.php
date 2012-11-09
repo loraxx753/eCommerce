@@ -97,18 +97,18 @@ class Catalog_Controller extends Controller
 	public static function action_edit_product()
 	{
 		$product = Model_Products::build()->where('ProductID', $_POST["ProductID"])->execute();
-		$product->ProductID = $_POST["ProductID"];
-		$product->Product_Name = $_POST["Product_Name"]; 
-		$product->SKU = $_POST["SKU"];
-		$product->Stock = $_POST["Stock"];
-		$product->Product_Description = $_POST["Product_Description"];
-		$product->Product_Cost = $_POST["Product_Cost"];
-		$product->Product_Price = $_POST["Product_Price"];
-		$product->Weight = $_POST["Weight"];
-		$product->Size = $_POST["Size"];
-		$product->Featured = $_POST["feat"] ? 1: 0;
+		$product[0]->ProductID = $_POST["ProductID"];
+		$product[0]->Product_Name = $_POST["Product_Name"]; 
+		$product[0]->SKU = $_POST["SKU"];
+		$product[0]->Stock = $_POST["Stock"];
+		$product[0]->Product_Description = $_POST["Product_Description"];
+		$product[0]->Product_Cost = $_POST["Product_Cost"];
+		$product[0]->Product_Price = $_POST["Product_Price"];
+		$product[0]->Weight = $_POST["Weight"];
+		$product[0]->Size = $_POST["Size"];
+		$product[0]->Featured = $_POST["feat"] ? 1: 0;
 		
-		$product -> save(); 
+		$product[0]-> save(); 
 
 		header("Location: ".LINK_BASE."client/product");
 	}
