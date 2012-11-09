@@ -27,7 +27,7 @@
 			<div id="search" class="span7">
 				<form class="form-search pull-right" action="<?=LINK_BASE?>catalog/search/">
 					<div class="input-append">
-						<input class="span6 search_field" type="text" /><a href="<?=LINK_BASE?>catalog/search/" class="btn" type="submit">Search</a>
+						<input class="span6 search_field" type="text" /><a href="<?=LINK_BASE?>catalog/search/" class="btn">Search</a>
 					</div>
 				</form>
 			</div>
