@@ -117,7 +117,29 @@
 						('Chairs', 0),
 						('Couches', 0),
 						('Desks', 0);", "Filling Catagories."),
-				);
+					array("UPDATE products SET Product_Description='Have a seat in the Napoleon Chair and drink, dine, or just relax. This chair is both stylish and comfortable, making it the perfect fit for any home.' WHERE Product_Image='products/chair'
+						", "Updating Chair"),
+					array("UPDATE products SET Product_Description='Classic bentwood seating with a retro modern shape curves with a generous seat.' WHERE Product_Image='products/chair2'
+						", "Updating Chair 2"),
+					array("UPDATE products SET Product_Description='Graceful deep-seated lounge sofa catches the eye with a sweeping profile whose arms curve from a refined taper to a modern flare. Plump back and seat cushions sink in with an extra layer of down feathers.' WHERE Product_Image='products/chair3'
+						", "Updating Chair 3"),
+					array("UPDATE products SET Product_Description='Sofa winks at tradition with a fresh new color and playful new proportions. Same height tight back and arms shelter with subtle curves, punctuated with a clever graceful rolled arm and eye catching corner base miters.' WHERE Product_Image='products/couch1'
+						", "Updating Couch 1"),
+					array("UPDATE products SET Product_Description='Sofa winks at tradition with a fresh new color and playful new proportions. Same height tight back and arms shelter with subtle curves, punctuated with a clever graceful rolled arm and eye catching corner base miters.' WHERE Product_Image='products/couch2'
+						", "Updating Couch 2"),
+					array("UPDATE products SET Product_Description='Inspired by a flea market find, this couch was updated with lean contemporary lines. Luxe full-grain leather is cured deep chocolate with subtle vintage marbling that ages beautifully over time.' WHERE Product_Image='products/couch3'
+						", "Updating Couch 3"),
+					array("UPDATE products SET Product_Description='This compact sofa whose bold color fills the room with attitude has narrow tapered arms cut to make a sleek profile in a room. The perfect size for apartments and small living spaces or use in conversational pairs for larger spaces.' WHERE Product_Image='products/couch4'
+						", "Updating Couch 4"),
+					array("UPDATE products SET Product_Description='Pure design, pure materials, purely expressed. This contemporary collection refines function with the integrity and beauty and timelessness.' WHERE Product_Image='products/desk'
+						", "Updating Desk"),
+					array("UPDATE products SET Product_Description='Handsome ash wood table with modified steamer trunk styling conceals a compact workspace. A clever contemporary design with repeated horizontal panel inset and hidden handles has the ability to make you home office disappear.' WHERE Product_Image='products/desk2'
+						", "Updating Desk 2"),
+					array("UPDATE products SET Product_Description='An industrial mix of glass and steel architects new angles with an urban edge.' WHERE Product_Image='products/desk3'
+						", "Updating Desk 3"),
+					);
+
+
 			if($currentUpdate['current'] > 0)
 			{
 				$undoneUpdates = array_slice($queryArray, $currentUpdate['current']);

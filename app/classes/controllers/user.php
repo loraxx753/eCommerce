@@ -26,12 +26,13 @@ class User_Controller {
 		$name = $_POST['name'];
 		$pass = $_POST['pass'];
 		$response = Auth::login($name, $pass);
+
 		echo json_encode($response); 
 	}
 
 	public function action_logout()
 	{
 		Auth::logout();
-		header("Location: ".WEB_BASE);
+		header("Location: ".HOME_LINK_BASE);
 	}
 }

@@ -16,6 +16,16 @@ include APPBASE."bootstrap.php";
 
 //Defines the base used for assets.
 define("WEB_BASE", Config::find("base"));
+if(Config::find('shorttags') == true)
+{
+	define('LINK_BASE', WEB_BASE);
+	define('HOME_LINK_BASE', WEB_BASE);
+}
+else
+{
+	define('LINK_BASE', WEB_BASE."public/index.php?url=");
+	define('HOME_LINK_BASE', WEB_BASE."public/index.php");
+}
 
 //If the user is at the base location, load the default controller.
 if(!isset($_GET['url']))

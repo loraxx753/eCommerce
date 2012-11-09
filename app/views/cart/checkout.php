@@ -161,21 +161,27 @@
 						<h3>Order Summary</h3>
 						<div>
 							<p class="span2">Merchandise:</p>
-							<p class="span2">$100.00</p>
+							<p class="span2">$<?=number_format($total, 2);?></p>
 						</div>
 						<div>
 							<p class="span2">Shipping &amp; Handling:</p>
-							<p class="span2">$100.00</p>
+							<p class="span2">$<?=number_format($shipping, 2);?></p>
 						</div>
 						<div>
 							<p class="span2">Tax:</p>
-							<p class="span2">$100.00</p>
+							<p class="span2">$<?=number_format($tax, 2);?></p>
 						</div>
 						<div id="order_total">
 							<h4 class="span2">Total:</h4>
-							<h4 class="span2">$300.00</h4>
+							<h4 class="span2">$<?=number_format($total + $shipping + $tax, 2);?></h4>
 						</div>
-					<button type="submit" id="checkout" class="btn span4">Checkout</button>
+						
+						<?php
+						echo'
+						<form action="'.WEB_BASE.'cart/paypal" METHOD="POST">
+							<input type="image" name="submit" src="https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif" border="0" align="top" alt="Check out with PayPal"/>
+						</form>';
+						?>
 					</div>
 				</div>
 			</div>

@@ -36,8 +36,8 @@
 									<input type="text" class="span1 quantity" value="'.$quantity.'" />
 								</div>
 								<div class="span2 pull-right action_buttons">
-								 	<a href="'.WEB_BASE.'cart/update/'.$product->ProductID.'/"class="btn btn-small span1 update_product">Update</a>
-									<a href="'.WEB_BASE.'cart/delete/'.$product->ProductID.'" class="btn btn-small span1 delete_product">Delete</a>
+								 	<a href="'.LINK_BASE.'cart/update/'.$product->ProductID.'/"class="btn btn-small span1 update_product">Update</a>
+									<a href="'.LINK_BASE.'cart/delete/'.$product->ProductID.'" class="btn btn-small span1 delete_product">Delete</a>
 								</div>
 							</div>
 						</div>';
@@ -57,7 +57,7 @@
 				</div>
 				<?php if(count($cartArray) > 0) {?>
 				<span id="checkout" class="span2 pull-right">
-					<a href="<?=WEB_BASE?>/checkout"class="btn btn-small">Proceed to Checkout</a>
+					<a href="<?=LINK_BASE?>/checkout"class="btn btn-small">Proceed to Checkout</a>
 				</span>
 				<?php } ?>
 			</div>

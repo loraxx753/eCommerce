@@ -14,6 +14,10 @@ return array(
 
 	// the base of your code. So, if you went to http://localhost/ecommerce/ to get to your site (because it's in /htdocs/ecommerce), than the base would be '/ecommerce/'
 	'base' => 'WEB BASE',
+
+	// Whether to turn shorttags on or not (true results in /catalog/cart, while false looks like /public/index.php?url=catalog/cart) 
+	'shorttags' => false,
+
 );
 
 

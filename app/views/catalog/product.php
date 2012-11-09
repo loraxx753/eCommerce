@@ -26,7 +26,7 @@
 				<div class="span2 pull-right"><h3>$<?=number_format($product->Product_Price, 2)?></h3></div>
 			</div>
 			<div class="span3 pull-right add_to_cart">
-				<a href="<?=WEB_BASE?>catalog/cart/<?=$product->ProductID?>/1" class="btn btn-small">Add To Cart</a>
+				<a href="<?=LINK_BASE?>catalog/cart/<?=$product->ProductID?>/1" class="btn btn-small">Add To Cart</a>
 			</div>
 		</div>
 		<div class="row">
@@ -40,7 +40,7 @@
 							</ul>
 							<div class="tab-content">
 								<div class="tab-pane active" id="tab1">
-									<p>Lorem ipsum dolor sit amet, maiores ornare ac fermentum, imperdiet ut vivamus a, nam lectus at nunc. Quam euismod sem, semper ut potenti pellentesque quisque. In eget sapien sed, sit duis vestibulum ultricies, placerat morbi amet vel, nullam in in lorem vel. In molestie elit dui dictum, praesent nascetur pulvinar sed, in dolor pede in aliquam, risus nec error quis pharetra. Eros metus quam augue suspendisse, metus rutrum risus erat in.</p>
+									<p><?=$product->Product_Description?></p>
 								</div>
 								<div class="tab-pane" id="tab2">
 									<span>Return Policy</span>
