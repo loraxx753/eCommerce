@@ -16,7 +16,7 @@
 			<div class="span8">
 				<div class="row">
 					<div id="admin_dashboard" class="span8">
-						<h3>Manage Products</h3>
+						<h3 id="manage_header">Manage Products</h3>
 						<?php if($success = Session::get_single('success'))
 						{
 							foreach ($success as $item) {
@@ -43,7 +43,7 @@
                             </div>
                             <div class="span6">
                             	<label>Product Description:</label>
-                           		<textarea name="Product_Description"></textarea>
+                           		<textarea class="product_description_textarea" name="Product_Description"></textarea>
                             </div>
                             <div class="span3">
                            		<label>Category:</label>
@@ -100,8 +100,8 @@
 		                						<li class="product_name">'.$value->Product_Name.'</li>
 		                						<li class="product_sku">#'.$value->SKU.'</li>
 		                						<li>
-		                							<span><a class="editLink" class="btn btn-small">Edit</a></span>
-		      										<a href="'.LINK_BASE.'catalog/delete_product/'.$value->ProductID.'"/>Delete</a>
+		                							<span><a class="editLink" href="'.LINK_BASE.'catalog/get_info/'.$value->ProductID.'" class="btn btn-small">Edit</a></span>
+		      										<a class="delete_product" href="'.LINK_BASE.'catalog/delete_product/'.$value->ProductID.'"/>Delete</a>
 		                						</li>
 		                					</ul>
 		                				</div>

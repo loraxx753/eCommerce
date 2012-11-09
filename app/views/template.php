@@ -98,10 +98,6 @@
 	<div id="editBox">
 		<form id="editArea" method="post" action="<?=LINK_BASE?>catalog/edit_product">
 		<fieldset>
-			<div class="span3">
-	       		<label>Product ID:</label>
-	       		<input type="text" name="ProductID" placeholder="Enter product id here" />
-	       	</div>
 	       	<div class="span3">
 	       		<label>Product Name:</label>
 	       		<input type="text" name="Product_Name" placeholder="Enter product name here" />
@@ -112,7 +108,7 @@
 	        </div>
 	        <div class="span6">
 	        	<label>Product Description:</label>
-	       		<input type="text" name="Product_Description" placeholder="Enter Description here" />
+	       		<textarea class="product_description_textarea" name="Product_Description"></textarea>
 	        </div>
 	        <div class="span3">
 	       		<label>Stock:</label>

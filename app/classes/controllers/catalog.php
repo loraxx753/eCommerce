@@ -54,6 +54,7 @@ class Catalog_Controller extends Controller
 	
 	public static function action_add_product()
 	{
+		self::authenticate('privilege');
 		$uuid=uniqid();
 		$explodedimg = explode(".", $_FILES['image']['name']);
 		$extentionimg = array_pop($explodedimg);
@@ -93,11 +94,18 @@ class Catalog_Controller extends Controller
 		$product[0] -> delete(); 
 		header("Location: ".LINK_BASE."client/product");
 	}
-
-	public static function action_edit_product()
+	public static function action_get_info($id)
 	{
-		$product = Model_Products::build()->where('ProductID', $_POST["ProductID"])->execute();
-		$product[0]->ProductID = $_POST["ProductID"];
+		self::authenticate('privilege');
+		$product = Model_Products::build()->where('ProductID', $id)->execute();
+		echo json_encode($product[0]);
+
+	}
+
+	public static function action_edit_product($productID)
+	{
+		self::authenticate('privilege');
+		$product = Model_Products::build()->where('ProductID', $productID)->execute();
 		$product[0]->Product_Name = $_POST["Product_Name"]; 
 		$product[0]->SKU = $_POST["SKU"];
 		$product[0]->Stock = $_POST["Stock"];
@@ -108,9 +116,15 @@ class Catalog_Controller extends Controller
 		$product[0]->Size = $_POST["Size"];
 		$product[0]->Featured = $_POST["feat"] ? 1: 0;
 		
-		$product[0]-> save(); 
-
-		header("Location: ".LINK_BASE."client/product");
+		try
+		{
+			$product[0]-> save(); 
+			echo json_encode(array('success' => "Product has been edited."));
+		}
+		catch(Exception $e)
+		{
+			echo json_encode(array('error' => "Something went wrong!"));
+		}
 	}
 
 	public static function action_weight($limit_min, $limit_max)
@@ -273,4 +287,13 @@ class Catalog_Controller extends Controller
 		}
 		echo json_encode(array('success'=> $review->user." ".date("n/j/Y h:ia",$review->created)));
 	}
+	public static function authenticate($level)
+	{	
+		if(!Auth::check_access($level))
+		{
+			header('Location: '.HOME_LINK_BASE);
+			die();
+		}
+	}
+
 }

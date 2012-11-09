@@ -29,6 +29,14 @@ $(document).ready(function() {
 		buttons: {
 			'Edit' : function(e) {editProduct(e);},
 		},
+		beforeClose: function(event, ui) { 
+			var action = $('#editArea').attr('action');
+			var exploded = action.split('/');
+			exploded.pop();
+			$('#editArea input').val('');
+			$('#editArea textarea.product_description_textarea').val('');
+			$('#editArea input[name=feat]').prop('checked', false);
+		},
 		modal: true,
 		title: 'Edit'
 	})
@@ -40,6 +48,25 @@ $(document).ready(function() {
 		$('#regBox').dialog('open');
 	});
 	$('.editLink').on('click', function(e){
+		e.preventDefault();
+		$('.success').remove();
+		var href = $(this).attr('href');
+		$.get(href, function(data) {
+			var action = $('#editArea').attr('action');
+			$('#editArea').attr('action', action+"/"+data.ProductID);
+			$('#editArea input[name=Product_Name]').val(data.Product_Name);
+			$('#editArea input[name=SKU]').val(data.SKU);
+			$('#editArea textarea.product_description_textarea').val(data.Product_Description);
+			$('#editArea input[name=Stock]').val(data.Stock);
+			$('#editArea input[name=Weight]').val(data.Product_Weight);
+			$('#editArea input[name=Product_Price]').val(data.Product_Price);
+			$('#editArea input[name=Size]').val(data.Product_Size);
+			if(data.Featured == 1)
+			{
+				$('#editArea input[name=feat]').prop('checked', true);
+			}
+
+		}, 'json');
 		$('#editBox').dialog('open');
 	});
 
@@ -87,14 +114,13 @@ $(document).ready(function() {
 			}
 		}, 'json');
 	};
-	function editProduct(){
+	function editProduct(e){
 		var href = $('#editArea').attr('action');
 
 		var obj = {
-			'ProductID' 			: $('#editArea input[name=ProductID]').val(),
 			'Product_Name'  		: $('#editArea input[name=Product_Name]').val(),
 			'SKU' 					: $('#editArea input[name=SKU]').val(),
-			'Product_Description'   : $('#editArea input[name=Product_Description]').val(),
+			'Product_Description'   : $('#editArea textarea.product_description_textarea').val(),
 			'Stock' 				: $('#editArea input[name=Stock]').val(),
 			'Product_Cost' 			: $('#editArea input[name=Product_Cost]').val(),
 			'Product_Price' 		: $('#editArea input[name=Product_Price]').val(),
@@ -104,12 +130,11 @@ $(document).ready(function() {
 		};
 
 
-
 		$.post(href, obj, function(data){
 			if(data.success)
 			{
-				
-				location.reload();
+				$('#editBox').dialog('close');
+				$('#manage_header').after("<p class='success'>"+data.success+"</p>");
 			}
 			else
 			{
@@ -121,7 +146,6 @@ $(document).ready(function() {
 			}
 		}, 'json');
 
-		console.log(obj);
 	};
 
 	$('form.form-search a').click(function(event) {
@@ -151,10 +175,10 @@ $(document).ready(function() {
 		$this = $(this);
 		var href = $this.attr('href');
 		$.get(href, function() {
-			$this.closest('.cart_item').remove();
-			if($('.cart_item').length == 0)
+			$this.closest('.product_snapshot').remove();
+			if($('.product_snapshot').length == 0)
 			{
-				$('.page_header').after('<div class="alert alert-info"><button type="button" class="close" data-dismiss="alert">×</button><strong>Missing Something?</strong> <p>You have no items in your cart!</p></div>');
+				$('.page_header').after('<div class="alert alert-info"><button type="button" class="close" data-dismiss="alert">×</button><strong>Missing Something?</strong> <p>You have no products!</p></div>');
 				$('#checkout').hide();
 			}
 			update_total();
