@@ -37,7 +37,6 @@ class Model {
 				$values[] = $this->$column;
 			}
 			$save->values($values);
-			echo $save->compile();
 			$save->execute();
 			return true;
 		}

@@ -10,11 +10,21 @@
 			</div>
 			<div class="span2 offset1 rating">
 				<ul>
-					<li><i class="icon-star"></i></li>
-					<li><i class="icon-star"></i></li>
-					<li><i class="icon-star"></i></li>
-					<li><i class="icon-star-empty"></i></li>
-					<li><i class="icon-star-empty"></i></li>
+					<?php 
+					$counter = 0;
+					for($x=0; $x < 5; $x++)
+					{
+						if($counter < $rating)
+						{
+							echo '<li><i class="icon-star"></i></li>';
+							$counter++;
+						}
+						else
+						{
+							echo '<li><i class="icon-star-empty"></i></li>';
+						}
+					}
+					?>
 				</ul>
 			</div>
 			<div class="span6 product_description">
@@ -37,6 +47,7 @@
 							<ul class="nav nav-tabs">
 								<li class="active"><a href="#tab1" data-toggle="tab">Product Reviews</a></li>
 								<li><a href="#tab2" data-toggle="tab">Policies</a></li>
+								<li><a href="#tab3" data-toggle="tab">Reviews</a></li>
 							</ul>
 							<div class="tab-content">
 								<div class="tab-pane active" id="tab1">
@@ -54,6 +65,44 @@
 										<li>If an Original Sales or Gift Receipt is not present, the item’s current retail price will be refunded via a Shop Card, regardless of amount. Valid photo ID is required for store returns without an Original Sales or Gift Receipt.</li>
 										<li>For store returns of cash purchases accompanied by the Original Sales Receipt, a cash refund will be given up to $100. If the purchase exceeds $100, a check in the amount of the balance of the refund will be mailed to the customer.</li>
 									</ul>
+								</div>
+								<div class="tab-pane" id="tab3">
+									<span>Reviews</span>
+									<form method="post" action="<?=LINK_BASE?>/catalog/review/<?=$product->ProductID?>">
+										<p>Add A Review</p>
+										<p><textarea class="field span5 review_textarea" name="review"></textarea></p>
+										<p>Rating: <input type="text" name="rating" class="rating_input"/> out of 5 <input type="submit" class="padding-left" value="Add Review" /></p>
+									</form>
+									<?php if($reviews) { 
+										foreach ($reviews as $review) {
+										?>
+									<hr />
+									<ul class="review_rating">
+										<?php 
+										$counter = 0;
+										for($x=0; $x < 5; $x++)
+										{
+											if($counter < $review->rating)
+											{
+												echo '<li><i class="icon-star"></i></li>';
+												$counter++;
+											}
+											else
+											{
+												echo '<li><i class="icon-star-empty"></i></li>';
+											}
+										}
+										?>
+									</ul>
+
+									<p><?=$review->review?></p>
+									<div class="review_user">
+										<p><?=$review->user?> <?=date("n/j/Y h:ia",$review->created)?></p>
+									</div>
+									<?php }
+										} else { ?>
+										<p><em>There doesn't seem to be any reviews for this product</em></p>
+									<?php } ?>
 								</div>
 							</div>
 						</div>

@@ -26,7 +26,7 @@
 		{	
 			if(!Auth::check_access($level))
 			{
-				header('Location: '.WEB_BASE);
+				header('Location: '.HOME_LINK_BASE);
 				die();
 			}
 		}

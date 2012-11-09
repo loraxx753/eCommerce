@@ -545,3 +545,29 @@ a:hover {
 	margin: 20px 5px 0 0;
 	display: inline-block;
 }
+
+.rating_input {
+	width: 1em;
+	text-align: center;
+}
+.padding-left {
+	display: inline-block;
+	margin-left: 157px;
+}
+.review_textarea {
+	height: 100px;
+}
+.review_rating
+{
+	margin: 0 0 5px 0;
+	padding: 0;
+}
+.review_rating li
+{
+	display: inline-block;
+
+}
+.review_user
+{
+	font-style: italic;
+}
