@@ -73,6 +73,10 @@ header {
 	margin: 5px 0 0 0;
 	padding: 0 0 5px 0;
 	text-align: center;
+	border-bottom: thin solid #DDD;
+}
+aside {
+	padding-top: 10px;
 }
 #nav div {
 	margin-left: 0;
@@ -117,14 +121,6 @@ header {
 	font-weight: bold;
 	margin: 0 0 15px 0;
 }
-#ad_sidebar {
-	min-height: 660px;
-	border-left: thin solid #F5F6F7;
-	padding-left: 5px;
-}
-#ad_sidebar img {
-	margin: 10px 0 5px 0;
-}
 .thumbnail {
 	border-radius: 0px;
 }
@@ -161,7 +157,7 @@ header {
 }
 #sidebar {
 	min-height: 500px;
-	border-right: 2px solid #F5F6F7;
+	border-right: 1px solid #DDD;
 }
 #sidebar ul {
 	list-style: none;
@@ -345,7 +341,7 @@ ul.thumbnail {
 }
 #product_sidebar {
 	text-align: center;
-	border-left: thin solid #F5F6F7;
+	border-left: thin solid #DDD;
 }
 .recommended_button {
 	background: none;
@@ -376,7 +372,7 @@ ul.thumbnail {
 #checkout_sidebar {
 	padding-left:10px;
 	padding-top: 10px;
-	border-left: thin solid #F5F6F7;
+	border-left: thin solid #DDD;
 	height: 100%;
 }
 #checkout_sidebar h3 {
@@ -505,7 +501,7 @@ form#card_info div select.expir_month, select.expir_year {
 }
 #client_sidebar {
 	min-height: 500px;
-	border-right: 2px solid #F5F6F7;
+	border-right: 1px solid #DDD;
 }
 #client_sidebar ul {
 	list-style: none;
@@ -535,7 +531,7 @@ form#card_info div select.expir_month, select.expir_year {
 }
 #admin_sidebar {
 	min-height: 500px;
-	border-right: 2px solid #F5F6F7;
+	border-right: 1px solid #DDD;
 }
 #admin_sidebar ul {
 	list-style: none;
