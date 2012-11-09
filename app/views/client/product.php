@@ -22,12 +22,12 @@
 					<div id="admin_dashboard" class="span8">
 						<h3>Manage Products</h3>
 						<small>Manage all of your store products!</small>
-						<form id="contact" method="post" action="#">
+						<form id="contact" method="post" enctype="multipart/form-data" action="<?=LINK_BASE?>catalog/add_product">
                 		<fieldset>
-                			<div class="span3">
-                            	<label>Product ID:</label>
-                        		<input type="text" name="ProductID" class="span3" placeholder="Enter product ID here" />
-                        	</div>
+                           	<div class="span3">
+                           		<label>Product Name:</label>
+                           		<input type="text" name="Product_Name" placeholder="Enter product name here" />
+                           	</div>
                         	<div class="span">
                             	<label>SKU:</label>
                            		<input type="text" name="SKU" class="span3" placeholder="Enter SKU here" />
@@ -37,7 +37,7 @@
                            		<textarea></textarea>
                             </div>
                             <div class="span3">
-                           		<label>Category ID:</label>
+                           		<label>Category:</label>
                            		<input type="text" name="Category_ID" placeholder="Enter Category ID here" />
                             </div>
                             <div class="span3">
@@ -53,20 +53,12 @@
                            		<input type="text" name="Product_Price" placeholder="Enter product price here" />
                            	</div>
                            	<div class="span3">
-                           		<label>Product Image:</label>
-                           		<input type="text" name="Product_Image" placeholder="Enter image url here" />
-                           	</div>
-                           	<div class="span3">
                            		<label>Product Weight:</label>
                            		<input type="text" name="Weight" placeholder="Enter product weight here" />
                            	</div>
                            	<div class="span3">
                            		<label>Product Size:</label>
                            		<input type="text" name="Size" placeholder="Enter product size here" />
-                           	</div>
-                           	<div class="span3">
-                           		<label>Product Name:</label>
-                           		<input type="text" name="Product_Name" placeholder="Enter product name here" />
                            	</div>
                            	<div class="span3">
                            		<label>Image:</label>
@@ -79,7 +71,7 @@
                            	<div class="span3">
                            		<label>Featured Product:</label>
                            		<input type="checkbox" name="feat" value="true">
-                           	</div>
+                           	</div>                           	
 	                    </fieldset>
 	                    <button type="submit" id="saveProducts" class="btn btn-small span2 pull-right offset-2">Save</button>
 	                	</form>	
