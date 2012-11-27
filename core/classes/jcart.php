@@ -20,7 +20,6 @@ class Jcart {
 
 	function __construct() {
 		$this->config = include BASE.'app/config/jcart/config.php';
-		var_dump($this->config); die();
 	}
 
 	public function config_loader($config)
