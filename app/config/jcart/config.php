@@ -89,4 +89,6 @@ $config['paypal']['returnUrl']    = '';
 // The URL of your PayPal IPN script
 $config['paypal']['notifyUrl']    = '';
 
+
+return $config;
 ?>
