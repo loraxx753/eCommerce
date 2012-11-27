@@ -19,17 +19,11 @@ class Jcart {
 	private $itemCount = 0;
 
 	function __construct() {
-
-		// Get $config array
-		include_once('config-loader.php');
-		$this->config = $config;
+		$this->config = include BASE.'app/config/jcart/config.php';
 	}
 
-	function config_loader($config)
+	public function config_loader($config)
 	{
-		// Don't edit here, edit config.php
-		include_once('config.php');
-
 		// Use default values for any settings that have been left empty
 		if (!$config['currencyCode']) $config['currencyCode']                     = 'USD';
 		if (!$config['text']['cartTitle']) $config['text']['cartTitle']           = 'Shopping Cart';
@@ -50,6 +44,10 @@ class Jcart {
 		if ($_GET['ajax'] == 'true') {
 			header('Content-type: application/json; charset=utf-8');
 			echo json_encode($config);
+		}
+		else
+		{
+			return $config;
 		}
 	}
 
