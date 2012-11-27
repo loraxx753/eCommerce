@@ -3,6 +3,10 @@
 			<hr />
 		</div>
 
+		<div id="jcart">
+			<?php $jcart->display_cart();?>
+		</div>
+
 		<?php 
 			if(count($cartArray) <= 0)
 			{

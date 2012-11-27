@@ -34,7 +34,16 @@
 				<div class="span2 pull-right"><h3>$<?=number_format($product->Product_Price, 2)?></h3></div>
 			</div>
 			<div class="span3 pull-right add_to_cart">
-				<a href="<?=LINK_BASE?>catalog/cart/<?=$product->ProductID?>/1" class="btn btn-small">Add To Cart</a>
+				<form method="post">
+					<input type="hidden" name="my-item-id" value="<?=$product->ProductID?>"/>
+					<input type="hidden" name="my-item-name" value="<?=$product->Product_Name?>"/>
+					<input type="hidden" name="my-item-price" value="<?=$product->Product_Price?>"/>
+					<input type="hidden" name="my-item-qty" value="1"/>
+					<input type="hidden" name="my-item-url" value=""/>
+					<input type="submit" name="my-add-button" value="add to cart" class="button"/>
+
+					<a href="<?=LINK_BASE?>catalog/cart/<?=$product->ProductID?>/1" class="btn btn-small">Add To Cart</a>
+				</form>
 			</div>
 		</div>
 		<div class="row">

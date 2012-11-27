@@ -1,4 +1,7 @@
 <?php
+
+namespace Baughss\Core;
+// Start a new session
 session_start();
 
 //Defines the server base depending on where the public file is.
@@ -25,6 +28,40 @@ else
 {
 	define('LINK_BASE', WEB_BASE."public/index.php?url=");
 	define('HOME_LINK_BASE', WEB_BASE."public/index.php");
+}
+
+if(!isset($_SESSION))
+{
+	session_start();
+}
+
+// Initialize jcart after session start
+$jcart = $_SESSION['jcart'];
+if(!is_object($jcart)) {
+	$jcart = $_SESSION['jcart'] = new Jcart();
+}
+
+// Enable request_uri for non-Apache environments
+// See: http://api.drupal.org/api/function/request_uri/7
+if (!function_exists('request_uri')) {
+	function request_uri() {
+		if (isset($_SERVER['REQUEST_URI'])) {
+			$uri = $_SERVER['REQUEST_URI'];
+		}
+		else {
+			if (isset($_SERVER['argv'])) {
+				$uri = $_SERVER['SCRIPT_NAME'] . '?' . $_SERVER['argv'][0];
+			}
+			elseif (isset($_SERVER['QUERY_STRING'])) {
+				$uri = $_SERVER['SCRIPT_NAME'] . '?' . $_SERVER['QUERY_STRING'];
+			}
+			else {
+				$uri = $_SERVER['SCRIPT_NAME'];
+			}
+		}
+		$uri = '/' . ltrim($uri, '/');
+		return $uri;
+	}
 }
 
 //If the user is at the base location, load the default controller.
