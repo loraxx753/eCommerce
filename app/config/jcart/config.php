@@ -33,7 +33,7 @@ $config['paypal']['id']           = 'nwa_1352355423_biz@gmail.com';
 
 // Three-letter currency code, defaults to USD if empty
 // See available options here: http://j.mp/agNsTx
-$config['currencyCode']           = '';
+$config['currencyCode']           = 'USD';
 
 // Add a unique token to form posts to prevent CSRF exploits
 // Learn more: http://conceptlogic.com/jcart/security.php

@@ -120,7 +120,7 @@ class Jcarthandle_Controller extends Controller
 				$queryString  = "?cmd=_cart";
 				$queryString .= "&upload=1";
 				$queryString .= "&charset=utf-8";
-				$queryString .= "&currency_code=" . urlencode($config['currencyCode']);
+				$queryString .= "&currency_code=USD";
 				$queryString .= "&business=" . urlencode($config['paypal']['id']);
 				$queryString .= "&return=" . urlencode($config['paypal']['returnUrl']);
 				$queryString .= '&notify_url=' . urlencode($config['paypal']['notifyUrl']);
