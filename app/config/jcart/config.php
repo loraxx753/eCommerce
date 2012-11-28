@@ -14,7 +14,7 @@
 $config['jcartPath']              = 'jcart/';
 
 // Path to your checkout page
-$config['checkoutPath']           = 'checkout.php';
+$config['checkoutPath']           = 'checkout';
 
 // The HTML name attributes used in your item forms
 $config['item']['id']             = 'my-item-id';    // Item id
@@ -81,7 +81,7 @@ $config['priceFormat']            = array('decimals' => 2, 'dec_point' => '.', '
 $config['paypal']['https']        = true;
 
 // Use PayPal sandbox?
-$config['paypal']['sandbox']      = false;
+$config['paypal']['sandbox']      = true;
 
 // The URL a visitor is returned to after completing their PayPal transaction
 $config['paypal']['returnUrl']    = '';

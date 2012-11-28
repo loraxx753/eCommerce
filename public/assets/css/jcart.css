@@ -36,4 +36,4 @@ http://conceptlogic.com/jcart/
 
 #jcart-paypal-checkout { display:block; width:14em; padding:10px; margin:20px auto; }
 
-#jcart-tooltip { display:none; position:absolute; padding:3px 7px 3px 25px; background:url(../images/checkmark.png) 3px center no-repeat #fdfdfd; border:1px solid #a6c9e2; z-index:9999; }
+#jcart-tooltip { display:none; position:absolute; padding:3px 7px 3px 25px; background:url(../img/checkmark.png) 3px center no-repeat #fdfdfd; border:1px solid #a6c9e2; z-index:9999; }

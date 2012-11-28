@@ -22,8 +22,9 @@ class Jcart {
 		$this->config = include BASE.'app/config/jcart/config.php';
 	}
 
-	public function config_loader($config)
+	public function config_loader($ajax = false)
 	{
+		$config = $this->config;
 		// Use default values for any settings that have been left empty
 		if (!$config['currencyCode']) $config['currencyCode']                     = 'USD';
 		if (!$config['text']['cartTitle']) $config['text']['cartTitle']           = 'Shopping Cart';
@@ -40,10 +41,10 @@ class Jcart {
 		if (!$config['text']['priceError']) $config['text']['priceError']         = 'Invalid price format!';
 		if (!$config['text']['quantityError']) $config['text']['quantityError']   = 'Item quantities must be whole numbers!';
 		if (!$config['text']['checkoutError']) $config['text']['checkoutError']   = 'Your order could not be processed!';
-
-		if ($_GET['ajax'] == 'true') {
+		if($ajax)
+		{
 			header('Content-type: application/json; charset=utf-8');
-			echo json_encode($config);
+			echo json_encode($config);			
 		}
 		else
 		{
@@ -83,7 +84,6 @@ class Jcart {
 	* @return mixed
 	*/
 	private function add_item($id, $name, $price, $qty = 1, $url) {
-
 		$validPrice = false;
 		$validQty = false;
 
@@ -289,7 +289,7 @@ class Jcart {
 	*/
 	public function display_cart() {
 
-		$config = $this->config; 
+		$config = $this->config_loader();
 		$errorMessage = null;
 
 		// Simplify some config variables
@@ -335,6 +335,7 @@ class Jcart {
 
 		// Add an item
 		if ($_POST[$add]) {
+
 			$itemAdded = $this->add_item($id, $name, $price, $qty, $url);
 			// If not true the add item function returns the error type
 			if ($itemAdded !== true) {
@@ -409,7 +410,7 @@ class Jcart {
 			// Trim trailing slash if necessary
 			$path = rtrim($path, '/');
 
-			$checkout = $path . '/gateway.php';
+			$checkout = 'jcarthandle/gateway';
 		}
 
 		// Default input type
@@ -605,6 +606,7 @@ class Jcart {
 		echo tab(1) . "</form>\n\n";
 		
 		echo tab(1) . "<div id='jcart-tooltip'></div>\n";
+
 	}
 }
 

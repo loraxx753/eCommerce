@@ -1,9 +1,6 @@
 <?php
 
 namespace Baughss\Core;
-// Start a new session
-session_start();
-
 //Defines the server base depending on where the public file is.
 define("BASE", substr(dirname(__FILE__), 0, -6)); //removes the string "public" 
 define("APPBASE", BASE."app".DIRECTORY_SEPARATOR ); //removes the string "public" 
@@ -11,7 +8,7 @@ define("COREBASE", BASE."core".DIRECTORY_SEPARATOR ); //removes the string "publ
 
 // Turn on error reporting and display errors....just in case
 // TODO: Move this to the config file so it can be changed on production.
-ini_set('error_reporting', E_ALL);
+ini_set('error_reporting', E_ALL ^ E_NOTICE);
 ini_set('display_errors', 1);
 
 //Include the bootstrap to start everything up!
@@ -29,14 +26,12 @@ else
 	define('LINK_BASE', WEB_BASE."public/index.php?url=");
 	define('HOME_LINK_BASE', WEB_BASE."public/index.php");
 }
-
-if(!isset($_SESSION))
-{
-	session_start();
-}
-
+// Start a new session
+session_start();
 // Initialize jcart after session start
 $jcart = $_SESSION['jcart'];
+if (!is_object ($jcart) && gettype ($jcart) == 'object')
+    $jcart = unserialize (serialize ($jcart));
 if(!is_object($jcart)) {
 	$jcart = $_SESSION['jcart'] = new Jcart();
 }
@@ -64,8 +59,10 @@ if (!function_exists('request_uri')) {
 	}
 }
 
+$url = array_shift(explode("?", (str_replace(WEB_BASE, "", request_uri()))));
+
 //If the user is at the base location, load the default controller.
-if(!isset($_GET['url']))
+if(empty($url))
 {
 	$defaultController = ucwords(Config::find('defaultController')).'_Controller';
 	$defaultAction = 'action_'.Config::find('defaultAction');
@@ -94,11 +91,9 @@ else
 	}
 	$routes = include BASE."app/config/routes.php";
 
-	$url = $_GET['url'];
-
 	foreach($routes as $preg => $replacement) {
 		$preg = "/^$preg/";
-		if(preg_match($preg, $_GET['url']))
+		if(preg_match($preg, $url))
 		{
 			$url = preg_replace($preg, $replacement, $url);
 		}

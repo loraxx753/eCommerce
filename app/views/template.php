@@ -6,7 +6,7 @@
 	<meta name="keywords" content="Sale, Catalog, Decorating, Interior Design, Entertain, Design, Bed Room, Dining Room, Home Office, Living Room, Office, Outdoor, Home, Home Accessories, Housewares, Furniture, Sofa, Couch, Chair" />
 	<title><?=$title;?></title>
 	<link rel="stylesheet" href="http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css" />
-	<?=Load::css(array("bootstrap.css", "style.css"))?>
+	<?=Load::css(array("bootstrap.css", "style.css", "jcart.css"))?>
 </head>
 <body>
 	<div class="container">
@@ -59,7 +59,7 @@
 		var LINK_BASE = <?='"'.LINK_BASE.'"'?>;
 		var HOME_LINK_BASE = <?='"'.HOME_LINK_BASE.'"'?>;
 	</script>
-	<?=Load::js(array('http://code.jquery.com/jquery-1.8.2.js', 'http://code.jquery.com/ui/1.9.1/jquery-ui.js', 'bootstrap.js', 'ecommerce.js', 'product.js'));?>
+	<?=Load::js(array('http://code.jquery.com/jquery-1.8.2.js', 'http://code.jquery.com/ui/1.9.1/jquery-ui.js', 'bootstrap.js', 'ecommerce.js', 'product.js', 'jcart.js'));?>
 
 <!-- Google Analytics -->
 	<script type="text/javascript">

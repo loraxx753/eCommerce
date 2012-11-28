@@ -9,7 +9,7 @@ $(function() {
 		// This script sends Ajax requests to config-loader.php and relay.php using the path below
 		// We assume these files are in the 'jcart' directory, one level above this script
 		// Edit as needed if using a different directory structure
-		var path = 'jcart',
+		var path = WEB_BASE,
 			container = $('#jcart'),
 			token = $('[name=jcartToken]').val(),
 			tip = $('#jcart-tooltip');
@@ -17,7 +17,7 @@ $(function() {
 		var config = (function() {
 			var config = null;
 			$.ajax({
-				url: path + '/config-loader.php',
+				url: path + 'jcarthandle/configloader',
 				data: {
 					"ajax": "true"
 				},
@@ -26,8 +26,8 @@ $(function() {
 				success: function(response) {
 					config = response;
 				},
-				error: function() {
-					alert('Ajax error: Edit the path in jcart.js to fix.');
+				error: function(xhr, status, error) {
+					alert('Ajax error: Edit the path in jcart.js to fix. '+path + 'jcarthandle/configloader');
 				}
 			});
 			return config;
@@ -66,7 +66,7 @@ $(function() {
 			// Default settings for Ajax requests
 			$.ajaxSetup({
 				type: 'POST',
-				url: path + '/relay.php',
+				url: path + 'jcarthandle/relay',
 				success: function(response) {
 					// Refresh the cart display after a successful Ajax request
 					container.html(response);
@@ -106,15 +106,15 @@ $(function() {
 			$.ajax({
 				data: form.serialize() + '&' + config.item.add + '=' + itemAdd.val(),
 				success: function(response) {
-
 					// Momentarily display tooltip over the add-to-cart button
+					console.log(tip.parent());
 					if (itemQty.val() > 0 && tip.css('display') === 'none') {
 						tip.fadeIn('100').delay('400').fadeOut('100');
 					}
 
 					container.html(response);
 					$('#jcart-buttons').remove();
-				}
+				},
 			});
 		}
 
@@ -157,7 +157,6 @@ $(function() {
 			// Get the query string of the link that was clicked
 			var queryString = link.attr('href');
 			queryString = queryString.split('=');
-
 			// The id of the item to remove
 			var removeId = queryString[1];
 

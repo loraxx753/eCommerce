@@ -27,6 +27,7 @@ class Cart_Controller extends Controller
 
 		$render->addVar('total', $total);
 		$render->addVar('cart', $cart->cart);
+		$render->addVar('jcart', $_SESSION['jcart']);
 		$render->addVar('cartArray', $cartArray);
 		$render->load('cart', 'index');
 	}
@@ -143,6 +144,7 @@ class Cart_Controller extends Controller
 		$render->addVar('total', $total);
 		$render->addVar('cart', $cart->cart);
 		$render->addVar('cartArray', $cartArray);
+		$render->addVar('jcart', $_SESSION['jcart']);
 
 		$shipping = 15;
 		$render->addVar('shipping', $shipping);

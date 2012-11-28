@@ -34,7 +34,7 @@
 				<div class="span2 pull-right"><h3>$<?=number_format($product->Product_Price, 2)?></h3></div>
 			</div>
 			<div class="span3 pull-right add_to_cart">
-				<form method="post">
+				<form method="post" action="" class="jcart">
 					<input type="hidden" name="my-item-id" value="<?=$product->ProductID?>"/>
 					<input type="hidden" name="my-item-name" value="<?=$product->Product_Name?>"/>
 					<input type="hidden" name="my-item-price" value="<?=$product->Product_Price?>"/>
@@ -115,3 +115,4 @@
 				</div>
 			</div>
 		</div>
+		<div id="jcart-tooltip"></div>
