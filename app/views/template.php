@@ -6,7 +6,7 @@
 	<meta name="keywords" content="Sale, Catalog, Decorating, Interior Design, Entertain, Design, Bed Room, Dining Room, Home Office, Living Room, Office, Outdoor, Home, Home Accessories, Housewares, Furniture, Sofa, Couch, Chair" />
 	<title><?=$title;?></title>
 	<link rel="stylesheet" href="http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css" />
-	<?=Load::css(array("bootstrap.css", "style.css", "jcart.css"))?>
+	<?=Load::css(array("bootstrap.css", "jcart.css", "style.css"))?>
 </head>
 <body>
 	<div class="container">

@@ -324,7 +324,7 @@ ul.thumbnail {
 .product_options h3 {
 	float:right;
 }
-.add_to_cart a {
+.add_to_cart .button {
 	float:right;
 	margin-top: 10px;
 	background: none;
@@ -400,90 +400,30 @@ ul.thumbnail {
 	text-align: right;
 	margin-left: 0;
 }
-button#checkout {
-	background: none;
-	border-radius: 0px;
-	margin-left: 0;
+.checkout {
+	float:right;
+	background: #FFFFFF;
+	border-radius: 0;
+	border: thin solid #C5C5C5;
+	width: 90px;
+	text-align: center;
+	color: #000000 !important;
+	font-weight: bold;
+	padding: 5px 15px !important;
+	margin: 0 0 15px 0 !important;
 }
-button#submit {
-	background: none;
-	border-radius: 0px;
+.checkout:hover {
+	background: #FFFFFF;
 }
-form#shipping_info div input, select {
-	border-radius: 0px;
+#jcart th {
+	background: none !important;
+	border: none;
 }
-form#shipping_info div {
-	float:left;
-	margin-right: 15px;
-}
-form#shipping_info div i {
-	color: #FF0000;
-}
-form#shipping_info div input {
-	height: 30px;
-}
-form#shipping_info div input.company {
-	width: 440px;
-}
-form#shipping_info div input.address1, input.address2 {
-	width: 440px;
-}
-form#shipping_info div select.state {
-	width: 220px;
-	height: 40px;
-}
-form#shipping_info div input.phone_number {
-	width:209px;
-}
-form#billing_info div input, select {
-	border-radius: 0px;
-}
-form#billing_info div {
-	float:left;
-	margin-right: 15px;
-}
-form#billing_info div i {
-	color: #FF0000;
-}
-form#billing_info div input {
-	height: 30px;
-}
-form#billing_info div input.company, input.address1, input.address2 {
-	width: 442px;
-}
-form#billing_info div select.state {
-	width: 220px;
-	height: 40px;
-}
-form#billing_info div input.phone_number {
-	width:208px;
-}
-form#card_info div input, select {
-	border-radius: 0px;
-}
-form#card_info div {
-	float:left;
-	margin-right: 15px;
-}
-form#card_info div i {
-	color: #FF0000;
-}
-form#card_info div input {
-	height: 30px;
-}
-form#card_info div input.card_number {
-	width: 430px;
-}
-form#card_info div select.card_type {
-	width: 208px;
-	height: 40px;
-}
-form#card_info div input.cvv2_code {
-	width: 131px;
-	height: 20px;
-}
-form#card_info div select.expir_month, select.expir_year {
-	width: 140px;
+#jcart-subtotal {
+	font-size: 15px;
+	float: right;
+	text-align: right;
+	margin: 10px 0 5px 0;
 }
 
 /* Client Page Styles */

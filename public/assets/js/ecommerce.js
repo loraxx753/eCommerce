@@ -271,5 +271,4 @@ $(document).ready(function() {
 			$this.parent().parent().prev().children('p').html(data);
 		});
 	});
-
 });

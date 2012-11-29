@@ -8,11 +8,7 @@
 		</div>
 
 		<?php 
-			if(count($cartArray) <= 0)
-			{
-				echo '<div class="alert alert-info"><button type="button" class="close" data-dismiss="alert">×</button><strong>Missing Something?</strong> <p>You have no items in your cart!</p></div>';
-			}
-			else
+			if(count($cartArray) > 0)
 			{
 				foreach ($cartArray as $key => $products) 
 				{
@@ -49,20 +45,3 @@
 				}
 			}
 		?>
-
-		
-		<div class="row policies">
-			<div class="span6 pull-right order_summary">
- 				<div class="span2">
-					<p class="sub_total">Sub-Total:</p>
-				</div>
-				<div id="sub-total" class="span3 pull-right">
-					<p id="subtotal_price" class="sub_total"><?=number_format($total, 2)?></p>
-				</div>
-				<?php if(count($cartArray) > 0) {?>
-				<span id="checkout" class="span2 pull-right">
-					<a href="<?=LINK_BASE?>checkout"class="btn btn-small">Proceed to Checkout</a>
-				</span>
-				<?php } ?>
-			</div>
-		</div>

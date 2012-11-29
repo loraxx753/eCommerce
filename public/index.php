@@ -8,7 +8,7 @@ define("COREBASE", BASE."core".DIRECTORY_SEPARATOR ); //removes the string "publ
 
 // Turn on error reporting and display errors....just in case
 // TODO: Move this to the config file so it can be changed on production.
-ini_set('error_reporting', E_ALL ^ E_NOTICE);
+ini_set('error_reporting', 0);
 ini_set('display_errors', 1);
 
 //Include the bootstrap to start everything up!

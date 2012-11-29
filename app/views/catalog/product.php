@@ -40,9 +40,9 @@
 					<input type="hidden" name="my-item-price" value="<?=$product->Product_Price?>"/>
 					<input type="hidden" name="my-item-qty" value="1"/>
 					<input type="hidden" name="my-item-url" value=""/>
-					<input type="submit" name="my-add-button" value="add to cart" class="button"/>
+					<input type="submit" name="my-add-button" value="Add To Cart" class="button btn btn-small"/>
 
-					<a href="<?=LINK_BASE?>catalog/cart/<?=$product->ProductID?>/1" class="btn btn-small">Add To Cart</a>
+					<!-- <a href="<?=LINK_BASE?>catalog/cart/<?=$product->ProductID?>/1" class="btn btn-small">Add To Cart</a> -->
 				</form>
 			</div>
 		</div>

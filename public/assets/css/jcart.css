@@ -20,9 +20,10 @@ http://conceptlogic.com/jcart/
 #jcart th, #jcart td { padding:5px; border:0; border:solid 1px #ccc; vertical-align:middle; text-align:left; font-weight:normal; }
 #jcart #jcart-empty { text-align:center; }
 
-.jcart-item-qty { width:25%; }
-#jcart .jcart-item-name { width:50%; font-weight:bold; }
-#jcart .jcart-item-price { width:25%; font-weight:bold; text-align:right; }
+.jcart-item-qty { width: 10px; }
+.jcart-item-qty input { width: 30px; text-align: center; }
+#jcart .jcart-item-name { width: 80%; font-weight:bold; padding: 0 0 0 10px; }
+#jcart .jcart-item-price { font-weight:bold; text-align:right; }
 .jcart-item-price span { display:block; }
 
 .jcart-remove { font-size:11px; font-weight:normal; }
